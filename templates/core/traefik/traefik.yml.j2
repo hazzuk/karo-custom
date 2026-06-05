@@ -31,12 +31,20 @@ entryPoints:
     address: :443
     http3: true
     asDefault: true
+    forwardedHeaders:
+      trustedIPs:
+        - "172.18.0.253"
+{% if karo_compose_proxy_client_enabled %}
+    proxyProtocol:
+      trustedIPs:
+        - "{{ karo_compose_proxy_server_wireguard_ipv4 }}"
+{% endif %}
     http:
       tls:
         certResolver: cloudflare
         domains:
-          - main: "*.{{ karo_compose_public_domain }}"
-          - main: "*.{{ karo_compose_private_domain }}"
+          - main: "*.{{ karo_compose_root_domain }}"
+          {{ karo_compose_traefik_custom_domains_raw }}
 
 # https://doc.traefik.io/traefik/reference/install-configuration/tls/certificate-resolvers/acme/
 certificatesResolvers:

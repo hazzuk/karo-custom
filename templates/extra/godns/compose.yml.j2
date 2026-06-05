@@ -2,13 +2,13 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-only
 
+# https://docs.karolabs.dev/stacks/extra/godns
+
 ---
 name: godns
 services:
 
   godns:
-    # https://github.com/TimothyYe/godns
-    # https://hub.docker.com/r/timothyye/godns
     image: {{ karo_compose_godns_image }}:{{ karo_compose_godns_version }}
     container_name: godns
     restart: {{ karo_compose_restart_policy }}
@@ -16,11 +16,11 @@ services:
       - egress_godns
     volumes:
       - type: bind
-        source: /srv/docker/godns/config.json
+        source: /srv/docker/extra/godns/config.json
         target: /config.json
         read_only: true
     secrets:
-      - karo_compose_godns_dns_api_token
+      - godns_dns_api_token
 
 networks:
   egress_godns:
@@ -29,5 +29,5 @@ networks:
     internal: false
 
 secrets:
-  karo_compose_godns_dns_api_token:
-    environment: karo_compose_godns_dns_api_token
+  godns_dns_api_token:
+    file: /run/user/1001/karo/compose/godns_dns_api_token

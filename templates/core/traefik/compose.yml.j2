@@ -2,13 +2,13 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-only
 
+# https://docs.karolabs.dev/stacks/core/traefik
+
 ---
 name: traefik
 services:
 
   traefik:
-    # https://github.com/traefik/traefik
-    # https://hub.docker.com/_/traefik
     image: {{ karo_compose_traefik_image }}:{{ karo_compose_traefik_version }}
     container_name: traefik
     restart: {{ karo_compose_restart_policy }}
@@ -25,7 +25,7 @@ services:
         ipv4_address: 172.18.0.254
     volumes:
       - type: bind
-        source: /srv/docker/traefik/traefik.yml
+        source: /srv/docker/core/traefik/traefik.yml
         target: /etc/traefik/traefik.yml
         read_only: true
       - type: volume
@@ -36,25 +36,25 @@ services:
       - traefik.http.routers.dashboard.rule=Host(`{{ karo_compose_traefik_dashboard_domain }}`)
       - traefik.http.routers.dashboard.service=api@internal
       - traefik.http.services.dashboard.loadbalancer.server.port=8080
+{% if karo_compose_traefik_dashboard_forward_auth_enabled %}
       # forward auth
       - traefik.http.routers.dashboard.middlewares=tinyauth
       - tinyauth.apps.dashboard.config.domain={{ karo_compose_traefik_dashboard_domain }}
       - tinyauth.apps.dashboard.oauth.groups={{ karo_compose_oidc_admin_group }}
+{% endif %}
     environment:
-      - CF_ZONE_API_TOKEN_FILE=/run/secrets/karo_compose_traefik_acme_zone_api_token
-      - CF_DNS_API_TOKEN_FILE=/run/secrets/karo_compose_traefik_acme_dns_api_token
+      - CF_ZONE_API_TOKEN_FILE=/run/secrets/traefik_acme_zone_api_token
+      - CF_DNS_API_TOKEN_FILE=/run/secrets/traefik_acme_dns_api_token
       - CLOUDFLARE_POLLING_INTERVAL=10
       - TZ={{ karo_compose_timezone }}
     secrets:
-      - karo_compose_traefik_acme_zone_api_token
-      - karo_compose_traefik_acme_dns_api_token
+      - traefik_acme_zone_api_token
+      - traefik_acme_dns_api_token
     depends_on:
       tinyauth:
         condition: service_healthy
 
   tinyauth:
-    # https://github.com/steveiliop56/tinyauth
-    # https://github.com/steveiliop56/tinyauth/pkgs/container/tinyauth
     image: {{ karo_compose_traefik_tinyauth_image }}:{{ karo_compose_traefik_tinyauth_version }}
     container_name: tinyauth
     restart: {{ karo_compose_restart_policy }}
@@ -63,8 +63,9 @@ services:
     security_opt:
       - no-new-privileges:true
     networks:
-      - socketproxy_traefik
-      - frontend
+      socketproxy_traefik:
+      frontend:
+        ipv4_address: 172.18.0.253
     extra_hosts:
       - "{{ karo_compose_oidc_domain }}:172.18.0.254"
     labels:
@@ -72,30 +73,30 @@ services:
       - traefik.http.routers.tinyauth.rule=Host(`{{ karo_compose_traefik_tinyauth_domain }}`)
       - traefik.http.services.tinyauth.loadbalancer.server.port=3000
       - traefik.http.middlewares.tinyauth.forwardauth.address=http://tinyauth:3000/api/auth/traefik
+      - traefik.http.middlewares.tinyauth.forwardauth.maxResponseBodySize=8192
+      - traefik.http.middlewares.tinyauth.forwardauth.trustForwardHeader=true
     environment:
-      - LOG_LEVEL={{ karo_compose_traefik_tinyauth_log_level }}
-      - DISABLE_ANALYTICS=true
-      - DISABLE_RESOURCES=true
-      - BACKGROUND_IMAGE=""
-      - APP_URL=https://{{ karo_compose_traefik_tinyauth_domain }}
-      - OAUTH_AUTO_REDIRECT=pocketid
-      - PROVIDERS_POCKETID_CLIENT_ID={{ karo_compose_traefik_tinyauth_oidc_client_id }}
-      - PROVIDERS_POCKETID_CLIENT_SECRET_FILE=/run/secrets/karo_compose_traefik_tinyauth_oidc_client_secret
-      - PROVIDERS_POCKETID_AUTH_URL={{ karo_compose_oidc_authorization_url }}
-      - PROVIDERS_POCKETID_TOKEN_URL={{ karo_compose_oidc_token_url }}
-      - PROVIDERS_POCKETID_USER_INFO_URL={{ karo_compose_oidc_userinfo_url }}
-      - PROVIDERS_POCKETID_REDIRECT_URL=https://{{ karo_compose_traefik_tinyauth_domain }}/api/oauth/callback/pocketid
-      - PROVIDERS_POCKETID_SCOPES=openid email profile groups
-      - PROVIDERS_POCKETID_NAME={{ karo_compose_oidc_provider_name }}
+      - TINYAUTH_LOG_LEVEL={{ karo_compose_traefik_tinyauth_log_level }}
+      - TINYAUTH_ANALYTICS_ENABLED=false
+      - TINYAUTH_RESOURCES_ENABLED=false
+      - TINYAUTH_UI_BACKGROUNDIMAGE=""
+      - TINYAUTH_APPURL=https://{{ karo_compose_traefik_tinyauth_domain }}
+      - TINYAUTH_OAUTH_AUTOREDIRECT=pocketid
+      - TINYAUTH_OAUTH_PROVIDERS_POCKETID_CLIENTID={{ karo_compose_traefik_tinyauth_oidc_client_id }}
+      - TINYAUTH_OAUTH_PROVIDERS_POCKETID_CLIENTSECRETFILE=/run/secrets/tinyauth_oidc_client_secret
+      - TINYAUTH_OAUTH_PROVIDERS_POCKETID_AUTHURL={{ karo_compose_oidc_authorization_url }}
+      - TINYAUTH_OAUTH_PROVIDERS_POCKETID_TOKENURL={{ karo_compose_oidc_token_url }}
+      - TINYAUTH_OAUTH_PROVIDERS_POCKETID_USERINFOURL={{ karo_compose_oidc_userinfo_url }}
+      - TINYAUTH_OAUTH_PROVIDERS_POCKETID_REDIRECTURL=https://{{ karo_compose_traefik_tinyauth_domain }}/api/oauth/callback/pocketid
+      - TINYAUTH_OAUTH_PROVIDERS_POCKETID_SCOPES=openid email profile groups
+      - TINYAUTH_OAUTH_PROVIDERS_POCKETID_NAME={{ karo_compose_oidc_provider_name }}
       - DOCKER_HOST=tcp://cetusguard:2375
     secrets:
-      - karo_compose_traefik_tinyauth_oidc_client_secret
+      - tinyauth_oidc_client_secret
     depends_on:
       - cetusguard
 
   cetusguard:
-    # https://github.com/hectorm/cetusguard
-    # https://hub.docker.com/r/hectorm/cetusguard
     image: {{ karo_compose_traefik_cetusguard_image }}:{{ karo_compose_traefik_cetusguard_version }}
     container_name: cetusguard_traefik
     restart: {{ karo_compose_restart_policy }}
@@ -147,9 +148,9 @@ volumes:
     name: traefik_acme
 
 secrets:
-  karo_compose_traefik_acme_zone_api_token:
-    environment: karo_compose_traefik_acme_zone_api_token
-  karo_compose_traefik_acme_dns_api_token:
-    environment: karo_compose_traefik_acme_dns_api_token
-  karo_compose_traefik_tinyauth_oidc_client_secret:
-    environment: karo_compose_traefik_tinyauth_oidc_client_secret
+  traefik_acme_zone_api_token:
+    file: /run/user/1001/karo/compose/traefik_acme_zone_api_token
+  traefik_acme_dns_api_token:
+    file: /run/user/1001/karo/compose/traefik_acme_dns_api_token
+  tinyauth_oidc_client_secret:
+    file: /run/user/1001/karo/compose/tinyauth_oidc_client_secret
