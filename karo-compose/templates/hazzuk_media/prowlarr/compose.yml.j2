@@ -8,7 +8,7 @@ name: prowlarr
 services:
 
   prowlarr:
-    image: {{ karo_compose_prowlarr_image }}:{{ karo_compose_prowlarr_version }}
+    image: {{ compose.prowlarr.image }}:{{ compose.prowlarr.version }}
     container_name: prowlarr
     restart: {{ karo_compose_restart_policy }}
     network_mode: "container:gluetun"
@@ -18,12 +18,12 @@ services:
         target: /config
     labels:
       - traefik.enable=true
-      - traefik.http.routers.prowlarr.rule=Host(`{{ karo_compose_prowlarr_domain }}`)
+      - traefik.http.routers.prowlarr.rule=Host(`{{ compose.prowlarr.domain }}`)
       - traefik.http.services.prowlarr.loadbalancer.server.port=9696
-{% if karo_compose_prowlarr_forward_auth_enabled %}
+{% if compose.prowlarr.forward_auth_enabled %}
       # forward auth
       - traefik.http.routers.prowlarr.middlewares=tinyauth
-      - tinyauth.apps.prowlarr.config.domain={{ karo_compose_prowlarr_domain }}
+      - tinyauth.apps.prowlarr.config.domain={{ compose.prowlarr.domain }}
       - tinyauth.apps.prowlarr.oauth.groups={{ karo_compose_oidc_admin_group }}
 {% endif %}
     environment:
