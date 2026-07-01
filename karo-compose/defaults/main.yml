@@ -4,14 +4,6 @@
 
 ---
 
-# seerr
-
-karo_compose_seerr_enabled: false
-karo_compose_seerr_image: ghcr.io/seerr-team/seerr
-karo_compose_seerr_version: preview-new-oidc@sha256:a14a9c326881fdce70b00df3fc095f5b5b128f5552677f677cd3788e757fb4e6
-karo_compose_seerr_domain: "seerr.{{ karo_compose_root_domain }}"
-karo_compose_seerr_log_level: info # debug, info, warn, error
-
 # sonarr
 
 karo_compose_sonarr_enabled: false

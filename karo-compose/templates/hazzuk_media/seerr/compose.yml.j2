@@ -8,7 +8,7 @@ name: seerr
 services:
 
   seerr:
-    image: {{ karo_compose_seerr_image }}:{{ karo_compose_seerr_version }}
+    image: {{ compose.seerr.image }}:{{ compose.seerr.version }}
     container_name: seerr
     restart: {{ karo_compose_restart_policy }}
     init: true
@@ -21,10 +21,10 @@ services:
         target: /app/config
     labels:
       - traefik.enable=true
-      - traefik.http.routers.seerr.rule=Host(`{{ karo_compose_seerr_domain }}`)
+      - traefik.http.routers.seerr.rule=Host(`{{ compose.seerr.domain }}`)
       - traefik.http.services.seerr.loadbalancer.server.port=5055
     environment:
-      - LOG_LEVEL={{ karo_compose_seerr_log_level }}
+      - LOG_LEVEL={{ compose.seerr.log_level }}
       - TZ={{ karo_compose_timezone }}
     healthcheck:
       test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider http://localhost:5055/api/v1/settings/public || exit 1"]
