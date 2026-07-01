@@ -1,0 +1,17 @@
+# SPDX-FileCopyrightText: 2026 hazzuk
+#
+# SPDX-License-Identifier: AGPL-3.0-only
+
+---
+
+hazzuk_extra_ntfy_enabled: false
+
+hazzuk_extra_ntfy_stack_defaults:
+  ntfy:
+    image: docker.io/binwiederhier/ntfy
+    version: v2.22.0@sha256:d8b3408c75d5ae78e03339af6103e7e6195e56573eea6f1ad34bb4dc4f44f340
+    domain: "ntfy.{{ karo_compose_root_domain }}"
+    log_level: info # trace, debug, info, warn, error
+    auth_users: "" # https://docs.ntfy.sh/config/#users-via-the-config
+    auth_access: "" # https://docs.ntfy.sh/config/#acl-entries-via-the-config
+    auth_tokens: "" # https://docs.ntfy.sh/config/#tokens-via-the-config

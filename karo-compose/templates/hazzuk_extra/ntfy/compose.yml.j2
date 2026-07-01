@@ -8,7 +8,7 @@ name: ntfy
 services:
 
   ntfy:
-    image: {{ karo_compose_ntfy_image }}:{{ karo_compose_ntfy_version }}
+    image: {{ compose.ntfy.image }}:{{ compose.ntfy.version }}
     container_name: ntfy
     restart: {{ karo_compose_restart_policy }}
     # user: 1000:1000 # issue 1276
@@ -27,11 +27,11 @@ services:
         target: /var/lib/ntfy
     labels:
       - traefik.enable=true
-      - traefik.http.routers.ntfy.rule=Host(`{{ karo_compose_ntfy_domain }}`)
+      - traefik.http.routers.ntfy.rule=Host(`{{ compose.ntfy.domain }}`)
       - traefik.http.services.ntfy.loadbalancer.server.port=80
     environment:
       - TZ={{ karo_compose_timezone }}
-      - NTFY_BASE_URL=https://{{ karo_compose_ntfy_domain }}
+      - NTFY_BASE_URL=https://{{ compose.ntfy.domain }}
       - NTFY_CACHE_FILE=/var/lib/ntfy/cache.db
       - NTFY_AUTH_FILE=/var/lib/ntfy/auth.db
       - NTFY_AUTH_DEFAULT_ACCESS=deny-all
@@ -39,10 +39,10 @@ services:
       - NTFY_ATTACHMENT_CACHE_DIR=/var/lib/ntfy/attachments
       - NTFY_UPSTREAM_BASE_URL=https://ntfy.sh
       - NTFY_WEB_ROOT=disable
-      - NTFY_LOG_LEVEL={{ karo_compose_ntfy_log_level }}
-      - NTFY_AUTH_USERS={{ karo_compose_ntfy_auth_users }}
-      - NTFY_AUTH_ACCESS={{ karo_compose_ntfy_auth_access }}
-      - NTFY_AUTH_TOKENS={{ karo_compose_ntfy_auth_tokens }}
+      - NTFY_LOG_LEVEL={{ compose.ntfy.log_level }}
+      - NTFY_AUTH_USERS={{ compose.ntfy.auth_users }}
+      - NTFY_AUTH_ACCESS={{ compose.ntfy.auth_access }}
+      - NTFY_AUTH_TOKENS={{ compose.ntfy.auth_tokens }}
     healthcheck:
       test: ["CMD-SHELL", "wget -q --tries=1 http://localhost:80/v1/health -O - | grep -Eo '\"healthy\"\\s*:\\s*true' || exit 1"]
       interval: 60s

@@ -27,18 +27,6 @@ karo_compose_jellyfin_domain: "jellyfin.{{ karo_compose_root_domain }}"
 karo_compose_jellyfin_movies_media_path: "" # e.g. /media/drive1/data/media/movies
 karo_compose_jellyfin_series_media_path: "" # e.g. /media/drive1/data/media/series
 
-# ntfy
-
-karo_compose_ntfy_enabled: false
-karo_compose_ntfy_image: docker.io/binwiederhier/ntfy
-karo_compose_ntfy_version: v2.22.0@sha256:d8b3408c75d5ae78e03339af6103e7e6195e56573eea6f1ad34bb4dc4f44f340
-karo_compose_ntfy_domain: "ntfy.{{ karo_compose_root_domain }}"
-karo_compose_ntfy_log_level: info # trace, debug, info, warn, error
-
-karo_compose_ntfy_auth_users: "" # https://docs.ntfy.sh/config/#users-via-the-config
-karo_compose_ntfy_auth_access: "" # https://docs.ntfy.sh/config/#acl-entries-via-the-config
-karo_compose_ntfy_auth_tokens: "" # https://docs.ntfy.sh/config/#tokens-via-the-config
-
 # prowlarr
 
 karo_compose_prowlarr_enabled: false
