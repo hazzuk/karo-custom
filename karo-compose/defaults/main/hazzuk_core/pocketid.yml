@@ -4,8 +4,6 @@
 
 ---
 
-# pocketid
-
 hazzuk_core_pocketid_enabled: false
 
 hazzuk_core_pocketid_stack_defaults:

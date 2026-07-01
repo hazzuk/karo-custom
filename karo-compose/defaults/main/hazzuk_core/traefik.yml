@@ -4,8 +4,6 @@
 
 ---
 
-# traefik
-
 hazzuk_core_traefik_enabled: false
 
 hazzuk_core_traefik_stack_defaults:
