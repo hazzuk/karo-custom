@@ -4,64 +4,6 @@
 
 ---
 
-karo_compose_justfile_stack: all
-
-# docker will start stacks in this order
-# docker will stop stacks in reverse order
-karo_compose_stacks:
-  core:
-    - traefik
-    - pocketid
-  extra:
-    - proxy
-    - whoami
-    - godns
-    - gluetun
-    - qbittorrent
-    - prowlarr
-    - radarr
-    - sonarr
-    - seerr
-    - jellyfin
-    - ntfy
-    - glance
-
-karo_compose_restart_policy: unless-stopped
-karo_compose_timezone: "Europe/London"
-
-karo_compose_root_domain: example.com
-
-# oidc
-
-karo_compose_oidc_subdomain: auth
-karo_compose_oidc_domain: "{{ karo_compose_oidc_subdomain }}.{{ karo_compose_root_domain }}" # e.g. auth.example.com
-karo_compose_oidc_url: "https://{{ karo_compose_oidc_domain }}" # e.g. https://auth.example.com
-
-karo_compose_oidc_authorization_path: "/authorize"
-karo_compose_oidc_authorization_url: "{{ karo_compose_oidc_url }}{{ karo_compose_oidc_authorization_path }}"
-
-karo_compose_oidc_discovery_path: "/.well-known/openid-configuration"
-karo_compose_oidc_discovery_url: "{{ karo_compose_oidc_url }}{{ karo_compose_oidc_discovery_path }}"
-
-karo_compose_oidc_token_path: "/api/oidc/token"
-karo_compose_oidc_token_url: "{{ karo_compose_oidc_url }}{{ karo_compose_oidc_token_path }}"
-
-karo_compose_oidc_userinfo_path: "/api/oidc/userinfo"
-karo_compose_oidc_userinfo_url: "{{ karo_compose_oidc_url }}{{ karo_compose_oidc_userinfo_path }}"
-
-karo_compose_oidc_logout_path: "/api/oidc/end-session"
-karo_compose_oidc_logout_url: "{{ karo_compose_oidc_url }}{{ karo_compose_oidc_logout_path }}"
-
-karo_compose_oidc_certificate_path: "/.well-known/jwks.json"
-karo_compose_oidc_certificate_url: "{{ karo_compose_oidc_url }}{{ karo_compose_oidc_certificate_path }}"
-
-karo_compose_oidc_provider_name: "PocketID"
-
-karo_compose_oidc_admin_group: "admin"
-
-# core stacks
-# ---
-
 # pocketid
 
 karo_compose_pocketid_enabled: true
@@ -113,9 +55,6 @@ karo_compose_traefik_tinyauth_oidc_client_id: ""
 karo_compose_traefik_cetusguard_image: docker.io/hectorm/cetusguard
 karo_compose_traefik_cetusguard_version: v1.1.3@sha256:b3dc5d2042869dd714c75985d94bb8c259df53b325ec6b1a2b57bcc3eac17689
 karo_compose_traefik_cetusguard_log_level: 7 # 0-7 (min to max verbosity)
-
-# extra stacks
-# ---
 
 # glance
 
