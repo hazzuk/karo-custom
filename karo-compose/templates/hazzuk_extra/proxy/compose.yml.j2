@@ -19,7 +19,7 @@ services:
       - egress_haproxy
     volumes:
       - type: bind
-        source: /srv/docker/extra/proxy/haproxy.cfg
+        source: /srv/docker/hazzuk_extra/proxy/haproxy.cfg
         target: /usr/local/etc/haproxy/haproxy.cfg
         read_only: true
 
