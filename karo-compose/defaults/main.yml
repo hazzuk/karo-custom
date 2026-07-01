@@ -4,16 +4,6 @@
 
 ---
 
-# radarr
-
-karo_compose_radarr_enabled: false
-karo_compose_radarr_image: docker.io/linuxserver/radarr
-karo_compose_radarr_version: 6.1.1.10360-ls300@sha256:b01097ad2d948c9f5eca39eb60bb529e2e55b0738c4bf7db09383bef0abab59d
-karo_compose_radarr_domain: "radarr.{{ karo_compose_root_domain }}"
-karo_compose_radarr_forward_auth_enabled: true
-
-karo_compose_radarr_data_path: "" # e.g. /media/drive1/data
-
 # seerr
 
 karo_compose_seerr_enabled: false
