@@ -4,16 +4,6 @@
 
 ---
 
-# jellyfin
-
-karo_compose_jellyfin_enabled: false
-karo_compose_jellyfin_image: docker.io/jellyfin/jellyfin
-karo_compose_jellyfin_version: 10.11.8@sha256:1694ff069f0c9dafb283c36765175606866769f5d72f2ed56b6a0f1be922fc37
-karo_compose_jellyfin_domain: "jellyfin.{{ karo_compose_root_domain }}"
-
-karo_compose_jellyfin_movies_media_path: "" # e.g. /media/drive1/data/media/movies
-karo_compose_jellyfin_series_media_path: "" # e.g. /media/drive1/data/media/series
-
 # prowlarr
 
 karo_compose_prowlarr_enabled: false

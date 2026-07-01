@@ -8,7 +8,7 @@ name: jellyfin
 services:
 
   jellyfin:
-    image: {{ karo_compose_jellyfin_image }}:{{ karo_compose_jellyfin_version }}
+    image: {{ compose.jellyfin.image }}:{{ compose.jellyfin.version }}
     container_name: jellyfin
     restart: {{ karo_compose_restart_policy }}
     networks:
@@ -16,11 +16,11 @@ services:
       - frontend
     volumes:
       - type: bind
-        source: {{ karo_compose_jellyfin_movies_media_path }}
+        source: {{ compose.jellyfin.movies_media_path }}
         target: /data/media/movies
         read_only: true
       - type: bind
-        source: {{ karo_compose_jellyfin_series_media_path }}
+        source: {{ compose.jellyfin.series_media_path }}
         target: /data/media/series
         read_only: true
       - type: volume
@@ -31,7 +31,7 @@ services:
         target: /cache
     labels:
       - traefik.enable=true
-      - traefik.http.routers.jellyfin.rule=Host(`{{ karo_compose_jellyfin_domain }}`)
+      - traefik.http.routers.jellyfin.rule=Host(`{{ compose.jellyfin.domain }}`)
       - traefik.http.services.jellyfin.loadbalancer.server.port=8096
     environment:
       - TZ={{ karo_compose_timezone }}
