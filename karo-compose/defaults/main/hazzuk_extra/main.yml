@@ -9,3 +9,6 @@ hazzuk_extra:
   - whoami
   - ntfy
   - godns
+
+hazzuk_extra_godns_secrets:
+  godns_dns_api_token: "{{ hazzuk_extra_godns_stack.godns.dns_api_token }}"

@@ -17,18 +17,6 @@ karo_compose_gluetun_secrets:
   gluetun_wireguard_config_raw: |
     # wireguard config
 
-# godns
-
-karo_compose_godns_enabled: false
-karo_compose_godns_image: docker.io/timothyye/godns
-karo_compose_godns_version: v3.4.1@sha256:d9a043164b256ab9d7ab03a7619bfe2292a2ab2b6e5e3151e818edb63249b1de
-karo_compose_godns_debug_info_enabled: false
-
-karo_compose_godns_subdomain: home
-
-karo_compose_godns_secrets:
-  godns_dns_api_token: ""
-
 # jellyfin
 
 karo_compose_jellyfin_enabled: false
