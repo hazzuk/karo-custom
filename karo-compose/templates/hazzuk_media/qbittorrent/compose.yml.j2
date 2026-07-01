@@ -8,7 +8,7 @@ name: qbittorrent
 services:
 
   qbittorrent:
-    image: {{ karo_compose_qbittorrent_image }}:{{ karo_compose_qbittorrent_version }}
+    image: {{ compose.qbittorrent.image }}:{{ compose.qbittorrent.version }}
     container_name: qbittorrent
     restart: {{ karo_compose_restart_policy }}
     stop_grace_period: 30m
@@ -22,14 +22,14 @@ services:
     network_mode: "container:gluetun"
     volumes:
       - type: bind
-        source: {{ karo_compose_qbittorrent_downloads_path }}
+        source: {{ compose.qbittorrent.downloads_path }}
         target: /data/torrents
       - type: volume
         source: qbittorrent_data
         target: /config
     labels:
-      - traefik.enable={{ karo_compose_qbittorrent_webui_enabled | lower }}
-      - traefik.http.routers.qbittorrent.rule=Host(`{{ karo_compose_qbittorrent_domain }}`)
+      - traefik.enable={{ compose.qbittorrent.webui_enabled | lower }}
+      - traefik.http.routers.qbittorrent.rule=Host(`{{ compose.qbittorrent.domain }}`)
       - traefik.http.services.qbittorrent.loadbalancer.server.port=9814
     environment:
       - TZ={{ karo_compose_timezone }}
@@ -39,7 +39,7 @@ services:
       - QBT_WEBUI_PORT=9814
 
   qui:
-    image: {{ karo_compose_qbittorrent_qui_image }}:{{ karo_compose_qbittorrent_qui_version }}
+    image: {{ compose.qui.image }}:{{ compose.qui.version }}
     container_name: qui
     restart: {{ karo_compose_restart_policy }}
     network_mode: "container:gluetun"
@@ -49,16 +49,16 @@ services:
         target: /config
     labels:
       - traefik.enable=true
-      - traefik.http.routers.qui.rule=Host(`{{ karo_compose_qbittorrent_qui_domain }}`)
+      - traefik.http.routers.qui.rule=Host(`{{ compose.qui.domain }}`)
       - traefik.http.services.qui.loadbalancer.server.port=7476
     environment:
-      - QUI__LOG_LEVEL={{ karo_compose_qbittorrent_qui_log_level | upper }}
+      - QUI__LOG_LEVEL={{ compose.qui.log_level | upper }}
       - QUI__SESSION_SECRET_FILE=/run/secrets/qui_session_secret
       - QUI__OIDC_ENABLED=true
       - QUI__OIDC_ISSUER={{ karo_compose_oidc_url }}
-      - QUI__OIDC_CLIENT_ID={{ karo_compose_qbittorrent_qui_oidc_client_id }}
+      - QUI__OIDC_CLIENT_ID={{ compose.qui.oidc_client_id }}
       - QUI__OIDC_CLIENT_SECRET_FILE=/run/secrets/qui_oidc_client_secret
-      - QUI__OIDC_REDIRECT_URL=https://{{ karo_compose_qbittorrent_qui_domain }}/api/auth/oidc/callback
+      - QUI__OIDC_REDIRECT_URL=https://{{ compose.qui.domain }}/api/auth/oidc/callback
       - QUI__OIDC_DISABLE_BUILT_IN_LOGIN=true
     secrets:
       - qui_session_secret

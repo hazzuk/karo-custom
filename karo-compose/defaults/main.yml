@@ -4,30 +4,6 @@
 
 ---
 
-# qbittorrent
-
-karo_compose_qbittorrent_enabled: false
-karo_compose_qbittorrent_image: docker.io/qbittorrentofficial/qbittorrent-nox
-karo_compose_qbittorrent_version: 5.1.4-1@sha256:41888f4e05646ace98aeaff01a7bbec714e2e6082ab273fd4af0d1210352ea2c
-karo_compose_qbittorrent_domain: "qbittorrent.{{ karo_compose_root_domain }}"
-
-karo_compose_qbittorrent_downloads_path: "" # e.g. /media/drive1/data/torrents
-
-karo_compose_qbittorrent_webui_enabled: true
-
-karo_compose_qbittorrent_secrets:
-  qui_session_secret: "" # `openssl rand -hex 16`
-  qui_oidc_client_secret: ""
-
-# qbittorrent qui
-
-karo_compose_qbittorrent_qui_image: ghcr.io/autobrr/qui
-karo_compose_qbittorrent_qui_version: v1.17.0@sha256:fb3832e68f66b056e1b049d16c40732661e7b73999bc642d4b11469a3ebbabd3
-karo_compose_qbittorrent_qui_domain: "qui.{{ karo_compose_root_domain }}"
-karo_compose_qbittorrent_qui_log_level: info # trace, debug, info, warn, error
-
-karo_compose_qbittorrent_qui_oidc_client_id: ""
-
 # radarr
 
 karo_compose_radarr_enabled: false
