@@ -7,3 +7,8 @@
 hazzuk_core:
   - traefik
   - pocketid
+
+hazzuk_core_traefik_secrets:
+  traefik_acme_zone_api_token: "{{ hazzuk_core_traefik_stack.traefik.acme.zone_api_token }}"
+  traefik_acme_dns_api_token: "{{ hazzuk_core_traefik_stack.traefik.acme.dns_api_token }}"
+  tinyauth_oidc_client_secret: "{{ hazzuk_core_traefik_stack.tinyauth.oidc.client_secret }}"

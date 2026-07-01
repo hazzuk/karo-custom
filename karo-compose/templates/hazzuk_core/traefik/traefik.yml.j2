@@ -10,11 +10,11 @@ global:
 
 # https://doc.traefik.io/traefik/reference/install-configuration/observability/logs-and-accesslogs/
 log:
-  level: {{ karo_compose_traefik_log_level | upper }}
+  level: {{ compose.traefik.log_level | upper }}
 
 # https://doc.traefik.io/traefik/reference/install-configuration/api-dashboard/
 api:
-  dashboard: {{ karo_compose_traefik_dashboard_enabled | lower }}
+  dashboard: {{ compose.traefik.dashboard.enabled | lower }}
   disabledashboardad: true
 
 # https://doc.traefik.io/traefik/reference/install-configuration/entrypoints/
@@ -34,29 +34,29 @@ entryPoints:
     forwardedHeaders:
       trustedIPs:
         - "172.18.0.253"
-{% if karo_compose_proxy_client_enabled %}
+{% if hazzuk_extra_proxy_client_enabled %}
     proxyProtocol:
       trustedIPs:
-        - "{{ karo_compose_proxy_server_wireguard_ipv4 }}"
+        - "{{ hazzuk_extra_proxy_server_wireguard_ipv4 }}"
 {% endif %}
     http:
       tls:
         certResolver: cloudflare
         domains:
           - main: "*.{{ karo_compose_root_domain }}"
-          {{ karo_compose_traefik_custom_domains_raw }}
+          {{ compose.traefik.custom_domains_raw }}
 
 # https://doc.traefik.io/traefik/reference/install-configuration/tls/certificate-resolvers/acme/
 certificatesResolvers:
   cloudflare:
     acme:
       storage: /etc/traefik/acme/acme.json
-      email: {{ karo_compose_traefik_acme_email }}
+      email: {{ compose.traefik.acme.email }}
       keyType: EC384
-{% if karo_compose_traefik_acme_staging_enabled %}
-      caServer: {{ karo_compose_traefik_acme_staging_ca_server_url }}
+{% if compose.traefik.acme.staging_enabled %}
+      caServer: {{ compose.traefik.acme.staging_ca_server_url }}
 {% else %}
-      caServer: {{ karo_compose_traefik_acme_ca_server_url }}
+      caServer: {{ compose.traefik.acme.live_ca_server_url }}
 {% endif %}
       dnsChallenge:
         provider: cloudflare
