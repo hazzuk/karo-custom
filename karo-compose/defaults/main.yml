@@ -3,13 +3,3 @@
 # SPDX-License-Identifier: AGPL-3.0-only
 
 ---
-
-# sonarr
-
-karo_compose_sonarr_enabled: false
-karo_compose_sonarr_image: docker.io/linuxserver/sonarr
-karo_compose_sonarr_version: 4.0.17.2952-ls309@sha256:3580aec3802c915f0f819a88d5099abce61734b925732b8393d176b5dc561020
-karo_compose_sonarr_domain: "sonarr.{{ karo_compose_root_domain }}"
-karo_compose_sonarr_forward_auth_enabled: true
-
-karo_compose_sonarr_data_path: "" # e.g. /media/drive1/data
