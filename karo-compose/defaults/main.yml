@@ -130,11 +130,3 @@ karo_compose_sonarr_domain: "sonarr.{{ karo_compose_root_domain }}"
 karo_compose_sonarr_forward_auth_enabled: true
 
 karo_compose_sonarr_data_path: "" # e.g. /media/drive1/data
-
-# whoami
-
-karo_compose_whoami_enabled: false
-karo_compose_whoami_image: docker.io/traefik/whoami
-karo_compose_whoami_version: v1.11.0@sha256:200689790a0a0ea48ca45992e0450bc26ccab5307375b41c84dfc4f2475937ab
-karo_compose_whoami_domain: "whoami.{{ karo_compose_root_domain }}"
-karo_compose_whoami_forward_auth_enabled: false
