@@ -35,26 +35,6 @@ karo_compose_prowlarr_version: 2.3.5.5327-ls144@sha256:b4204e18666179472225935b4
 karo_compose_prowlarr_domain: "prowlarr.{{ karo_compose_root_domain }}"
 karo_compose_prowlarr_forward_auth_enabled: true
 
-# proxy
-
-karo_compose_proxy_client_enabled: false
-karo_compose_proxy_server_enabled: false
-
-karo_compose_proxy_enabled: "{{ karo_compose_proxy_server_enabled }}"
-
-karo_compose_proxy_client_wireguard_ipv4: 10.25.0.2
-karo_compose_proxy_server_wireguard_ipv4: 10.25.0.1
-
-karo_compose_proxy_server_wireguard_port: 52525
-
-# proxy haproxy
-
-karo_compose_proxy_haproxy_image: docker.io/haproxy
-karo_compose_proxy_haproxy_version: 3.2.17-alpine@sha256:0c32ec9e64a3bbacb2a1a28afbc3d46032d905bf74ccb745b45488ff41ee9a6b
-
-karo_compose_proxy_haproxy_config_raw: |
-  # haproxy config
-
 # qbittorrent
 
 karo_compose_qbittorrent_enabled: false
