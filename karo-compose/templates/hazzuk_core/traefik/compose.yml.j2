@@ -69,6 +69,10 @@ services:
         ipv4_address: 172.18.0.253
     extra_hosts:
       - "{{ karo_compose_oidc_domain }}:172.18.0.254"
+    volumes:
+      - type: volume
+        source: tinyauth_data
+        target: /data
     labels:
       - traefik.enable=true
       - traefik.http.routers.tinyauth.rule=Host(`{{ compose.tinyauth.domain }}`)
@@ -147,6 +151,8 @@ networks:
 volumes:
   {{ traefik_acme_volume_name }}:
     name: {{ traefik_acme_volume_name }}
+  tinyauth_data:
+    name: tinyauth_data
 
 secrets:
   traefik_acme_zone_api_token:
