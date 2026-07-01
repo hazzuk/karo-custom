@@ -12,3 +12,6 @@ hazzuk_media:
   - sonarr
   - seerr
   - jellyfin
+
+hazzuk_media_gluetun_secrets:
+  gluetun_wireguard_config_raw: "{{ hazzuk_media_gluetun_stack.gluetun.wireguard_config_raw }}"
