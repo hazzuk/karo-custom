@@ -3,7 +3,6 @@
 # SPDX-License-Identifier: AGPL-3.0-only
 
 ---
-
 {% set traefik_acme_volume_name = "traefik_acme_staging" if compose.traefik.acme.staging_enabled else "traefik_acme" %}
 
 name: traefik
