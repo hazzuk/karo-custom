@@ -1,0 +1,15 @@
+# SPDX-FileCopyrightText: 2026 hazzuk
+#
+# SPDX-License-Identifier: AGPL-3.0-only
+
+---
+
+hazzuk_core_pocketid_enabled: false
+
+hazzuk_core_pocketid_stack_defaults:
+  pocketid:
+    image: ghcr.io/pocket-id/pocket-id
+    version: v2.6.2@sha256:1cc51e5b36fa7ec31368d3efb24ba362be6dce20f3cc0a2852843527bd5110f0
+    log_level: info # debug, info, warn, error
+    encryption_key: "" # `openssl rand -base64 32`
+    maxmind_license_key: ""

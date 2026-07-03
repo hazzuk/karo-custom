@@ -1,0 +1,39 @@
+# SPDX-FileCopyrightText: 2026 hazzuk
+#
+# SPDX-License-Identifier: AGPL-3.0-only
+
+---
+
+name: radarr
+services:
+
+  radarr:
+    image: {{ compose.radarr.image }}:{{ compose.radarr.version }}
+    container_name: radarr
+    restart: {{ karo_compose_restart_policy }}
+    network_mode: "container:gluetun"
+    volumes:
+      - type: bind
+        source: {{ compose.radarr.data_path }}
+        target: /data
+      - type: volume
+        source: radarr_data
+        target: /config
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.radarr.rule=Host(`{{ compose.radarr.domain }}`)
+      - traefik.http.services.radarr.loadbalancer.server.port=7878
+{% if compose.radarr.forward_auth_enabled %}
+      # forward auth
+      - traefik.http.routers.radarr.middlewares=tinyauth
+      - tinyauth.apps.radarr.config.domain={{ compose.radarr.domain }}
+      - tinyauth.apps.radarr.oauth.groups={{ karo_compose_oidc_admin_group }}
+{% endif %}
+    environment:
+      - TZ={{ karo_compose_timezone }}
+      - PUID=0
+      - PGID=0
+
+volumes:
+  radarr_data:
+    name: radarr_data

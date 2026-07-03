@@ -1,0 +1,18 @@
+# SPDX-FileCopyrightText: 2026 hazzuk
+#
+# SPDX-License-Identifier: AGPL-3.0-only
+
+---
+
+hazzuk_core:
+  - traefik
+  - pocketid
+
+hazzuk_core_pocketid_secrets:
+  pocketid_encryption_key: "{{ hazzuk_core_pocketid_stack.pocketid.encryption_key }}"
+  pocketid_maxmind_license_key: "{{ hazzuk_core_pocketid_stack.pocketid.maxmind_license_key | default('') }}"
+
+hazzuk_core_traefik_secrets:
+  traefik_acme_zone_api_token: "{{ hazzuk_core_traefik_stack.traefik.acme.zone_api_token }}"
+  traefik_acme_dns_api_token: "{{ hazzuk_core_traefik_stack.traefik.acme.dns_api_token }}"
+  tinyauth_oidc_client_secret: "{{ hazzuk_core_traefik_stack.tinyauth.oidc.client_secret }}"

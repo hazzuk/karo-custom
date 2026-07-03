@@ -1,0 +1,14 @@
+# SPDX-FileCopyrightText: 2026 hazzuk
+#
+# SPDX-License-Identifier: AGPL-3.0-only
+
+---
+
+hazzuk_media_prowlarr_enabled: false
+
+hazzuk_media_prowlarr_stack_defaults:
+  prowlarr:
+    image: docker.io/linuxserver/prowlarr
+    version: 2.3.5.5327-ls144@sha256:b4204e18666179472225935b443a99cf6c66dcb7bbc2d35034427a3851f13135
+    domain: "prowlarr.{{ karo_compose_root_domain }}"
+    forward_auth_enabled: true

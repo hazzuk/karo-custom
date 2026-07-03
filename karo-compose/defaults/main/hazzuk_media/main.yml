@@ -1,0 +1,21 @@
+# SPDX-FileCopyrightText: 2026 hazzuk
+#
+# SPDX-License-Identifier: AGPL-3.0-only
+
+---
+
+hazzuk_media:
+  - gluetun
+  - qbittorrent
+  - prowlarr
+  - radarr
+  - sonarr
+  - seerr
+  - jellyfin
+
+hazzuk_media_gluetun_secrets:
+  gluetun_wireguard_config_raw: "{{ hazzuk_media_gluetun_stack.gluetun.wireguard_config_raw }}"
+
+hazzuk_media_qbittorrent_secrets:
+  qui_session_secret: "{{ hazzuk_media_qbittorrent_stack.qui.session_secret }}"
+  qui_oidc_client_secret: "{{ hazzuk_media_qbittorrent_stack.qui.oidc.client_secret }}"

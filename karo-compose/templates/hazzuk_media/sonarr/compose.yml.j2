@@ -1,0 +1,39 @@
+# SPDX-FileCopyrightText: 2026 hazzuk
+#
+# SPDX-License-Identifier: AGPL-3.0-only
+
+---
+
+name: sonarr
+services:
+
+  sonarr:
+    image: {{ compose.sonarr.image }}:{{ compose.sonarr.version }}
+    container_name: sonarr
+    restart: {{ karo_compose_restart_policy }}
+    network_mode: "container:gluetun"
+    volumes:
+      - type: bind
+        source: {{ compose.sonarr.data_path }}
+        target: /data
+      - type: volume
+        source: sonarr_data
+        target: /config
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.sonarr.rule=Host(`{{ compose.sonarr.domain }}`)
+      - traefik.http.services.sonarr.loadbalancer.server.port=8989
+{% if compose.sonarr.forward_auth_enabled %}
+      # forward auth
+      - traefik.http.routers.sonarr.middlewares=tinyauth
+      - tinyauth.apps.sonarr.config.domain={{ compose.sonarr.domain }}
+      - tinyauth.apps.sonarr.oauth.groups={{ karo_compose_oidc_admin_group }}
+{% endif %}
+    environment:
+      - TZ={{ karo_compose_timezone }}
+      - PUID=0
+      - PGID=0
+
+volumes:
+  sonarr_data:
+    name: sonarr_data

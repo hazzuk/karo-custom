@@ -1,0 +1,14 @@
+# SPDX-FileCopyrightText: 2026 hazzuk
+#
+# SPDX-License-Identifier: AGPL-3.0-only
+
+---
+
+hazzuk_extra:
+  - proxy
+  - whoami
+  - ntfy
+  - godns
+
+hazzuk_extra_godns_secrets:
+  godns_dns_api_token: "{{ hazzuk_extra_godns_stack.godns.dns_api_token }}"

@@ -1,0 +1,15 @@
+# SPDX-FileCopyrightText: 2026 hazzuk
+#
+# SPDX-License-Identifier: AGPL-3.0-only
+
+---
+
+hazzuk_extra_godns_enabled: false
+
+hazzuk_extra_godns_stack_defaults:
+  godns:
+    image: docker.io/timothyye/godns
+    version: v3.4.1@sha256:d9a043164b256ab9d7ab03a7619bfe2292a2ab2b6e5e3151e818edb63249b1de
+    subdomain: home
+    debug_info_enabled: false
+    dns_api_token: ""
