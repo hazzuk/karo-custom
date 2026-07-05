@@ -27,7 +27,7 @@ karo_compose_godns_secrets:
 
 ??? tip "Guide - Create a Cloudflare API token for GoDNS"
 
-    --8<-- "snippets.md:cloudflare_token"
+    --8<-- "includes/snippets.md:cloudflare_token"
 
     === "`karo_compose_godns_dns_api_token`"
 

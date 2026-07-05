@@ -58,7 +58,7 @@ karo_compose_traefik_secrets:
 
     > Based on the [Lego library docs](https://go-acme.github.io/lego/dns/cloudflare/index.html#api-tokens).
 
-    --8<-- "snippets.md:cloudflare_token"
+    --8<-- "includes/snippets.md:cloudflare_token"
 
     === "`karo_compose_traefik_acme_zone_api_token`"
 

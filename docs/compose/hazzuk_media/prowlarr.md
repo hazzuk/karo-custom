@@ -23,7 +23,7 @@ karo_compose_prowlarr_enabled: false
 
 ??? tip "Guide - Prowlarr authentication"
 
-    --8<-- "snippets.md:arr_auth"
+    --8<-- "includes/snippets.md:arr_auth"
 
         ```sh
         # set prowlarr's auth to external

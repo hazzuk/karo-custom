@@ -25,7 +25,7 @@ karo_compose_sonarr_data_path: "" # e.g. /media/drive1/data
 
 ??? tip "Guide - Sonarr authentication"
 
-    --8<-- "snippets.md:arr_auth"
+    --8<-- "includes/snippets.md:arr_auth"
 
         ```sh
         # set sonarr's auth to external

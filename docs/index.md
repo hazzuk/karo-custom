@@ -2,4 +2,4 @@
 icon: lucide/home
 ---
 
-# hazzuk/karo-custom
+--8<-- "README.md"
