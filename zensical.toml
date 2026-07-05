@@ -69,7 +69,7 @@ features = [
   "navigation.instant.prefetch",
   # "navigation.instant.progress",
   "navigation.path",
-  # "navigation.prune",
+  "navigation.prune",
   "navigation.sections",
   # "navigation.tabs",
   # "navigation.tabs.sticky",
@@ -80,8 +80,8 @@ features = [
   # "toc.integrate",
 ]
 
-# [project.theme.icon]
-# logo = "lucide/smile"
+[project.theme.icon]
+logo = "lucide/bolt"
 
 # [project.theme.font]
 # text = "Inter"
@@ -92,6 +92,8 @@ features = [
 media = "(prefers-color-scheme)"
 toggle.icon = "lucide/sun-moon"
 toggle.name = "Switch to light mode"
+primary = "cyan"
+accent = "cyan"
 
 # palette toggle for light mode
 [[project.theme.palette]]
@@ -99,6 +101,8 @@ media = "(prefers-color-scheme: light)"
 scheme = "default"
 toggle.icon = "lucide/sun"
 toggle.name = "Switch to dark mode"
+primary = "cyan"
+accent = "cyan"
 
 # palette toggle for dark mode
 [[project.theme.palette]]
@@ -106,6 +110,8 @@ media = "(prefers-color-scheme: dark)"
 scheme = "slate"
 toggle.icon = "lucide/moon"
 toggle.name = "Switch to system preference"
+primary = "cyan"
+accent = "cyan"
 
 # [[project.extra.social]]
 # icon = "fontawesome/brands/github"
