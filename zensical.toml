@@ -87,52 +87,89 @@ features = [
 # text = "Inter"
 # code = "Jetbrains Mono"
 
+# palette toggle for automatic mode
 [[project.theme.palette]]
+media = "(prefers-color-scheme)"
+toggle.icon = "lucide/sun-moon"
+toggle.name = "Switch to light mode"
+
+# palette toggle for light mode
+[[project.theme.palette]]
+media = "(prefers-color-scheme: light)"
 scheme = "default"
 toggle.icon = "lucide/sun"
 toggle.name = "Switch to dark mode"
 
+# palette toggle for dark mode
 [[project.theme.palette]]
+media = "(prefers-color-scheme: dark)"
 scheme = "slate"
 toggle.icon = "lucide/moon"
-toggle.name = "Switch to light mode"
+toggle.name = "Switch to system preference"
 
 # [[project.extra.social]]
 # icon = "fontawesome/brands/github"
 # link = "https://github.com/user/repo"
 
-[project.markdown_extensions.abbr]
+# extensions
+# https://zensical.org/docs/authoring/markdown/
+
+# html
+[project.markdown_extensions.attr_list] # add html/css to markdown lines
+[project.markdown_extensions.md_in_html] # write markdown inbetween html
+[project.markdown_extensions.pymdownx.blocks.caption] # add captions markdown blocks
+
+# call-outs (admonitions)
 [project.markdown_extensions.admonition]
-[project.markdown_extensions.attr_list]
-[project.markdown_extensions.def_list]
-[project.markdown_extensions.footnotes]
-[project.markdown_extensions.md_in_html]
-[project.markdown_extensions.toc]
-permalink = true
-[project.markdown_extensions.pymdownx.arithmatex]
-generic = true
-[project.markdown_extensions.pymdownx.betterem]
-[project.markdown_extensions.pymdownx.caret]
-[project.markdown_extensions.pymdownx.details]
-[project.markdown_extensions.pymdownx.emoji]
-emoji_generator = "zensical.extensions.emoji.to_svg"
-emoji_index = "zensical.extensions.emoji.twemoji"
-[project.markdown_extensions.pymdownx.highlight]
+[project.markdown_extensions.pymdownx.details] # improved call-outs
+
+# code blocks
+[project.markdown_extensions.pymdownx.highlight] # syntax highlighting
 anchor_linenums = true
 line_spans = "__span"
 pygments_lang_class = true
-[project.markdown_extensions.pymdownx.inlinehilite]
-[project.markdown_extensions.pymdownx.keys]
-[project.markdown_extensions.pymdownx.magiclink]
-[project.markdown_extensions.pymdownx.mark]
-[project.markdown_extensions.pymdownx.smartsymbols]
-[project.markdown_extensions.pymdownx.superfences]
+[project.markdown_extensions.pymdownx.inlinehilite] # in-line syntax highlighting
+[project.markdown_extensions.pymdownx.snippets] # embed external files
+base_path = ["includes"]
+# auto_append = ["abbreviations.md"]
+
+# content tabs
+[project.markdown_extensions.pymdownx.superfences] # nest code/content blocks
 custom_fences = [
   { name = "mermaid", class = "mermaid", format = "pymdownx.superfences.fence_code_format" }
 ]
-[project.markdown_extensions.pymdownx.tabbed]
+[project.markdown_extensions.pymdownx.tabbed] # content tabs
 alternate_style = true
-combine_header_slug = true
+
+# anchor links
+[project.markdown_extensions.pymdownx.tabbed.slugify]
+object = "pymdownx.slugs.slugify"
+kwds = { case = "lower" }
+
+# data tables
+[project.markdown_extensions.tables]
+
+# footnotes
+[project.markdown_extensions.footnotes]
+
+# formatting text
+[project.markdown_extensions.pymdownx.caret]
+[project.markdown_extensions.pymdownx.mark]
+[project.markdown_extensions.pymdownx.tilde]
+[project.markdown_extensions.pymdownx.keys] # render keyboard keys
+[project.markdown_extensions.pymdownx.betterem]
+
+# icons and emoji
+[project.markdown_extensions.pymdownx.emoji]
+emoji_index = "zensical.extensions.emoji.twemoji"
+emoji_generator = "zensical.extensions.emoji.to_svg"
+# custom icons directory
+options.custom_icons = ["overrides/.icons"]
+
+# lists
 [project.markdown_extensions.pymdownx.tasklist]
 custom_checkbox = true
-[project.markdown_extensions.pymdownx.tilde]
+clickable_checkbox = true
+
+# tooltip abbreviations
+[project.markdown_extensions.abbr]
