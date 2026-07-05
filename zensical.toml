@@ -9,8 +9,8 @@ copyright = """
 &copy; 2026 hazzuk
 """
 
-repo_name = "hazzuk/karo-stack"
-repo_url = "https://github.com/hazzuk/karo-stack"
+repo_name = "hazzuk/karo-custom"
+repo_url = "https://github.com/hazzuk/karo-custom"
 
 nav = [
   { "Home" = [
