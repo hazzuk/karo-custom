@@ -12,10 +12,35 @@ copyright = """
 repo_name = "hazzuk/karo-stack"
 repo_url = "https://github.com/hazzuk/karo-stack"
 
-# nav = [
-#   { "Get started" = "index.md" },
-#   { "Markdown in 5min" = "markdown.md" },
-# ]
+nav = [
+  { "Home" = [
+    "index.md",
+  ] },
+  { "karo-compose" = [
+    { "hazzuk_core" = [
+      "compose/hazzuk_core/index.md",
+      "compose/hazzuk_core/traefik.md",
+      "compose/hazzuk_core/pocket-id.md",
+    ] },
+    { "hazzuk_extra" = [
+      "compose/hazzuk_extra/index.md",
+      "compose/hazzuk_extra/godns.md",
+      "compose/hazzuk_extra/ntfy.md",
+      "compose/hazzuk_extra/proxy.md",
+      "compose/hazzuk_extra/whoami.md",
+    ] },
+    { "hazzuk_media" = [
+      "compose/hazzuk_media/index.md",
+      "compose/hazzuk_media/gluetun.md",
+      "compose/hazzuk_media/qbittorrent.md",
+      "compose/hazzuk_media/prowlarr.md",
+      "compose/hazzuk_media/radarr.md",
+      "compose/hazzuk_media/sonarr.md",
+      "compose/hazzuk_media/jellyfin.md",
+      "compose/hazzuk_media/seerr.md",
+    ] },
+  ] },
+]
 
 # extra_css = ["stylesheets/extra.css"]
 
@@ -27,32 +52,32 @@ language = "en"
 
 # https://zensical.org/docs/
 features = [
-    "announce.dismiss",
-    # "content.action.edit",
-    # "content.action.view",
-    "content.code.annotate",
-    "content.code.copy",
-    # "content.code.select",
-    "content.footnote.tooltips",
-    "content.tabs.link",
-    "content.tooltips",
-    # "header.autohide",
-    # "navigation.expand",
-    "navigation.footer",
-    "navigation.indexes",
-    "navigation.instant",
-    "navigation.instant.prefetch",
-    # "navigation.instant.progress",
-    "navigation.path",
-    # "navigation.prune",
-    "navigation.sections",
-    # "navigation.tabs",
-    # "navigation.tabs.sticky",
-    "navigation.top",
-    "navigation.tracking",
-    "search.highlight",
-    # "toc.follow",
-    # "toc.integrate",
+  "announce.dismiss",
+  # "content.action.edit",
+  # "content.action.view",
+  "content.code.annotate",
+  "content.code.copy",
+  # "content.code.select",
+  "content.footnote.tooltips",
+  "content.tabs.link",
+  "content.tooltips",
+  # "header.autohide",
+  "navigation.expand",
+  "navigation.footer",
+  "navigation.indexes",
+  "navigation.instant",
+  "navigation.instant.prefetch",
+  # "navigation.instant.progress",
+  "navigation.path",
+  # "navigation.prune",
+  "navigation.sections",
+  # "navigation.tabs",
+  # "navigation.tabs.sticky",
+  "navigation.top",
+  "navigation.tracking",
+  "search.highlight",
+  # "toc.follow",
+  # "toc.integrate",
 ]
 
 # [project.theme.icon]
