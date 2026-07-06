@@ -6,7 +6,7 @@ icon: traefik
 
 > Reverse proxy
 
-```yaml title="Ansible vault"
+```yaml { title="Ansible vault" }
 hazzuk_core_traefik_enabled: true
 
 hazzuk_core_traefik_stack:
