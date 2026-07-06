@@ -30,7 +30,7 @@ hazzuk_extra_godns_stack:
 
         --8<-- "includes/snippets.md:cloudflare_token"
 
-        === "`karo_compose_godns_dns_api_token`"
+        === "`godns_dns_api_token`"
 
             - Token name
 

@@ -42,7 +42,7 @@ hazzuk_core_traefik_stack:
 
         --8<-- "includes/snippets.md:cloudflare_token"
 
-        === "`karo_compose_traefik_acme_zone_api_token`"
+        === "`traefik_acme_zone_api_token`"
 
             - Token name
 
@@ -54,7 +54,7 @@ hazzuk_core_traefik_stack:
 
             - Zone Resources: Include, Specific zone, example.com
 
-        === "`karo_compose_traefik_acme_dns_api_token`"
+        === "`traefik_acme_dns_api_token`"
 
             - Token name
 
