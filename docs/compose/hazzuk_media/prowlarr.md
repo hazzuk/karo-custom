@@ -6,67 +6,72 @@ icon: prowlarr
 
 > Indexer manager
 
-<div class="grid cards" markdown>
-
-- :simple-github: [prowlarr/prowlarr](https://github.com/prowlarr/prowlarr)
-- :simple-docker: [docker.io/linuxserver/prowlarr](https://hub.docker.com/r/linuxserver/prowlarr)
-
-</div>
-
-```yaml
+```yaml title="Ansible vault"
 # prowlarr
 
-karo_compose_prowlarr_enabled: false
-# karo_compose_prowlarr_domain: "prowlarr.{{ karo_compose_root_domain }}"
-# karo_compose_prowlarr_forward_auth_enabled: true
+hazzuk_media_prowlarr_enabled: true
+
+hazzuk_media_prowlarr_stack:
+--8<-- "karo-compose/defaults/main/hazzuk_media/prowlarr.yml:10"
 ```
 
-??? tip "Guide - Prowlarr authentication"
+[See all defaults](https://github.com/hazzuk/karo-custom/blob/main/karo-compose/defaults/main/hazzuk_media/prowlarr.yml){:target='_blank'}
 
-    --8<-- "includes/snippets.md:arr_auth"
+??? abstract "Prowlarr - Indexer manager"
 
-        ```sh
-        # set prowlarr's auth to external
-        sudo sed -i 's/Forms/External/' /home/dockeruser/.local/share/docker/volumes/prowlarr_data/_data/config.xml
-        ```
+    <div class="grid cards" markdown>
 
-??? abstract "Notes - Prowlarr settings"
+    - :simple-github: [prowlarr/prowlarr](https://github.com/prowlarr/prowlarr)
+    - :simple-docker: [docker.io/linuxserver/prowlarr](https://hub.docker.com/r/linuxserver/prowlarr)
 
-    !!! info "Show advanced"
-        To configure all necessary settings, enable 'Show Advanced'.
+    </div>
 
-    === "Indexers"
+    ??? tip "Prowlarr authentication"
 
-        - Add an indexer proxy (optional)
+        --8<-- "includes/snippets.md:arr_auth"
 
-            > As some indexers may require you to use a socks5 proxy or FlareSolverr to function correctly.
+            ```sh
+            # set prowlarr's auth to external
+            sudo sed -i 's/Forms/External/' /home/dockeruser/.local/share/docker/volumes/prowlarr_data/_data/config.xml
+            ```
 
-    === "Apps"
+    ??? tip "Prowlarr settings"
 
-        - Add a Radarr application
-            - API key: `#!ini <radarr api key>`
+        !!! info "Show advanced"
+            To configure all necessary settings, enable 'Show Advanced'.
 
-        - Add a Sonarr application
-            - API key: `#!ini <sonarr api key>`
+        === "Indexers"
 
-    === "Tags"
+            - Add an indexer proxy (optional)
 
-        - Add an indexer proxy tag (e.g. "socks5") (optional)
+                > As some indexers may require you to use a socks5 proxy or FlareSolverr to function correctly.
 
-            > Add this if you previously setup an indexer proxy.
+        === "Apps"
 
-    === "General"
+            - Add a Radarr application
+                - API key: `#!ini <radarr api key>`
 
-        - Host
-            - Application URL: `https://prowlarr.example.com:443/`
+            - Add a Sonarr application
+                - API key: `#!ini <sonarr api key>`
 
-        - Logging
-            - Log level: `info`
+        === "Tags"
 
-        - Analytics
-            - Send anonymous usage data: `false` (optional)
+            - Add an indexer proxy tag (e.g. "socks5") (optional)
 
-??? note "Links"
+                > Add this if you previously setup an indexer proxy.
 
-    - :lucide-bookmark: [Documentation](https://wiki.servarr.com/prowlarr)
-    - :lucide-tag: [Releases](https://github.com/prowlarr/prowlarr/releases)
+        === "General"
+
+            - Host
+                - Application URL: `https://prowlarr.example.com:443/`
+
+            - Logging
+                - Log level: `info`
+
+            - Analytics
+                - Send anonymous usage data: `false` (optional)
+
+    !!! note "Links"
+
+        - :lucide-bookmark: [Documentation](https://wiki.servarr.com/prowlarr)
+        - :lucide-tag: [Releases](https://github.com/prowlarr/prowlarr/releases)
