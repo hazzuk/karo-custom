@@ -4,18 +4,20 @@
 
 ---
 
-hazzuk_extra_proxy_client_enabled: false
-hazzuk_extra_proxy_server_enabled: false
 
-hazzuk_extra_proxy_client_wireguard_ipv4: 10.25.0.2
-hazzuk_extra_proxy_server_wireguard_ipv4: 10.25.0.1
+hazzuk_extra_proxy_server_enabled: false # proxyserver
+hazzuk_extra_proxy_client_enabled: false # homeserver
+
+hazzuk_extra_proxy_server_wireguard_ipv4: 10.25.0.1 # proxyserver
+hazzuk_extra_proxy_client_wireguard_ipv4: 10.25.0.2 # homeserver
+
 hazzuk_extra_proxy_server_wireguard_port: 52525
 
 hazzuk_extra_proxy_enabled: "{{ hazzuk_extra_proxy_server_enabled }}"
 
 hazzuk_extra_proxy_stack_defaults:
   haproxy:
-    image: docker.io/haproxy
-    version: 3.2.17-alpine@sha256:0c32ec9e64a3bbacb2a1a28afbc3d46032d905bf74ccb745b45488ff41ee9a6b
+    image: docker.io/haproxy # -8<- [end:x]
+    version: 3.2.17-alpine@sha256:0c32ec9e64a3bbacb2a1a28afbc3d46032d905bf74ccb745b45488ff41ee9a6b # -8<- [end:x]
     config_raw: |
       # haproxy config
