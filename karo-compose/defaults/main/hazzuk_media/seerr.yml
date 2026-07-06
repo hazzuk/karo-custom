@@ -8,7 +8,7 @@ hazzuk_media_seerr_enabled: false
 
 hazzuk_media_seerr_stack_defaults:
   seerr:
-    image: ghcr.io/seerr-team/seerr
-    version: preview-new-oidc@sha256:a14a9c326881fdce70b00df3fc095f5b5b128f5552677f677cd3788e757fb4e6
+    image: ghcr.io/seerr-team/seerr # -8<- [end:x]
+    version: preview-new-oidc@sha256:a14a9c326881fdce70b00df3fc095f5b5b128f5552677f677cd3788e757fb4e6 # -8<- [end:x]
     domain: "seerr.{{ karo_compose_root_domain }}"
     log_level: info # debug, info, warn, error
