@@ -6,133 +6,94 @@ icon: traefik
 
 > Reverse proxy
 
-<div class="grid cards" markdown>
+```yaml title="Ansible vault"
+hazzuk_core_traefik_enabled: true
 
-- :simple-github: [traefik/traefik](https://github.com/traefik/traefik)
-- :simple-docker: [docker.io/traefik](https://hub.docker.com/_/traefik)
-
-</div>
-
-```yaml
-# traefik
-
-# karo_compose_traefik_enabled: true
-# karo_compose_traefik_dashboard_domain: "traefik.{{ karo_compose_root_domain }}"
-# karo_compose_traefik_dashboard_forward_auth_enabled: true
-karo_compose_traefik_log_level: debug # trace, debug, info, warn, error, fatal, panic
-
-karo_compose_traefik_dashboard_enabled: true
-
-karo_compose_traefik_acme_staging_enabled: true
-
-karo_compose_traefik_acme_email: cert@example.com
-
-karo_compose_traefik_secrets:
-  traefik_acme_zone_api_token: ""
-  traefik_acme_dns_api_token: ""
-  tinyauth_oidc_client_secret: ""
+hazzuk_core_traefik_stack:
+--8<-- "karo-compose/defaults/main/hazzuk_core/traefik.yml:10:24,27"
 ```
 
-??? abstract "Notes - Traefik setup"
+[See all defaults](https://github.com/hazzuk/karo-custom/blob/main/karo-compose/defaults/main/hazzuk_core/traefik.yml){:target='_blank'}
 
-    - The first time you run Traefik, you should keep ACME staging enabled. Once you've verified that your setup is correct, disable it to request valid TLS certificates. This is to avoid [Let's Encrypt rate limits](https://letsencrypt.org/docs/rate-limits/).
+??? abstract "Traefik - Reverse proxy"
 
-    - It's recommended to disable the Traefik dashboard when your server is exposed publicly.
+    <div class="grid cards" markdown>
 
-    - Traefik is set to use TLS 1.3. Cipher suites are not configurable, all supported ciphers are [considered safe](https://golang.org/doc/go1.12#tls_1_3).
+    - :simple-github: [traefik/traefik](https://github.com/traefik/traefik)
+    - :simple-docker: [docker.io/traefik](https://hub.docker.com/_/traefik)
 
-    - The Traefik dashboard can be useful when setting up other stacks. As you can check 'HTTP Routers' to ensure the availability of other services. 
+    </div>
 
-<!--
-    - Traefik creates a docker network named `frontend`. Other stacks that have a frontend web UI can use this network to route traffic through Traefik.
-    
-    - The `frontend` network uses an internal static IPv4 address, `172.18.0.254`. This is done to resolve external addresses internally. E.g. In Tinyauth, we want requests to the public Pocket ID OIDC domain to instead point directly at Traefik:
+    ??? info "Setup notes"
 
-        ```yaml+jinja { .no-copy }
-        extra_hosts:
-        - "{{ karo_compose_oidc_domain }}:172.18.0.254"
-        ```
--->
+        - The first time you run Traefik, you should keep ACME staging enabled. Once you've verified that your setup is correct, disable it to request valid TLS certificates. This is to avoid [Let's Encrypt rate limits](https://letsencrypt.org/docs/rate-limits/).
 
-??? tip "Guide - Create Cloudflare API tokens for Traefik"
+        - It's recommended to disable the Traefik dashboard when your server is exposed publicly.
 
-    > Based on the [Lego library docs](https://go-acme.github.io/lego/dns/cloudflare/index.html#api-tokens).
+        - Traefik is set to use TLS 1.3. Cipher suites are not configurable, supported ciphers are [safe](https://golang.org/doc/go1.12#tls_1_3).
 
-    --8<-- "includes/snippets.md:cloudflare_token"
+        - The Traefik dashboard can be useful when setting up other stacks. As you can check 'HTTP Routers' to ensure the availability of other services.
 
-    === "`karo_compose_traefik_acme_zone_api_token`"
+    ??? tip "Guide - Create Cloudflare API tokens for Traefik"
 
-        - Token name
+        > Based on the [Lego library docs](https://go-acme.github.io/lego/dns/cloudflare/index.html#api-tokens).
 
-            ```
-            Traefik (example.com) - Resolve domain names to Zone IDs
-            ```
+        --8<-- "includes/snippets.md:cloudflare_token"
 
-        - Permissions: Zone, Zone, Read
+        === "`karo_compose_traefik_acme_zone_api_token`"
 
-        - Zone Resources: Include, Specific zone, example.com
+            - Token name
 
-    === "`karo_compose_traefik_acme_dns_api_token`"
+                ```
+                Traefik (example.com) - Resolve domain names to Zone IDs
+                ```
 
-        - Token name
+            - Permissions: Zone, Zone, Read
 
-            ```
-            Traefik (example.com) - Edit DNS for DNS-01 challenges
-            ```
+            - Zone Resources: Include, Specific zone, example.com
 
-        - Permissions: Zone, DNS, Edit
+        === "`karo_compose_traefik_acme_dns_api_token`"
 
-        - Zone Resources: Include, Specific zone, example.com
+            - Token name
 
-??? note "Links"
+                ```
+                Traefik (example.com) - Edit DNS for DNS-01 challenges
+                ```
 
-    - :lucide-bookmark: [Documentation](https://doc.traefik.io/traefik/)
-    - :lucide-tag: [Releases](https://github.com/traefik/traefik/releases)
-    - :lucide-zap: [Migration guides](https://doc.traefik.io/traefik/migrate/v3/)
-    - :lucide-clock: [Deprecation notices](https://doc.traefik.io/traefik/v3.7/deprecation/releases/)
+            - Permissions: Zone, DNS, Edit
 
-## Tinyauth
+            - Zone Resources: Include, Specific zone, example.com
 
-> Authentication middleware (forward auth)
+    !!! note "Links"
 
-<div class="grid cards" markdown>
+        - :lucide-bookmark: [Documentation](https://doc.traefik.io/traefik/)
+        - :lucide-tag: [Releases](https://github.com/traefik/traefik/releases)
+        - :lucide-zap: [Migration guides](https://doc.traefik.io/traefik/migrate/v3/)
+        - :lucide-clock: [Deprecation notices](https://doc.traefik.io/traefik/v3.7/deprecation/releases/)
 
-- :simple-github: [tinyauthapp/tinyauth](https://github.com/tinyauthapp/tinyauth)
-- :lucide-container: [ghcr.io/tinyauthapp/tinyauth](https://ghcr.io/tinyauthapp/tinyauth)
+??? abstract "Tinyauth - Authentication middleware (forward auth)"
 
-</div>
+    <div class="grid cards" markdown>
 
-```yaml
-# traefik tinyauth
+    - :simple-github: [tinyauthapp/tinyauth](https://github.com/tinyauthapp/tinyauth)
+    - :lucide-container: [ghcr.io/tinyauthapp/tinyauth](https://ghcr.io/tinyauthapp/tinyauth)
 
-# karo_compose_traefik_tinyauth_domain: "tinyauth.{{ karo_compose_root_domain }}"
-karo_compose_traefik_tinyauth_log_level: info # trace, debug, info, warn, error, fatal, panic
+    </div>
 
-karo_compose_traefik_tinyauth_oidc_client_id: ""
-```
+    !!! note "Links"
 
-??? note "Links"
+        - :lucide-bookmark: [Documentation](https://tinyauth.app/docs/getting-started/)
+        - :lucide-tag: [Releases](https://github.com/tinyauthapp/tinyauth/releases)
 
-    - :lucide-bookmark: [Documentation](https://tinyauth.app/docs/getting-started/)
-    - :lucide-tag: [Releases](https://github.com/tinyauthapp/tinyauth/releases)
+??? abstract "CetusGuard - Docker socket proxy"
 
-## CetusGuard
+    <div class="grid cards" markdown>
 
-> Docker socket proxy
+    - :simple-github: [hectorm/cetusguard](https://github.com/hectorm/cetusguard)
+    - :simple-docker: [docker.io/hectorm/cetusguard](https://hub.docker.com/r/hectorm/cetusguard)
 
-<div class="grid cards" markdown>
+    </div>
 
-- :simple-github: [hectorm/cetusguard](https://github.com/hectorm/cetusguard)
-- :simple-docker: [docker.io/hectorm/cetusguard](https://hub.docker.com/r/hectorm/cetusguard)
+    !!! note "Links"
 
-</div>
-
-```yaml
-# traefik cetusguard
-
-karo_compose_traefik_cetusguard_log_level: 7 # 0-7 (min to max verbosity)
-```
-
-??? note "Links"
-
-    - :lucide-tag: [Releases](https://github.com/hectorm/cetusguard/releases)
+        - :lucide-tag: [Releases](https://github.com/hectorm/cetusguard/releases)
