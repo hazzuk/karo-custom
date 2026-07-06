@@ -8,8 +8,8 @@ hazzuk_media_sonarr_enabled: false
 
 hazzuk_media_sonarr_stack_defaults:
   sonarr:
-    image: docker.io/linuxserver/sonarr
-    version: 4.0.17.2952-ls309@sha256:3580aec3802c915f0f819a88d5099abce61734b925732b8393d176b5dc561020
+    image: docker.io/linuxserver/sonarr # -8<- [end:x]
+    version: 4.0.17.2952-ls309@sha256:3580aec3802c915f0f819a88d5099abce61734b925732b8393d176b5dc561020 # -8<- [end:x]
     domain: "sonarr.{{ karo_compose_root_domain }}"
     forward_auth_enabled: true
     data_path: "" # e.g. /media/drive1/data
