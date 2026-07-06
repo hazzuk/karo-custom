@@ -6,89 +6,92 @@ icon: radarr
 
 > Movie collection manager
 
-<div class="grid cards" markdown>
-
-- :simple-github: [radarr/radarr](https://github.com/Radarr/Radarr)
-- :simple-docker: [docker.io/linuxserver/radarr](https://hub.docker.com/r/linuxserver/radarr)
-
-</div>
-
-```yaml
+```yaml title="Ansible vault"
 # radarr
 
-karo_compose_radarr_enabled: false
-# karo_compose_radarr_domain: "radarr.{{ karo_compose_root_domain }}"
-# karo_compose_radarr_forward_auth_enabled: true
+hazzuk_media_radarr_enabled: true
 
-karo_compose_radarr_data_path: "" # e.g. /media/drive1/data
+hazzuk_media_radarr_stack:
+--8<-- "karo-compose/defaults/main/hazzuk_media/radarr.yml:10"
 ```
 
-??? tip "Guide - Radarr authentication"
+[See all defaults](https://github.com/hazzuk/karo-custom/blob/main/karo-compose/defaults/main/hazzuk_media/radarr.yml){:target='_blank'}
 
-    --8<-- "includes/snippets.md:arr_auth"
+??? abstract "Radarr - Movie collection manager"
 
-        ```sh
-        # set radarr's auth to external
-        sudo sed -i 's/Forms/External/' /home/dockeruser/.local/share/docker/volumes/radarr_data/_data/config.xml
-        ```
+    <div class="grid cards" markdown>
 
-??? abstract "Notes - Radarr settings"
+    - :simple-github: [radarr/radarr](https://github.com/Radarr/Radarr)
+    - :simple-docker: [docker.io/linuxserver/radarr](https://hub.docker.com/r/linuxserver/radarr)
 
-    !!! info "Show advanced"
-        To configure all necessary settings, enable 'Show Advanced'.
+    </div>
 
-    === "Media management"
+    ??? tip "Radarr authentication"
 
-        - Add root folder: `/data/media/movies`
+        --8<-- "includes/snippets.md:arr_auth"
 
-        - Read [TRaSH Guides - 'Radarr Recommended Naming Scheme'](https://trash-guides.info/Radarr/Radarr-recommended-naming-scheme/)
+            ```sh
+            # set radarr's auth to external
+            sudo sed -i 's/Forms/External/' /home/dockeruser/.local/share/docker/volumes/radarr_data/_data/config.xml
+            ```
 
-    === "Profiles"
+    ??? tip "Radarr settings"
 
-        - Read [TRaSH Guides - 'Radarr How to set up Quality Profiles'](https://trash-guides.info/Radarr/radarr-setup-quality-profiles/) (optional)
+        !!! info "Show advanced"
+            To configure all necessary settings, enable 'Show Advanced'.
 
-    === "Indexers"
+        === "Media management"
 
-        - Options
-            - RSS sync interval: `0` (optional)
+            - Add root folder: `/data/media/movies`
 
-                > Set this to disable all automatic release grabbing.
+            - Read [TRaSH Guides - 'Radarr Recommended Naming Scheme'](https://trash-guides.info/Radarr/Radarr-recommended-naming-scheme/)
 
-        - (Setup torrent indexers in Prowlarr if you haven't already)
+        === "Profiles"
 
-    === "Download clients"
+            - Read [TRaSH Guides - 'Radarr How to set up Quality Profiles'](https://trash-guides.info/Radarr/radarr-setup-quality-profiles/) (optional)
 
-        !!! info "qui client proxy"
-    
-            - Go to 'qui' > 'Settings' > 'Client Proxy'
-            - Create client API key
-                - Client name: `radarr`
-                - qBittorrent instance: `main`
+        === "Indexers"
 
-        - Add qBittorrent download client
-            - Host: `localhost`
-            - Port: `7476`
-            - URL base: `#!ini /proxy/<qui client proxy radarr api key>`
-            - Category: `movies`
-            - Remove completed: `false`
+            - Options
+                - RSS sync interval: `0` (optional)
 
-    === "Metadata"
+                    > Set this to disable all automatic release grabbing.
 
-        - Options
-            - Certification country: `#!ini <your region>`
+            - (Setup torrent indexers in Prowlarr if you haven't already)
 
-    === "General"
+        === "Download clients"
 
-        - Host
-            - Application URL: `https://radarr.example.com:443/`
+            !!! info "qui client proxy"
+        
+                - Go to 'qui' > 'Settings' > 'Client Proxy'
+                - Create client API key
+                    - Client name: `radarr`
+                    - qBittorrent instance: `main`
 
-        - Logging
-            - Log level: `info`
+            - Add qBittorrent download client
+                - Host: `localhost`
+                - Port: `7476`
+                - URL base: `#!ini /proxy/<qui client proxy radarr api key>`
+                - Category: `movies`
+                - Remove completed: `false`
 
-        - Analytics
-            - Send anonymous usage data: `false` (optional)
+        === "Metadata"
 
-??? note "Links"
+            - Options
+                - Certification country: `#!ini <your region>`
 
-    - :lucide-bookmark: [Documentation](https://wiki.servarr.com/radarr)
-    - :lucide-tag: [Releases](https://github.com/radarr/radarr/releases)
+        === "General"
+
+            - Host
+                - Application URL: `https://radarr.example.com:443/`
+
+            - Logging
+                - Log level: `info`
+
+            - Analytics
+                - Send anonymous usage data: `false` (optional)
+
+    !!! note "Links"
+
+        - :lucide-bookmark: [Documentation](https://wiki.servarr.com/radarr)
+        - :lucide-tag: [Releases](https://github.com/radarr/radarr/releases)
