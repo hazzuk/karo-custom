@@ -1,6 +1,6 @@
 # hazzuk/karo-custom
 
-**Custom [karo-stack](https://docs.karolabs.dev/) files.**
+**Custom [karo-stack](https://docs.karolabs.dev/) files**
 
 [![GitHub Release](https://img.shields.io/github/v/release/hazzuk/karo-custom?display_name=tag&cacheSeconds=7200)](https://github.com/hazzuk/karo-custom/releases)
 [![License](https://img.shields.io/badge/license-AGPL--3.0-orange)](https://github.com/hazzuk/karo-docs/blob/main/LICENSE)
