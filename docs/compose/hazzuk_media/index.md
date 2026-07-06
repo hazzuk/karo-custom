@@ -12,7 +12,7 @@ karo_compose_stack_groups:
   - hazzuk_media
 ```
 
-!!! tip
+!!! info "Setup order"
 
     It is recommended you setup each stack in the order shown.
 

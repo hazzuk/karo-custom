@@ -26,7 +26,7 @@ hazzuk_media_gluetun_stack:
 
     </div>
 
-    ??? example "Example - WireGuard config"
+    !!! info "WireGuard config"
 
         Your VPN service should be able to provide you with a `wireguard.conf` file.
 

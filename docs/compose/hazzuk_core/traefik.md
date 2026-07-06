@@ -26,7 +26,7 @@ hazzuk_core_traefik_stack:
 
     </div>
 
-    ??? info "Setup notes"
+    ??? info "Traefik notes"
 
         - The first time you run Traefik, you should keep ACME staging enabled. Once you've verified that your setup is correct, disable it to request valid TLS certificates. This is to avoid [Let's Encrypt rate limits](https://letsencrypt.org/docs/rate-limits/).
 
@@ -36,7 +36,7 @@ hazzuk_core_traefik_stack:
 
         - The Traefik dashboard can be useful when setting up other stacks. As you can check 'HTTP Routers' to ensure the availability of other services.
 
-    ??? tip "Guide - Create Cloudflare API tokens for Traefik"
+    ??? tip "Traefik Cloudflare API tokens"
 
         > Based on the [Lego library docs](https://go-acme.github.io/lego/dns/cloudflare/index.html#api-tokens).
 

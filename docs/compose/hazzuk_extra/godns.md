@@ -26,7 +26,7 @@ hazzuk_extra_godns_stack:
 
     </div>
 
-    ??? tip "Guide - Create a Cloudflare API token for GoDNS"
+    ??? tip "GoDNS Cloudflare API token"
 
         --8<-- "includes/snippets.md:cloudflare_token"
 

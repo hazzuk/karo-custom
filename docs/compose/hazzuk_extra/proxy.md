@@ -31,7 +31,7 @@ hazzuk_extra_proxy_stack:
 
     </div>
 
-    ??? example "Example - HAProxy config"
+    ??? example "HAProxy config example"
 
         Simple setup, traffic is routed to your server if the request's SNI hostname matches your domain name.
 
