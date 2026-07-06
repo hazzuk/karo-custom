@@ -8,14 +8,14 @@ hazzuk_media_qbittorrent_enabled: false
 
 hazzuk_media_qbittorrent_stack_defaults:
   qbittorrent:
-    image: docker.io/qbittorrentofficial/qbittorrent-nox
-    version: 5.1.4-1@sha256:41888f4e05646ace98aeaff01a7bbec714e2e6082ab273fd4af0d1210352ea2c
+    image: docker.io/qbittorrentofficial/qbittorrent-nox # -8<- [end:x]
+    version: 5.1.4-1@sha256:41888f4e05646ace98aeaff01a7bbec714e2e6082ab273fd4af0d1210352ea2c # -8<- [end:x]
     domain: "qbittorrent.{{ karo_compose_root_domain }}"
     downloads_path: "" # e.g. /media/drive1/data/torrents
     webui_enabled: true
   qui:
-    image: ghcr.io/autobrr/qui
-    version: v1.17.0@sha256:fb3832e68f66b056e1b049d16c40732661e7b73999bc642d4b11469a3ebbabd3
+    image: ghcr.io/autobrr/qui # -8<- [end:x]
+    version: v1.17.0@sha256:fb3832e68f66b056e1b049d16c40732661e7b73999bc642d4b11469a3ebbabd3 # -8<- [end:x]
     domain: "qui.{{ karo_compose_root_domain }}"
     log_level: info # trace, debug, info, warn, error
     session_secret: "" # `openssl rand -hex 16`
