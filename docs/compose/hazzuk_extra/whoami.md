@@ -4,23 +4,28 @@ icon: lucide/file-question-mark
 
 # whoami
 
-> Tiny webserver that prints request information
+> Tiny web server for testing
 
-<div class="grid cards" markdown>
-
-- :simple-github: [traefik/whoami](https://github.com/traefik/whoami)
-- :simple-docker: [docker.io/traefik/whoami](https://hub.docker.com/r/traefik/whoami)
-
-</div>
-
-```yaml
+```yaml title="Ansible vault"
 # whoami
 
-karo_compose_whoami_enabled: false
-# karo_compose_whoami_domain: "whoami.{{ karo_compose_root_domain }}"
-# karo_compose_whoami_forward_auth_enabled: false
+hazzuk_extra_whoami_enabled: true
+
+hazzuk_extra_whoami_stack:
+--8<-- "karo-compose/defaults/main/hazzuk_extra/whoami.yml:10"
 ```
 
-??? note "Links"
+[See all defaults](https://github.com/hazzuk/karo-custom/blob/main/karo-compose/defaults/main/hazzuk_extra/whoami.yml){:target='_blank'}
 
-    - :lucide-tag: [Releases](https://github.com/traefik/whoami/releases)
+??? abstract "whoami - Tiny web server for testing"
+
+    <div class="grid cards" markdown>
+
+    - :simple-github: [traefik/whoami](https://github.com/traefik/whoami)
+    - :simple-docker: [docker.io/traefik/whoami](https://hub.docker.com/r/traefik/whoami)
+
+    </div>
+
+    !!! note "Links"
+
+        - :lucide-tag: [Releases](https://github.com/traefik/whoami/releases)

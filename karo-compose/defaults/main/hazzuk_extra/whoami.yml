@@ -8,7 +8,7 @@ hazzuk_extra_whoami_enabled: false
 
 hazzuk_extra_whoami_stack_defaults:
   whoami:
-    image: docker.io/traefik/whoami
-    version: v1.11.0@sha256:200689790a0a0ea48ca45992e0450bc26ccab5307375b41c84dfc4f2475937ab
+    image: docker.io/traefik/whoami # -8<- [end:x]
+    version: v1.11.0@sha256:200689790a0a0ea48ca45992e0450bc26ccab5307375b41c84dfc4f2475937ab # -8<- [end:x]
     domain: "whoami.{{ karo_compose_root_domain }}"
     forward_auth_enabled: false
