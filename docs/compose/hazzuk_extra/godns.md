@@ -6,41 +6,42 @@ icon: lucide/globe
 
 > Dynamic DNS client
 
-<div class="grid cards" markdown>
-
-- :simple-github: [timothyye/godns](https://github.com/timothyye/godns)
-- :simple-docker: [docker.io/timothyye/godns](https://hub.docker.com/r/timothyye/godns)
-
-</div>
-
-```yaml
+```yaml title="Ansible vault"
 # godns
 
-karo_compose_godns_enabled: false
-# karo_compose_godns_debug_info_enabled: false
+hazzuk_extra_godns_enabled: true
 
-karo_compose_godns_subdomain: dyndns
-
-karo_compose_godns_secrets:
-  godns_dns_api_token: ""
+hazzuk_extra_godns_stack:
+--8<-- "karo-compose/defaults/main/hazzuk_extra/godns.yml:10"
 ```
 
-??? tip "Guide - Create a Cloudflare API token for GoDNS"
+[See all defaults](https://github.com/hazzuk/karo-custom/blob/main/karo-compose/defaults/main/hazzuk_extra/godns.yml){:target='_blank'}
 
-    --8<-- "includes/snippets.md:cloudflare_token"
+??? abstract "GoDNS - Dynamic DNS client"
 
-    === "`karo_compose_godns_dns_api_token`"
+    <div class="grid cards" markdown>
 
-        - Token name
+    - :simple-github: [timothyye/godns](https://github.com/timothyye/godns)
+    - :simple-docker: [docker.io/timothyye/godns](https://hub.docker.com/r/timothyye/godns)
 
-            ```
-            GoDNS (example.com) - Edit dynamic DNS record
-            ```
+    </div>
 
-        - Permissions: Zone, DNS, Edit
+    ??? tip "Guide - Create a Cloudflare API token for GoDNS"
 
-        - Zone Resources: Include, Specific zone, example.com
+        --8<-- "includes/snippets.md:cloudflare_token"
 
-??? note "Links"
+        === "`karo_compose_godns_dns_api_token`"
 
-    - :lucide-tag: [Releases](https://github.com/timothyye/godns/releases)
+            - Token name
+
+                ```
+                GoDNS (example.com) - Edit dynamic DNS record
+                ```
+
+            - Permissions: Zone, DNS, Edit
+
+            - Zone Resources: Include, Specific zone, example.com
+
+    !!! note "Links"
+
+        - :lucide-tag: [Releases](https://github.com/timothyye/godns/releases)
