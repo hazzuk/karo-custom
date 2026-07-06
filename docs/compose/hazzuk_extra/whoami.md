@@ -6,7 +6,7 @@ icon: lucide/file-question-mark
 
 > Tiny web server for testing
 
-```yaml title="Ansible vault"
+```yaml { title="Ansible vault" }
 # whoami
 
 hazzuk_extra_whoami_enabled: true

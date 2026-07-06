@@ -6,7 +6,7 @@ icon: lucide/globe
 
 > Dynamic DNS client
 
-```yaml title="Ansible vault"
+```yaml { title="Ansible vault" }
 # godns
 
 hazzuk_extra_godns_enabled: true

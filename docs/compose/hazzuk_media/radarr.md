@@ -6,7 +6,7 @@ icon: radarr
 
 > Movie collection manager
 
-```yaml title="Ansible vault"
+```yaml { title="Ansible vault" }
 # radarr
 
 hazzuk_media_radarr_enabled: true

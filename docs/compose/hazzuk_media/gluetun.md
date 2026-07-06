@@ -6,7 +6,7 @@ icon: gluetun
 
 > Docker VPN client
 
-```yaml title="Ansible vault"
+```yaml { title="Ansible vault" }
 # gluetun
 
 hazzuk_media_gluetun_enabled: true

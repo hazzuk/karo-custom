@@ -10,7 +10,7 @@ icon: lucide/waypoints
 
     See the [karo-stack docs](https://docs.karolabs.dev/advanced/proxy/) for details.
 
-```yaml title="Ansible vault"
+```yaml { title="Ansible vault" }
 # proxy
 
 hazzuk_extra_proxy_server_enabled: true # proxyserver

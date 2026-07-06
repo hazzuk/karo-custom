@@ -7,7 +7,7 @@ icon: qbittorrent
 
 > BitTorrent client
 
-```yaml title="Ansible vault"
+```yaml { title="Ansible vault" }
 # qbittorrent
 
 hazzuk_media_qbittorrent_enabled: true

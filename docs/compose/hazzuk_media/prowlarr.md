@@ -6,7 +6,7 @@ icon: prowlarr
 
 > Indexer manager
 
-```yaml title="Ansible vault"
+```yaml { title="Ansible vault" }
 # prowlarr
 
 hazzuk_media_prowlarr_enabled: true

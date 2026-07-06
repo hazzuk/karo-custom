@@ -6,7 +6,7 @@ icon: ntfy
 
 > Notification service
 
-```yaml title="Ansible vault"
+```yaml { title="Ansible vault" }
 # ntfy
 
 hazzuk_extra_ntfy_enabled: true
