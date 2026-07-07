@@ -1,0 +1,180 @@
+[project]
+
+site_name = "hazzuk/karo-custom"
+site_description = "hazzuk karo-custom documentation."
+site_author = "hazzuk"
+site_url = "https://hazzuk.github.io/karo-custom"
+
+copyright = """
+&copy; 2026 hazzuk
+"""
+
+repo_name = "hazzuk/karo-custom"
+repo_url = "https://github.com/hazzuk/karo-custom"
+
+nav = [
+  { "Home" = [
+    "index.md",
+  ] },
+  { "karo-compose" = [
+    { "hazzuk_core" = [
+      "compose/hazzuk_core/index.md",
+      "compose/hazzuk_core/traefik.md",
+      "compose/hazzuk_core/pocket-id.md",
+    ] },
+    { "hazzuk_extra" = [
+      "compose/hazzuk_extra/index.md",
+      "compose/hazzuk_extra/godns.md",
+      "compose/hazzuk_extra/ntfy.md",
+      "compose/hazzuk_extra/proxy.md",
+      "compose/hazzuk_extra/whoami.md",
+    ] },
+    { "hazzuk_media" = [
+      "compose/hazzuk_media/index.md",
+      "compose/hazzuk_media/gluetun.md",
+      "compose/hazzuk_media/qbittorrent.md",
+      "compose/hazzuk_media/prowlarr.md",
+      "compose/hazzuk_media/radarr.md",
+      "compose/hazzuk_media/sonarr.md",
+      "compose/hazzuk_media/jellyfin.md",
+      "compose/hazzuk_media/seerr.md",
+    ] },
+  ] },
+]
+
+# extra_css = ["stylesheets/extra.css"]
+
+[project.theme]
+
+custom_dir = "overrides"
+#favicon = "images/favicon.png"
+language = "en"
+
+# https://zensical.org/docs/
+features = [
+  "announce.dismiss",
+  # "content.action.edit",
+  # "content.action.view",
+  "content.code.annotate",
+  "content.code.copy",
+  # "content.code.select",
+  "content.footnote.tooltips",
+  "content.tabs.link",
+  "content.tooltips",
+  # "header.autohide",
+  # "navigation.expand",
+  "navigation.footer",
+  "navigation.indexes",
+  "navigation.instant",
+  "navigation.instant.prefetch",
+  # "navigation.instant.progress",
+  "navigation.path",
+  # "navigation.prune",
+  "navigation.sections",
+  # "navigation.tabs",
+  # "navigation.tabs.sticky",
+  "navigation.top",
+  "navigation.tracking",
+  "search.highlight",
+  # "toc.follow",
+  # "toc.integrate",
+]
+
+[project.theme.icon]
+logo = "lucide/bolt"
+
+# [project.theme.font]
+# text = "Inter"
+# code = "Jetbrains Mono"
+
+# palette toggle for automatic mode
+[[project.theme.palette]]
+media = "(prefers-color-scheme)"
+toggle.icon = "lucide/sun-moon"
+toggle.name = "Switch to light mode"
+primary = "cyan"
+accent = "cyan"
+
+# palette toggle for light mode
+[[project.theme.palette]]
+media = "(prefers-color-scheme: light)"
+scheme = "default"
+toggle.icon = "lucide/sun"
+toggle.name = "Switch to dark mode"
+primary = "cyan"
+accent = "cyan"
+
+# palette toggle for dark mode
+[[project.theme.palette]]
+media = "(prefers-color-scheme: dark)"
+scheme = "slate"
+toggle.icon = "lucide/moon"
+toggle.name = "Switch to system preference"
+primary = "cyan"
+accent = "cyan"
+
+# [[project.extra.social]]
+# icon = "fontawesome/brands/github"
+# link = "https://github.com/user/repo"
+
+# extensions
+# https://zensical.org/docs/authoring/markdown/
+
+# html
+[project.markdown_extensions.attr_list] # add html/css to markdown lines
+[project.markdown_extensions.md_in_html] # write markdown inbetween html
+[project.markdown_extensions.pymdownx.blocks.caption] # add captions markdown blocks
+
+# call-outs (admonitions)
+[project.markdown_extensions.admonition]
+[project.markdown_extensions.pymdownx.details] # improved call-outs
+
+# code blocks
+[project.markdown_extensions.pymdownx.highlight] # syntax highlighting
+anchor_linenums = true
+line_spans = "__span"
+pygments_lang_class = true
+[project.markdown_extensions.pymdownx.inlinehilite] # in-line syntax highlighting
+[project.markdown_extensions.pymdownx.snippets] # embed external files
+# auto_append = ["abbreviations.md"]
+
+# content tabs
+[project.markdown_extensions.pymdownx.superfences] # nest code/content blocks
+custom_fences = [
+  { name = "mermaid", class = "mermaid", format = "pymdownx.superfences.fence_code_format" }
+]
+[project.markdown_extensions.pymdownx.tabbed] # content tabs
+alternate_style = true
+
+# anchor links
+[project.markdown_extensions.pymdownx.tabbed.slugify]
+object = "pymdownx.slugs.slugify"
+kwds = { case = "lower" }
+
+# data tables
+[project.markdown_extensions.tables]
+
+# footnotes
+[project.markdown_extensions.footnotes]
+
+# formatting text
+[project.markdown_extensions.pymdownx.caret]
+[project.markdown_extensions.pymdownx.mark]
+[project.markdown_extensions.pymdownx.tilde]
+[project.markdown_extensions.pymdownx.keys] # render keyboard keys
+[project.markdown_extensions.pymdownx.betterem]
+
+# icons and emoji
+[project.markdown_extensions.pymdownx.emoji]
+emoji_index = "zensical.extensions.emoji.twemoji"
+emoji_generator = "zensical.extensions.emoji.to_svg"
+# custom icons directory
+options.custom_icons = ["overrides/.icons"]
+
+# lists
+[project.markdown_extensions.pymdownx.tasklist]
+custom_checkbox = true
+clickable_checkbox = true
+
+# tooltip abbreviations
+[project.markdown_extensions.abbr]
