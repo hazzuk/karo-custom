@@ -35,25 +35,24 @@ hazzuk_extra_proxy_stack:
 
         Simple setup, traffic is routed to your server if the request's SNI hostname matches your domain name.
 
-        ```yaml+jinja
-        karo_compose_proxy_haproxy_config_raw: |
+        ```toml
         # haproxy config
 
-            # wait for tls clienthello
-            tcp-request inspect-delay 5s
+          # wait for tls clienthello
+          tcp-request inspect-delay 5s
 
-            # accept clienthello
-            tcp-request content accept if { req_ssl_hello_type 1 }
+          # accept clienthello
+          tcp-request content accept if { req_ssl_hello_type 1 }
             
-            # catch-all reject
-            tcp-request content reject
+          # catch-all reject
+          tcp-request content reject
             
-            # sni routing
-            use_backend homeserver if { req.ssl_sni -m end .{{ karo_compose_root_domain }} }
+          # sni routing
+          use_backend homeserver if { req.ssl_sni -m end .{{ karo_compose_root_domain }} }
         
         backend homeserver
-            mode tcp
-            server wg {{ karo_compose_proxy_client_wireguard_ipv4 }}:443 send-proxy-v2 check
+          mode tcp
+          server wg {{ hazzuk_extra_proxy_client_wireguard_ipv4 }}:443 send-proxy-v2 check
         ```
 
     !!! note "Links"
