@@ -13,6 +13,9 @@
     ```
 
 2. Add these variables
+    ```sh
+    just vault homeserver
+    ```
     ```yaml { title="Ansible vault" }
     karo_compose_stack_groups:
     - hazzuk_core
