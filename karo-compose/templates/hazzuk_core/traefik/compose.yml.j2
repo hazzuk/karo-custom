@@ -86,7 +86,7 @@ services:
       - TINYAUTH_UI_BACKGROUNDIMAGE=""
       - TINYAUTH_APPURL=https://{{ compose.tinyauth.domain }}
       - TINYAUTH_OAUTH_AUTOREDIRECT=pocketid
-      - TINYAUTH_OAUTH_PROVIDERS_POCKETID_CLIENTID={{ compose.tinyauth.oidc.client_id }}
+      - TINYAUTH_OAUTH_PROVIDERS_POCKETID_CLIENTID={{ compose.tinyauth.oidc_client_id }}
       - TINYAUTH_OAUTH_PROVIDERS_POCKETID_CLIENTSECRETFILE=/run/secrets/tinyauth_oidc_client_secret
       - TINYAUTH_OAUTH_PROVIDERS_POCKETID_AUTHURL={{ karo_compose_oidc_authorization_url }}
       - TINYAUTH_OAUTH_PROVIDERS_POCKETID_TOKENURL={{ karo_compose_oidc_token_url }}

@@ -19,6 +19,5 @@ hazzuk_media_qbittorrent_stack_defaults:
     domain: "qui.{{ karo_compose_root_domain }}"
     log_level: info # trace, debug, info, warn, error
     session_secret: "" # `openssl rand -hex 16`
-    oidc:
-      client_id: ""
-      client_secret: ""
+    oidc_client_id: ""
+    oidc_client_secret: ""
