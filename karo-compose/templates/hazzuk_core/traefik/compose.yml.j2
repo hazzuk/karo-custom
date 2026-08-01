@@ -155,8 +155,8 @@ volumes:
 
 secrets:
   traefik_acme_zone_api_token:
-    file: /run/user/1001/karo/compose/traefik_acme_zone_api_token
+    file: {{ karo_compose_secrets_path }}/traefik_acme_zone_api_token
   traefik_acme_dns_api_token:
-    file: /run/user/1001/karo/compose/traefik_acme_dns_api_token
+    file: {{ karo_compose_secrets_path }}/traefik_acme_dns_api_token
   tinyauth_oidc_client_secret:
-    file: /run/user/1001/karo/compose/tinyauth_oidc_client_secret
+    file: {{ karo_compose_secrets_path }}/tinyauth_oidc_client_secret
