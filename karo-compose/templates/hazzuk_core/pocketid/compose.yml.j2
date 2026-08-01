@@ -57,6 +57,6 @@ volumes:
 
 secrets:
   pocketid_encryption_key:
-    file: /run/user/1001/karo/compose/pocketid_encryption_key
+    file: {{ karo_compose_secrets_path }}/pocketid_encryption_key
   pocketid_maxmind_license_key:
-    file: /run/user/1001/karo/compose/pocketid_maxmind_license_key
+    file: {{ karo_compose_secrets_path }}/pocketid_maxmind_license_key
