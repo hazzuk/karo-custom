@@ -29,4 +29,4 @@ networks:
 
 secrets:
   godns_dns_api_token:
-    file: /run/user/1001/karo/compose/godns_dns_api_token
+    file: {{ karo_compose_secrets_path }}/godns_dns_api_token

@@ -74,6 +74,6 @@ volumes:
 
 secrets:
   qui_session_secret:
-    file: /run/user/1001/karo/compose/qui_session_secret
+    file: {{ karo_compose_secrets_path }}/qui_session_secret
   qui_oidc_client_secret:
-    file: /run/user/1001/karo/compose/qui_oidc_client_secret
+    file: {{ karo_compose_secrets_path }}/qui_oidc_client_secret
