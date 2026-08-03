@@ -9,7 +9,7 @@ icon: gluetun
 ```yaml { title="Ansible vault" }
 # gluetun
 
-hazzuk_media_gluetun_enabled: true
+hazzuk_media_gluetun_enabled: false
 
 hazzuk_media_gluetun_stack:
 --8<-- "karo-compose/defaults/main/hazzuk_media/gluetun.yml:10"

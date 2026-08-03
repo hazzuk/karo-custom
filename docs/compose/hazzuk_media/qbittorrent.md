@@ -10,7 +10,7 @@ icon: qbittorrent
 ```yaml { title="Ansible vault" }
 # qbittorrent
 
-hazzuk_media_qbittorrent_enabled: true
+hazzuk_media_qbittorrent_enabled: false
 
 hazzuk_media_qbittorrent_stack:
 --8<-- "karo-compose/defaults/main/hazzuk_media/qbittorrent.yml:10"

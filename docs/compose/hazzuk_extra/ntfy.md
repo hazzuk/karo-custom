@@ -9,7 +9,7 @@ icon: ntfy
 ```yaml { title="Ansible vault" }
 # ntfy
 
-hazzuk_extra_ntfy_enabled: true
+hazzuk_extra_ntfy_enabled: false
 
 hazzuk_extra_ntfy_stack:
 --8<-- "karo-compose/defaults/main/hazzuk_extra/ntfy.yml:10"

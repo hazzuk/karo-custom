@@ -13,7 +13,7 @@ icon: lucide/waypoints
 ```yaml { title="Ansible vault" }
 # proxy
 
-hazzuk_extra_proxy_server_enabled: true # proxyserver
+hazzuk_extra_proxy_server_enabled: false # proxyserver
 hazzuk_extra_proxy_client_enabled: false # homeserver
 
 hazzuk_extra_proxy_stack:

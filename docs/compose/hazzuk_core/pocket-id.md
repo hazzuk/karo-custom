@@ -15,7 +15,7 @@ icon: pocket-id
 
 # pocketid
 
-hazzuk_core_pocketid_enabled: true
+hazzuk_core_pocketid_enabled: false
 
 hazzuk_core_pocketid_stack:
 --8<-- "karo-compose/defaults/main/hazzuk_core/pocketid.yml:10"

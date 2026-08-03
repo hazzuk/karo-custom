@@ -9,7 +9,7 @@ icon: sonarr
 ```yaml { title="Ansible vault" }
 # sonarr
 
-hazzuk_media_sonarr_enabled: true
+hazzuk_media_sonarr_enabled: false
 
 hazzuk_media_sonarr_stack:
 --8<-- "karo-compose/defaults/main/hazzuk_media/sonarr.yml:10"

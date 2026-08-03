@@ -9,7 +9,7 @@ icon: lucide/globe
 ```yaml { title="Ansible vault" }
 # godns
 
-hazzuk_extra_godns_enabled: true
+hazzuk_extra_godns_enabled: false
 
 hazzuk_extra_godns_stack:
 --8<-- "karo-compose/defaults/main/hazzuk_extra/godns.yml:10"

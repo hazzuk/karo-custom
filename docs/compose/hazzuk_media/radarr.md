@@ -9,7 +9,7 @@ icon: radarr
 ```yaml { title="Ansible vault" }
 # radarr
 
-hazzuk_media_radarr_enabled: true
+hazzuk_media_radarr_enabled: false
 
 hazzuk_media_radarr_stack:
 --8<-- "karo-compose/defaults/main/hazzuk_media/radarr.yml:10"

@@ -9,7 +9,7 @@ icon: prowlarr
 ```yaml { title="Ansible vault" }
 # prowlarr
 
-hazzuk_media_prowlarr_enabled: true
+hazzuk_media_prowlarr_enabled: false
 
 hazzuk_media_prowlarr_stack:
 --8<-- "karo-compose/defaults/main/hazzuk_media/prowlarr.yml:10"

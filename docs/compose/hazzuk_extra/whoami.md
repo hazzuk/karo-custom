@@ -9,7 +9,7 @@ icon: lucide/file-question-mark
 ```yaml { title="Ansible vault" }
 # whoami
 
-hazzuk_extra_whoami_enabled: true
+hazzuk_extra_whoami_enabled: false
 
 hazzuk_extra_whoami_stack:
 --8<-- "karo-compose/defaults/main/hazzuk_extra/whoami.yml:10"
