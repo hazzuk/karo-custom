@@ -9,7 +9,7 @@ icon: jellyfin
 ```yaml { title="Ansible vault" }
 # jellyfin
 
-hazzuk_media_jellyfin_enabled: true
+hazzuk_media_jellyfin_enabled: false
 
 hazzuk_media_jellyfin_stack:
 --8<-- "karo-compose/defaults/main/hazzuk_media/jellyfin.yml:10"

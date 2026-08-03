@@ -9,7 +9,7 @@ icon: seerr
 ```yaml { title="Ansible vault" }
 # seerr
 
-hazzuk_media_seerr_enabled: true
+hazzuk_media_seerr_enabled: false
 
 hazzuk_media_seerr_stack:
 --8<-- "karo-compose/defaults/main/hazzuk_media/seerr.yml:10"
