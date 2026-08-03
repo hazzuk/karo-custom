@@ -16,7 +16,7 @@ nav = [
   { "Home" = [
     "index.md",
   ] },
-  { "karo-compose" = [
+  { "Compose" = [
     { "hazzuk_core" = [
       "compose/hazzuk_core/index.md",
       "compose/hazzuk_core/traefik.md",
