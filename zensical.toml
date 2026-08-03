@@ -16,7 +16,7 @@ nav = [
   { "Home" = [
     "index.md",
   ] },
-  { "karo-compose" = [
+  { "Compose" = [
     { "hazzuk_core" = [
       "compose/hazzuk_core/index.md",
       "compose/hazzuk_core/traefik.md",
@@ -116,6 +116,9 @@ accent = "cyan"
 # [[project.extra.social]]
 # icon = "fontawesome/brands/github"
 # link = "https://github.com/user/repo"
+
+[project.extra.status]
+required = "Required"
 
 # extensions
 # https://zensical.org/docs/authoring/markdown/
