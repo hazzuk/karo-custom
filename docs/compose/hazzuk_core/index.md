@@ -1,5 +1,6 @@
 ---
 icon: lucide/layers-2
+status: required
 ---
 
 # hazzuk_core

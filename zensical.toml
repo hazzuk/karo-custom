@@ -117,6 +117,9 @@ accent = "cyan"
 # icon = "fontawesome/brands/github"
 # link = "https://github.com/user/repo"
 
+[project.extra.status]
+required = "Required"
+
 # extensions
 # https://zensical.org/docs/authoring/markdown/
 
