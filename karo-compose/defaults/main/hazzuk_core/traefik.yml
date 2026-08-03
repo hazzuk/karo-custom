@@ -16,8 +16,8 @@ hazzuk_core_traefik_stack_defaults:
       email: cert@example.com
       staging_ca_server_url: "https://acme-staging-v02.api.letsencrypt.org/directory" # -8<- [end:x]
       live_ca_server_url: "https://acme-v02.api.letsencrypt.org/directory" # "https://acme.zerossl.com/v2/DV90" # -8<- [end:x]
-      zone_api_token: ""
-      dns_api_token: ""
+      zone_api_token: "" # cloudflare
+      dns_api_token: "" # cloudflare
     dashboard:
       enabled: true
       forward_auth_enabled: true
