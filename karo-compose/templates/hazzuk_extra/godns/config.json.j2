@@ -1,11 +1,11 @@
 {
-    "debug_info": {{ compose.godns.debug_info_enabled | lower }},
+    "debug_info": {{ stack_vars.godns.debug_info_enabled | lower }},
     "provider": "Cloudflare",
     "login_token_file": "/run/secrets/godns_dns_api_token",
     "domains": [
         {
         "domain_name": "{{ karo_compose_root_domain }}",
-        "sub_domains": ["{{ compose.godns.subdomain }}"]
+        "sub_domains": ["{{ stack_vars.godns.subdomain }}"]
         }
     ],
     "resolver": "1.1.1.1",

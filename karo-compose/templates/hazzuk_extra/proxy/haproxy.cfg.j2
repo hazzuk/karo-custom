@@ -36,4 +36,4 @@ frontend https
   bind *:443
   mode tcp
 
-  {{ compose.haproxy.config_raw }}
+  {{ stack_vars.haproxy.config_raw }}
