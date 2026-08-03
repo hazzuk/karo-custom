@@ -8,25 +8,25 @@ name: sonarr
 services:
 
   sonarr:
-    image: {{ compose.sonarr.image }}:{{ compose.sonarr.version }}
+    image: {{ stack_vars.sonarr.image }}:{{ stack_vars.sonarr.version }}
     container_name: sonarr
     restart: {{ karo_compose_restart_policy }}
     network_mode: "container:gluetun"
     volumes:
       - type: bind
-        source: {{ compose.sonarr.data_path }}
+        source: {{ stack_vars.sonarr.data_path }}
         target: /data
       - type: volume
         source: sonarr_data
         target: /config
     labels:
       - traefik.enable=true
-      - traefik.http.routers.sonarr.rule=Host(`{{ compose.sonarr.domain }}`)
+      - traefik.http.routers.sonarr.rule=Host(`{{ stack_vars.sonarr.domain }}`)
       - traefik.http.services.sonarr.loadbalancer.server.port=8989
-{% if compose.sonarr.forward_auth_enabled %}
+{% if stack_vars.sonarr.forward_auth_enabled %}
       # forward auth
       - traefik.http.routers.sonarr.middlewares=tinyauth
-      - tinyauth.apps.sonarr.config.domain={{ compose.sonarr.domain }}
+      - tinyauth.apps.sonarr.config.domain={{ stack_vars.sonarr.domain }}
       - tinyauth.apps.sonarr.oauth.groups={{ karo_compose_oidc_admin_group }}
 {% endif %}
     environment:

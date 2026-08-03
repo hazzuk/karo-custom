@@ -8,7 +8,7 @@ name: proxy
 services:
 
   haproxy:
-    image: {{ compose.haproxy.image }}:{{ compose.haproxy.version }}
+    image: {{ stack_vars.haproxy.image }}:{{ stack_vars.haproxy.version }}
     container_name: haproxy
     restart: {{ karo_compose_restart_policy }}
     ports:
