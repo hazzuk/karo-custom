@@ -12,4 +12,5 @@ hazzuk_extra_godns_stack_defaults:
     version: v3.4.1@sha256:d9a043164b256ab9d7ab03a7619bfe2292a2ab2b6e5e3151e818edb63249b1de # -8<- [end:x]
     subdomain: dyndns
     debug_info_enabled: false
-    dns_api_token: ""
+    secrets:
+      dns_api_token: ""

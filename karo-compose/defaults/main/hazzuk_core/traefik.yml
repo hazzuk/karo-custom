@@ -16,21 +16,23 @@ hazzuk_core_traefik_stack_defaults:
       email: cert@example.com
       staging_ca_server_url: "https://acme-staging-v02.api.letsencrypt.org/directory" # -8<- [end:x]
       live_ca_server_url: "https://acme-v02.api.letsencrypt.org/directory" # "https://acme.zerossl.com/v2/DV90" # -8<- [end:x]
-      zone_api_token: "" # cloudflare
-      dns_api_token: "" # cloudflare
     dashboard:
       enabled: true
       forward_auth_enabled: true
       domain: "traefik.{{ karo_compose_root_domain }}"
     custom_domains_raw: |
       # - main: "*.int.{{ karo_compose_root_domain }}"
+    secrets:
+      acme_zone_api_token: "" # cloudflare
+      acme_dns_api_token: "" # cloudflare
   tinyauth:
     image: ghcr.io/steveiliop56/tinyauth # -8<- [end:x]
     version: v5.0.7-distroless@sha256:e31ae2bac566cfe4687a8a54121a884ce25c4869995075f8e7e3d352bcd59241 # -8<- [end:x]
     domain: "tinyauth.{{ karo_compose_root_domain }}"
     log_level: info # trace, debug, info, warn, error, fatal, panic
     oidc_client_id: ""
-    oidc_client_secret: ""
+    secrets:
+      oidc_client_secret: ""
   cetusguard:
     image: docker.io/hectorm/cetusguard # -8<- [end:x]
     version: v1.1.3@sha256:b3dc5d2042869dd714c75985d94bb8c259df53b325ec6b1a2b57bcc3eac17689 # -8<- [end:x]
