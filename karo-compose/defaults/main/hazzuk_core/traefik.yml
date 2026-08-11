@@ -11,15 +11,13 @@ hazzuk_core_traefik_stack_defaults:
     image: docker.io/traefik # -8<- [end:x]
     version: v3.6.15@sha256:8cb20d16e01a53d8d7f7696ac2f1af7d200d5c9984d226ce2299731d9eab6d6c # -8<- [end:x]
     log_level: debug # trace, debug, info, warn, error, fatal, panic
-    acme:
-      staging_enabled: true
-      email: cert@example.com
-      staging_ca_server_url: "https://acme-staging-v02.api.letsencrypt.org/directory" # -8<- [end:x]
-      live_ca_server_url: "https://acme-v02.api.letsencrypt.org/directory" # "https://acme.zerossl.com/v2/DV90" # -8<- [end:x]
-    dashboard:
-      enabled: true
-      forward_auth_enabled: true
-      domain: "traefik.{{ karo_compose_root_domain }}"
+    acme_staging_enabled: true
+    acme_email: cert@example.com
+    acme_staging_ca_server_url: "https://acme-staging-v02.api.letsencrypt.org/directory" # -8<- [end:x]
+    acme_live_ca_server_url: "https://acme-v02.api.letsencrypt.org/directory" # "https://acme.zerossl.com/v2/DV90" # -8<- [end:x]
+    dashboard_enabled: true
+    dashboard_forward_auth_enabled: true
+    dashboard_domain: "traefik.{{ karo_compose_root_domain }}"
     custom_domains_raw: |
       # - main: "*.int.{{ karo_compose_root_domain }}"
     secrets:

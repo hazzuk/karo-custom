@@ -14,7 +14,7 @@ log:
 
 # https://doc.traefik.io/traefik/reference/install-configuration/api-dashboard/
 api:
-  dashboard: {{ stack_vars.traefik.dashboard.enabled | lower }}
+  dashboard: {{ stack_vars.traefik.dashboard_enabled | lower }}
   disabledashboardad: true
 
 # https://doc.traefik.io/traefik/reference/install-configuration/entrypoints/
@@ -51,12 +51,12 @@ certificatesResolvers:
   cloudflare:
     acme:
       storage: /etc/traefik/acme/acme.json
-      email: {{ stack_vars.traefik.acme.email }}
+      email: {{ stack_vars.traefik.acme_email }}
       keyType: EC384
-{% if stack_vars.traefik.acme.staging_enabled %}
-      caServer: {{ stack_vars.traefik.acme.staging_ca_server_url }}
+{% if stack_vars.traefik.acme_staging_enabled %}
+      caServer: {{ stack_vars.traefik.acme_staging_ca_server_url }}
 {% else %}
-      caServer: {{ stack_vars.traefik.acme.live_ca_server_url }}
+      caServer: {{ stack_vars.traefik.acme_live_ca_server_url }}
 {% endif %}
       dnsChallenge:
         provider: cloudflare

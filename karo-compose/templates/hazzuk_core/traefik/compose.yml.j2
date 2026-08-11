@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: AGPL-3.0-only
 
 ---
-{% set traefik_acme_volume_name = "traefik_acme_staging" if stack_vars.traefik.acme.staging_enabled else "traefik_acme" %}
+{% set traefik_acme_volume_name = "traefik_acme_staging" if stack_vars.traefik.acme_staging_enabled else "traefik_acme" %}
 
 name: traefik
 services:
@@ -33,13 +33,13 @@ services:
         target: /etc/traefik/acme
     labels:
       - traefik.enable=true
-      - traefik.http.routers.dashboard.rule=Host(`{{ stack_vars.traefik.dashboard.domain }}`)
+      - traefik.http.routers.dashboard.rule=Host(`{{ stack_vars.traefik.dashboard_domain }}`)
       - traefik.http.routers.dashboard.service=api@internal
       - traefik.http.services.dashboard.loadbalancer.server.port=8080
-{% if stack_vars.traefik.dashboard.forward_auth_enabled %}
+{% if stack_vars.traefik.dashboard_forward_auth_enabled %}
       # forward auth
       - traefik.http.routers.dashboard.middlewares=tinyauth
-      - tinyauth.apps.dashboard.config.domain={{ stack_vars.traefik.dashboard.domain }}
+      - tinyauth.apps.dashboard.config.domain={{ stack_vars.traefik.dashboard_domain }}
       - tinyauth.apps.dashboard.oauth.groups={{ karo_compose_oidc_admin_group }}
 {% endif %}
     environment:
