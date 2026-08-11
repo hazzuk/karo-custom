@@ -12,7 +12,7 @@ icon: traefik
 hazzuk_core_traefik_enabled: false
 
 hazzuk_core_traefik_stack:
---8<-- "karo-compose/defaults/main/hazzuk_core/traefik.yml:10:24,27"
+--8<-- "karo-compose/defaults/main/hazzuk_core/traefik.yml:10:20,23"
 ```
 
 [See all defaults](https://github.com/hazzuk/karo-custom/blob/main/karo-compose/defaults/main/hazzuk_core/traefik.yml){:target='_blank'}
