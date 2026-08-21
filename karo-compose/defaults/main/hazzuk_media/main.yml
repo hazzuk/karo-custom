@@ -4,7 +4,7 @@
 
 ---
 
-hazzuk_media:
+hazzuk_media_stacks:
   - gluetun
   - qbittorrent
   - prowlarr
