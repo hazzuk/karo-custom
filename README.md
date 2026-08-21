@@ -7,7 +7,7 @@
 
 [![Developed by Humans, Not by AI](not-by-ai.png)](https://notbyai.fyi/)
 
-> This is the official [karo-custom](https://docs.karolabs.dev/custom/) repo, developed by the creator of the karo-stack.
+> This is the official [karo-custom](https://docs.karolabs.dev/custom/) repo, maintained by the creator of the karo-stack.
 
 1. Get this custom repo
     ```sh
