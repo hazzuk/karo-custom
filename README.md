@@ -9,9 +9,9 @@
 
 > This is the official [karo-custom](https://docs.karolabs.dev/custom/) repo, developed by the creator of the karo-stack.
 
-1. Add this custom repo
+1. Get this custom repo
     ```sh
-    just custom add hazzuk
+    just custom get hazzuk
     ```
 
 2. Add these variables
