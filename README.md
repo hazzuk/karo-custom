@@ -20,9 +20,9 @@
     ```
     ```yaml { title="Ansible vault" }
     karo_compose_stack_groups:
-    - hazzuk_core
-    - hazzuk_extra
-    - hazzuk_media
+      - hazzuk_core
+      - hazzuk_extra
+      - hazzuk_media
     ```
 
 ## Copyright & License
