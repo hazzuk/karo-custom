@@ -26,4 +26,5 @@
     ```
 
 ## Copyright & License
-[hazzuk/karo-custom](https://github.com/hazzuk/karo-custom) is copyright © hazzuk and is licensed AGPL-3.0-only.
+
+Copyright © 2026 hazzuk. Licensed AGPL-3.0-only.
