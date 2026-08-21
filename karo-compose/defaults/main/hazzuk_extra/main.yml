@@ -4,7 +4,7 @@
 
 ---
 
-hazzuk_extra:
+hazzuk_extra_stacks:
   - proxy
   - whoami
   - ntfy

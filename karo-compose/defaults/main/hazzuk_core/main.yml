@@ -4,6 +4,6 @@
 
 ---
 
-hazzuk_core:
+hazzuk_core_stacks:
   - traefik
   - pocketid

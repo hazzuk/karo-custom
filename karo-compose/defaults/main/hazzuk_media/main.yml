@@ -4,11 +4,11 @@
 
 ---
 
-hazzuk_media:
+hazzuk_media_stacks:
   - gluetun
   - qbittorrent
+  - jellyfin
   - prowlarr
   - radarr
   - sonarr
-  - jellyfin
   - seerr
