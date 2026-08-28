@@ -8,7 +8,7 @@
 [![License](https://img.shields.io/badge/license-AGPL--3.0-B461B3)](https://github.com/hazzuk/karo-custom/blob/main/LICENSE)
 [![Hits-of-Code](https://hitsofcode.com/github/hazzuk/karo-custom)](https://hitsofcode.com/github/hazzuk/karo-custom/view)
 
-[![Developed by Humans, Not by AI](not-by-ai.png)](https://notbyai.fyi/)
+[![Developed by Humans, Not by AI](https://hazzuk.github.io/assets/not-by-ai/dev.svg)](https://notbyai.fyi/)
 
 </div>
 
