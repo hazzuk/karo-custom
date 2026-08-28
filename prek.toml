@@ -31,6 +31,16 @@ hooks = [
 ]
 
 [[repos]]
+repo = "https://github.com/editorconfig-checker/editorconfig-checker"
+rev = "v3.11.1"
+hooks = [
+  {
+    id = "editorconfig-checker",
+    name = "editorconfig: lint files",
+  }
+]
+
+[[repos]]
 repo = "https://github.com/crate-ci/typos"
 rev = "v1.49.0"
 hooks = [

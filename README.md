@@ -10,20 +10,27 @@
 > This is the official [karo-custom](https://docs.karolabs.dev/custom/) repo, maintained by the creator of the karo-stack.
 
 1.  Get this custom repo
+
     ``` sh
     just custom get hazzuk
     ```
 
 2.  Add these variables
+
     ``` sh
     just vault homeserver
     ```
+
+    <!-- editorconfig-checker-disable -->
+
     ``` yaml { title="Ansible vault" }
     karo_compose_stack_groups:
       - hazzuk_core
       - hazzuk_extra
       - hazzuk_media
     ```
+
+    <!-- editorconfig-checker-enable -->
 
 ## Copyright & License
 

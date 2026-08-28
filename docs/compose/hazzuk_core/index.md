@@ -7,10 +7,14 @@ status: required
 
 Essential services required by every other stack.
 
+<!-- editorconfig-checker-disable -->
+
 ``` yaml { .no-copy hl_lines="2" }
 karo_compose_stack_groups:
   - hazzuk_core
 ```
+
+<!-- editorconfig-checker-enable -->
 
 !!! warning
 
