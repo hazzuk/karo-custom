@@ -1,5 +1,5 @@
 ---
-icon: ntfy
+icon: simple/ntfy
 ---
 
 # ntfy
