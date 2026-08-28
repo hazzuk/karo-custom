@@ -4,8 +4,9 @@
 
 **Custom [karo-stack](https://docs.karolabs.dev/) files**
 
-[![GitHub Release](https://img.shields.io/github/v/release/hazzuk/karo-custom?display_name=tag&cacheSeconds=7200)](https://github.com/hazzuk/karo-custom/releases)
-[![License](https://img.shields.io/badge/license-AGPL--3.0-orange)](https://github.com/hazzuk/karo-custom/blob/main/LICENSE)
+[![Latest release](https://img.shields.io/github/v/release/hazzuk/karo-custom?display_name=tag&cacheSeconds=7200&label=latest)](https://github.com/hazzuk/karo-custom/releases)
+[![License](https://img.shields.io/badge/license-AGPL--3.0-B461B3)](https://github.com/hazzuk/karo-custom/blob/main/LICENSE)
+[![Hits-of-Code](https://hitsofcode.com/github/hazzuk/karo-custom)](https://hitsofcode.com/github/hazzuk/karo-custom/view)
 
 [![Developed by Humans, Not by AI](not-by-ai.png)](https://notbyai.fyi/)
 
