@@ -6,7 +6,7 @@ icon: jellyfin
 
 > Media server
 
-```yaml { title="Ansible vault" }
+``` yaml { title="Ansible vault" }
 # jellyfin
 
 hazzuk_media_jellyfin_enabled: false
@@ -36,12 +36,12 @@ hazzuk_media_jellyfin_stack:
 
         === "Media"
 
-            - Movies
+            -   Movies
                 - Folders: `#!ini <radarr root folder>` (e.g. `/data/media/movies`)
                 - Preferred download language: `#!ini <your language>`
                 - Country/region: `#!ini <your region>`
 
-            - TV
+            -   TV
                 - Display name: `Series`
                 - Folders: `#!ini <sonarr root folder>` (e.g. `/data/media/series`)
                 - Preferred download language `#!ini <your language>`

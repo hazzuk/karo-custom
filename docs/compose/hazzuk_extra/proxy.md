@@ -10,7 +10,7 @@ icon: lucide/waypoints
 
     See the [karo-stack docs](https://docs.karolabs.dev/advanced/proxy/) for details.
 
-```yaml { title="Ansible vault" }
+``` yaml { title="Ansible vault" }
 # proxy
 
 hazzuk_extra_proxy_server_enabled: false # proxyserver
@@ -35,7 +35,7 @@ hazzuk_extra_proxy_stack:
 
         Simple setup, traffic is routed to your server if the request's SNI hostname matches your domain name.
 
-        ```toml
+        ``` toml
         # haproxy config
 
           # wait for tls clienthello

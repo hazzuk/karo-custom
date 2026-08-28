@@ -6,7 +6,7 @@ icon: lucide/layers-2
 
 Full set of media services, for downloads, content organisation, user requests, and streaming.
 
-```yaml { hl_lines="3" .no-copy }
+``` yaml { .no-copy hl_lines="3" }
 karo_compose_stack_groups:
   - hazzuk_core # required
   - hazzuk_media
@@ -18,15 +18,17 @@ karo_compose_stack_groups:
 
 ## Requirements
 
-- VPN service that supports [port forwarding](https://trash-guides.info/Misc/How-to-setup-Torguard-for-port-forwarding/#setup-torguard-for-port-forwarding).
+-   VPN service that supports [port forwarding](https://trash-guides.info/Misc/How-to-setup-Torguard-for-port-forwarding/#setup-torguard-for-port-forwarding).
 
-- Dedicated [storage partition](https://docs.karolabs.dev/advanced/storage/#partition-and-format) to download and store files (e.g. `/media/drive1`).
+-   Dedicated [storage partition](https://docs.karolabs.dev/advanced/storage/#partition-and-format) to download and store files (e.g. `/media/drive1`).
 
-- Directory structure which supports [hardlinks](https://trash-guides.info/File-and-Folder-Structure/Hardlinks-and-Instant-Moves/):
-    ```sh
+-   Directory structure which supports [hardlinks](https://trash-guides.info/File-and-Folder-Structure/Hardlinks-and-Instant-Moves/):
+
+    ``` sh
     DRIVE_MOUNT=/media/drive1
     ```
-    ```sh
+
+    ``` sh
     sudo install -d -m 0766 -o dockeruser -g dockeruser \
         ${DRIVE_MOUNT}/data \
         ${DRIVE_MOUNT}/data/media \

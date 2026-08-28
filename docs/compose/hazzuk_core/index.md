@@ -7,7 +7,7 @@ status: required
 
 Essential services required by every other stack.
 
-```yaml { hl_lines="2" .no-copy }
+``` yaml { .no-copy hl_lines="2" }
 karo_compose_stack_groups:
   - hazzuk_core
 ```
