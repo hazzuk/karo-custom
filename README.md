@@ -1,3 +1,5 @@
+<div align="center" markdown>
+
 # hazzuk/karo-custom
 
 **Custom [karo-stack](https://docs.karolabs.dev/) files**
@@ -6,6 +8,10 @@
 [![License](https://img.shields.io/badge/license-AGPL--3.0-orange)](https://github.com/hazzuk/karo-custom/blob/main/LICENSE)
 
 [![Developed by Humans, Not by AI](not-by-ai.png)](https://notbyai.fyi/)
+
+</div>
+
+---
 
 > This is the official [karo-custom](https://docs.karolabs.dev/custom/) repo, maintained by the creator of the karo-stack.
 
