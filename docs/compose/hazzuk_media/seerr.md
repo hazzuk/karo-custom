@@ -98,7 +98,7 @@ hazzuk_media_seerr_stack:
                 This information may be outdated, see notice above.
 
             !!! info "Pocket-ID OIDC client"
-        
+
                 - Name: `Seerr`
                 - Client launch URL: `https://seerr.example.com/login?provider=pocketid`
                 - Callback URL: `https://seerr.example.com/login`

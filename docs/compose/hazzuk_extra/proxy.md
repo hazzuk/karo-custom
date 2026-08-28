@@ -43,13 +43,13 @@ hazzuk_extra_proxy_stack:
 
           # accept clienthello
           tcp-request content accept if { req_ssl_hello_type 1 }
-            
+
           # catch-all reject
           tcp-request content reject
-            
+
           # sni routing
           use_backend homeserver if { req.ssl_sni -m end .{{ karo_compose_root_domain }} }
-        
+
         backend homeserver
           mode tcp
           server wg {{ hazzuk_extra_proxy_client_wireguard_ipv4 }}:443 send-proxy-v2 check

@@ -62,7 +62,7 @@ hazzuk_media_sonarr_stack:
         === "Download clients"
 
             !!! info "qui client proxy"
-        
+
                 - Go to 'qui' > 'Settings' > 'Client Proxy'
                 - Create client API key
                     - Client name: `sonarr`
