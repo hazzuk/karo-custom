@@ -1,5 +1,4 @@
 [project]
-
 site_name = "hazzuk/karo-custom"
 site_description = "hazzuk karo-custom documentation."
 site_author = "hazzuk"
@@ -45,9 +44,8 @@ nav = [
 # extra_css = ["stylesheets/extra.css"]
 
 [project.theme]
-
 custom_dir = "overrides"
-#favicon = "images/favicon.png"
+# favicon = "images/favicon.png"
 language = "en"
 
 # https://zensical.org/docs/
@@ -124,29 +122,30 @@ required = "Required"
 # https://zensical.org/docs/authoring/markdown/
 
 # html
-[project.markdown_extensions.attr_list] # add html/css to markdown lines
-[project.markdown_extensions.md_in_html] # write markdown inbetween html
-[project.markdown_extensions.pymdownx.blocks.caption] # add captions markdown blocks
+[project.markdown_extensions.attr_list]  # add html/css to markdown lines
 
-# call-outs (admonitions)
-[project.markdown_extensions.admonition]
-[project.markdown_extensions.pymdownx.details] # improved call-outs
+[project.markdown_extensions.md_in_html]  # write markdown inbetween html
+
+[project.markdown_extensions.pymdownx.blocks.caption]  # add captions markdown blocks
+
+[project.markdown_extensions.pymdownx.details]  # improved call-outs
 
 # code blocks
-[project.markdown_extensions.pymdownx.highlight] # syntax highlighting
+[project.markdown_extensions.pymdownx.highlight]  # syntax highlighting
 anchor_linenums = true
 line_spans = "__span"
 pygments_lang_class = true
-[project.markdown_extensions.pymdownx.inlinehilite] # in-line syntax highlighting
-[project.markdown_extensions.pymdownx.snippets] # embed external files
+
+[project.markdown_extensions.pymdownx.inlinehilite]  # in-line syntax highlighting
+
+[project.markdown_extensions.pymdownx.snippets]  # embed external files
 # auto_append = ["abbreviations.md"]
 
 # content tabs
-[project.markdown_extensions.pymdownx.superfences] # nest code/content blocks
-custom_fences = [
-  { name = "mermaid", class = "mermaid", format = "pymdownx.superfences.fence_code_format" }
-]
-[project.markdown_extensions.pymdownx.tabbed] # content tabs
+[project.markdown_extensions.pymdownx.superfences]  # nest code/content blocks
+custom_fences = [{ name = "mermaid", class = "mermaid", format = "pymdownx.superfences.fence_code_format" }]
+
+[project.markdown_extensions.pymdownx.tabbed]  # content tabs
 alternate_style = true
 
 # anchor links
@@ -154,17 +153,15 @@ alternate_style = true
 object = "pymdownx.slugs.slugify"
 kwds = { case = "lower" }
 
-# data tables
-[project.markdown_extensions.tables]
-
-# footnotes
-[project.markdown_extensions.footnotes]
-
 # formatting text
 [project.markdown_extensions.pymdownx.caret]
+
 [project.markdown_extensions.pymdownx.mark]
+
 [project.markdown_extensions.pymdownx.tilde]
-[project.markdown_extensions.pymdownx.keys] # render keyboard keys
+
+[project.markdown_extensions.pymdownx.keys]  # render keyboard keys
+
 [project.markdown_extensions.pymdownx.betterem]
 
 # icons and emoji
@@ -178,6 +175,15 @@ options.custom_icons = ["overrides/.icons"]
 [project.markdown_extensions.pymdownx.tasklist]
 custom_checkbox = true
 clickable_checkbox = true
+
+# call-outs (admonitions)
+[project.markdown_extensions.admonition]
+
+# data tables
+[project.markdown_extensions.tables]
+
+# footnotes
+[project.markdown_extensions.footnotes]
 
 # tooltip abbreviations
 [project.markdown_extensions.abbr]
