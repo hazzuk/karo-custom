@@ -35,6 +35,8 @@ hazzuk_extra_proxy_stack:
 
         Simple setup, traffic is routed to your server if the request's SNI hostname matches your domain name.
 
+        <!-- editorconfig-checker-disable -->
+
         ``` toml
         # haproxy config
 
@@ -54,6 +56,8 @@ hazzuk_extra_proxy_stack:
           mode tcp
           server wg {{ hazzuk_extra_proxy_client_wireguard_ipv4 }}:443 send-proxy-v2 check
         ```
+
+        <!-- editorconfig-checker-enable -->
 
     !!! note "Links"
 

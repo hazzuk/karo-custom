@@ -6,11 +6,15 @@ icon: lucide/layers-2
 
 Full set of media services, for downloads, content organisation, user requests, and streaming.
 
+<!-- editorconfig-checker-disable -->
+
 ``` yaml { .no-copy hl_lines="3" }
 karo_compose_stack_groups:
   - hazzuk_core # required
   - hazzuk_media
 ```
+
+<!-- editorconfig-checker-enable -->
 
 !!! info "Setup order"
 

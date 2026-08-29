@@ -1,5 +1,3 @@
-# python files
-.cache
-
-# build files
-site
+.cache/
+site/
+notes.md
