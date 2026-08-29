@@ -46,6 +46,9 @@ maintained by the creator of the karo-stack.
 
     <!-- editorconfig-checker-enable -->
 
+See the custom repo's documentation:
+[hazzuk.github.io/karo-custom](https://hazzuk.github.io/karo-custom/)
+
 ## Copyright & License
 
 Copyright © hazzuk. Licensed AGPL-3.0-only.
