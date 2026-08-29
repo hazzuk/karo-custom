@@ -1,5 +1,5 @@
 ---
-icon: qbittorrent
+icon: simple/qbittorrent
 # status: new
 ---
 

@@ -1,5 +1,5 @@
 ---
-icon: traefik
+icon: simple/traefikproxy
 ---
 
 # Traefik

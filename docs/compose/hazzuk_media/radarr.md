@@ -1,5 +1,5 @@
 ---
-icon: radarr
+icon: simple/radarr
 ---
 
 # Radarr

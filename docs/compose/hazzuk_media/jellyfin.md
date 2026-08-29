@@ -1,5 +1,5 @@
 ---
-icon: jellyfin
+icon: simple/jellyfin
 ---
 
 # Jellyfin
