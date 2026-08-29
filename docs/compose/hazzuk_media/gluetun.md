@@ -1,12 +1,16 @@
 ---
-icon: gluetun
+# SPDX-FileCopyrightText: © 2026 hazzuk
+#
+# SPDX-License-Identifier: AGPL-3.0-only
+
+icon: custom/gluetun
 ---
 
 # Gluetun
 
 > Docker VPN client
 
-```yaml { title="Ansible vault" }
+``` yaml { title="Ansible vault" }
 # gluetun
 
 hazzuk_media_gluetun_enabled: false

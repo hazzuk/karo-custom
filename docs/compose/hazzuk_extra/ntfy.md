@@ -1,12 +1,16 @@
 ---
-icon: ntfy
+# SPDX-FileCopyrightText: © 2026 hazzuk
+#
+# SPDX-License-Identifier: AGPL-3.0-only
+
+icon: simple/ntfy
 ---
 
 # ntfy
 
 > Notification service
 
-```yaml { title="Ansible vault" }
+``` yaml { title="Ansible vault" }
 # ntfy
 
 hazzuk_extra_ntfy_enabled: false

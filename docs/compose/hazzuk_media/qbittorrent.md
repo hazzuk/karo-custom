@@ -1,13 +1,16 @@
 ---
-icon: qbittorrent
-# status: new
+# SPDX-FileCopyrightText: © 2026 hazzuk
+#
+# SPDX-License-Identifier: AGPL-3.0-only
+
+icon: simple/qbittorrent
 ---
 
 # qBittorrent
 
 > BitTorrent client
 
-```yaml { title="Ansible vault" }
+``` yaml { title="Ansible vault" }
 # qbittorrent
 
 hazzuk_media_qbittorrent_enabled: false
@@ -33,7 +36,7 @@ hazzuk_media_qbittorrent_stack:
 
             - Obtain the generated qBittorrent web UI login credentials
 
-                ```sh { .no-copy }
+                ``` sh { .no-copy }
                 # ssh dockeruser@homeserver.example.com
                 docker logs qbittorrent
                 ```

@@ -1,4 +1,8 @@
 ---
+# SPDX-FileCopyrightText: © 2026 hazzuk
+#
+# SPDX-License-Identifier: AGPL-3.0-only
+
 icon: lucide/waypoints
 ---
 
@@ -10,7 +14,7 @@ icon: lucide/waypoints
 
     See the [karo-stack docs](https://docs.karolabs.dev/advanced/proxy/) for details.
 
-```yaml { title="Ansible vault" }
+``` yaml { title="Ansible vault" }
 # proxy
 
 hazzuk_extra_proxy_server_enabled: false # proxyserver
@@ -35,7 +39,9 @@ hazzuk_extra_proxy_stack:
 
         Simple setup, traffic is routed to your server if the request's SNI hostname matches your domain name.
 
-        ```toml
+        <!-- editorconfig-checker-disable -->
+
+        ``` toml
         # haproxy config
 
           # wait for tls clienthello
@@ -43,17 +49,19 @@ hazzuk_extra_proxy_stack:
 
           # accept clienthello
           tcp-request content accept if { req_ssl_hello_type 1 }
-            
+
           # catch-all reject
           tcp-request content reject
-            
+
           # sni routing
           use_backend homeserver if { req.ssl_sni -m end .{{ karo_compose_root_domain }} }
-        
+
         backend homeserver
           mode tcp
           server wg {{ hazzuk_extra_proxy_client_wireguard_ipv4 }}:443 send-proxy-v2 check
         ```
+
+        <!-- editorconfig-checker-enable -->
 
     !!! note "Links"
 

@@ -1,12 +1,16 @@
 ---
-icon: pocket-id
+# SPDX-FileCopyrightText: © 2026 hazzuk
+#
+# SPDX-License-Identifier: AGPL-3.0-only
+
+icon: custom/pocket-id
 ---
 
 # Pocket ID
 
 > OIDC provider
 
-```yaml { title="Ansible vault" }
+``` yaml { title="Ansible vault" }
 # oidc
 
 # karo_compose_oidc_subdomain: auth

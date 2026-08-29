@@ -1,12 +1,16 @@
 ---
-icon: traefik
+# SPDX-FileCopyrightText: © 2026 hazzuk
+#
+# SPDX-License-Identifier: AGPL-3.0-only
+
+icon: custom/traefik
 ---
 
 # Traefik
 
 > Reverse proxy
 
-```yaml { title="Ansible vault" }
+``` yaml { title="Ansible vault" }
 # traefik
 
 hazzuk_core_traefik_enabled: false

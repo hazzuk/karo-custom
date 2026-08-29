@@ -1,13 +1,19 @@
+# SPDX-FileCopyrightText: © 2026 hazzuk
+#
+# SPDX-License-Identifier: AGPL-3.0-only
+
 name: Documentation
+
 on:
   push:
     branches:
-      - master
       - main
+
 permissions:
   contents: read
   pages: write
   id-token: write
+
 jobs:
   deploy:
     environment:
@@ -21,6 +27,7 @@ jobs:
         with:
           python-version: 3.x
       - run: pip install zensical
+      - run: bash ./get-icons.sh
       - run: zensical build --clean
       - uses: actions/upload-pages-artifact@v5
         with:

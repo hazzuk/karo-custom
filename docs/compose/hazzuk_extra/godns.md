@@ -1,4 +1,8 @@
 ---
+# SPDX-FileCopyrightText: © 2026 hazzuk
+#
+# SPDX-License-Identifier: AGPL-3.0-only
+
 icon: lucide/globe
 ---
 
@@ -6,7 +10,7 @@ icon: lucide/globe
 
 > Dynamic DNS client
 
-```yaml { title="Ansible vault" }
+``` yaml { title="Ansible vault" }
 # godns
 
 hazzuk_extra_godns_enabled: false

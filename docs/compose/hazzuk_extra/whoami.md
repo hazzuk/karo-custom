@@ -1,4 +1,8 @@
 ---
+# SPDX-FileCopyrightText: © 2026 hazzuk
+#
+# SPDX-License-Identifier: AGPL-3.0-only
+
 icon: lucide/file-question-mark
 ---
 
@@ -6,7 +10,7 @@ icon: lucide/file-question-mark
 
 > Tiny web server for testing
 
-```yaml { title="Ansible vault" }
+``` yaml { title="Ansible vault" }
 # whoami
 
 hazzuk_extra_whoami_enabled: false

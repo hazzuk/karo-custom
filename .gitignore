@@ -1,5 +1,4 @@
-# python files
-.cache
-
-# build files
-site
+.cache/
+overrides/.icons/
+site/
+notes.md

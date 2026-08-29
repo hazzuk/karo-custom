@@ -1,0 +1,31 @@
+# SPDX-FileCopyrightText: © 2026 hazzuk
+#
+# SPDX-License-Identifier: AGPL-3.0-only
+
+# Configuration file for `reuse`, a compliance tool for the REUSE spec.
+# See https://reuse.software/spec for more information.
+
+# Commands:
+# - `reuse download --all`  Download all missing licenses
+# - `reuse lint`            Lint the directory for REUSE compliance
+
+version = 1
+
+# Uncopyrightable files
+[[annotations]]
+path = [
+  ".vscode/settings.json",
+  ".gitattributes",
+  ".gitignore",
+]
+SPDX-FileCopyrightText = "NONE"
+SPDX-License-Identifier = "CC0-1.0"
+
+# Uncommentable files
+[[annotations]]
+path = [
+  "karo-compose/templates/hazzuk_extra/godns/config.json.j2",
+]
+precedence = "override"
+SPDX-FileCopyrightText = "© hazzuk"
+SPDX-License-Identifier = "AGPL-3.0-only"
