@@ -6,7 +6,7 @@ icon: seerr
 
 > Media discovery and requests manager
 
-```yaml { title="Ansible vault" }
+``` yaml { title="Ansible vault" }
 # seerr
 
 hazzuk_media_seerr_enabled: false
@@ -44,8 +44,8 @@ hazzuk_media_seerr_stack:
 
         === "Sync libraries"
 
-            - Jellyfin external URL: `https://jellyfin.example.com`
-            - Sync libraries:
+            -   Jellyfin external URL: `https://jellyfin.example.com`
+            -   Sync libraries:
                 - Movies: `Enabled`
                 - Series: `Enabled`
 
@@ -98,13 +98,13 @@ hazzuk_media_seerr_stack:
                 This information may be outdated, see notice above.
 
             !!! info "Pocket-ID OIDC client"
-        
+
                 - Name: `Seerr`
                 - Client launch URL: `https://seerr.example.com/login?provider=pocketid`
                 - Callback URL: `https://seerr.example.com/login`
                 - (:lucide-pointer: Select allowed user groups)
 
-            - Add new OpenID Connect provider
+            -   Add new OpenID Connect provider
                 - Provider name: `pocketid`
                 - Logo: `https://auth.example.com/api/application-images/logo?light=false`
                 - Issuer URL: `https://auth.example.com`
@@ -113,7 +113,7 @@ hazzuk_media_seerr_stack:
                 - Scopes: `openid email profile groups`
                 - Allow new users: `true`
 
-            - Edit your user and link your account
+            -   Edit your user and link your account
 
     !!! note "Links"
 

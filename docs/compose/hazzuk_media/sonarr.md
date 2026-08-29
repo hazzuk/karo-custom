@@ -6,7 +6,7 @@ icon: sonarr
 
 > TV collection manager
 
-```yaml { title="Ansible vault" }
+``` yaml { title="Ansible vault" }
 # sonarr
 
 hazzuk_media_sonarr_enabled: false
@@ -38,6 +38,7 @@ hazzuk_media_sonarr_stack:
     ??? tip "Sonarr settings"
 
         !!! info "Show advanced"
+
             To configure all necessary settings, enable 'Show Advanced'.
 
         === "Media management"
@@ -62,7 +63,7 @@ hazzuk_media_sonarr_stack:
         === "Download clients"
 
             !!! info "qui client proxy"
-        
+
                 - Go to 'qui' > 'Settings' > 'Client Proxy'
                 - Create client API key
                     - Client name: `sonarr`

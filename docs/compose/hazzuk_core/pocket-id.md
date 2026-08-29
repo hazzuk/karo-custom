@@ -6,7 +6,7 @@ icon: pocket-id
 
 > OIDC provider
 
-```yaml { title="Ansible vault" }
+``` yaml { title="Ansible vault" }
 # oidc
 
 # karo_compose_oidc_subdomain: auth

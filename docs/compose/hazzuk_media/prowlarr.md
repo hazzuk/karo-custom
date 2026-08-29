@@ -6,7 +6,7 @@ icon: prowlarr
 
 > Indexer manager
 
-```yaml { title="Ansible vault" }
+``` yaml { title="Ansible vault" }
 # prowlarr
 
 hazzuk_media_prowlarr_enabled: false
@@ -38,6 +38,7 @@ hazzuk_media_prowlarr_stack:
     ??? tip "Prowlarr settings"
 
         !!! info "Show advanced"
+
             To configure all necessary settings, enable 'Show Advanced'.
 
         === "Indexers"
