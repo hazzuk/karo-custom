@@ -20,7 +20,8 @@ SPDX-License-Identifier: AGPL-3.0-only
 
 ---
 
-> This is the official [karo-custom](https://docs.karolabs.dev/custom/) repo, maintained by the creator of the karo-stack.
+> This is the official [karo-custom](https://docs.karolabs.dev/custom/) repo,
+maintained by the creator of the karo-stack.
 
 1.  Get this custom repo
 
