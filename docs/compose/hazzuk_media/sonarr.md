@@ -1,5 +1,5 @@
 ---
-icon: simple/sonarr
+icon: custom/sonarr
 ---
 
 # Sonarr

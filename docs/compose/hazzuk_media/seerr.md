@@ -1,5 +1,5 @@
 ---
-icon: seerr
+icon: custom/seerr
 ---
 
 # Seerr

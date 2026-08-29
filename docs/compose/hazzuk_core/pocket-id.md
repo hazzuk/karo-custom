@@ -1,5 +1,5 @@
 ---
-icon: pocket-id
+icon: custom/pocket-id
 ---
 
 # Pocket ID
