@@ -26,7 +26,7 @@ insert_final_newline = true
 
 # bash
 [*.sh]
-indent_size = tab
+indent_style = tab
 
 # go
 [*.go]

@@ -1,5 +1,5 @@
 ---
-icon: gluetun
+icon: custom/gluetun
 ---
 
 # Gluetun

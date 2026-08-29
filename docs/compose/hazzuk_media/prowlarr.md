@@ -1,5 +1,5 @@
 ---
-icon: prowlarr
+icon: custom/prowlarr
 ---
 
 # Prowlarr
