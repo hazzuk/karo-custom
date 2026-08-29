@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: © 2026 hazzuk
+
+SPDX-License-Identifier: AGPL-3.0-only
+-->
+
 <div align="center" markdown>
 
 # hazzuk/karo-custom
@@ -41,4 +47,4 @@
 
 ## Copyright & License
 
-Copyright © 2026 hazzuk. Licensed AGPL-3.0-only.
+Copyright © hazzuk. Licensed AGPL-3.0-only.
