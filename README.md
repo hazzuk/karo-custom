@@ -10,8 +10,8 @@ SPDX-License-Identifier: AGPL-3.0-only
 
 **Custom [karo-stack](https://docs.karolabs.dev/) files**
 
-[![Latest release](https://img.shields.io/github/v/release/hazzuk/karo-custom?display_name=tag&cacheSeconds=7200&label=latest)](https://github.com/hazzuk/karo-custom/releases)
-[![License](https://img.shields.io/badge/license-AGPL--3.0-B461B3)](https://github.com/hazzuk/karo-custom/blob/main/LICENSE)
+[![Latest release](https://img.shields.io/github/v/release/hazzuk/karo-custom?display_name=tag&cacheSeconds=7200&label=Latest)](https://github.com/hazzuk/karo-custom/releases)
+[![License](https://img.shields.io/badge/License-AGPL--3.0-B461B3)](https://github.com/hazzuk/karo-custom/blob/main/LICENSE)
 [![Hits-of-Code](https://hitsofcode.com/github/hazzuk/karo-custom)](https://hitsofcode.com/github/hazzuk/karo-custom/view)
 
 [![Developed by Humans, Not by AI](https://hazzuk.github.io/assets/not-by-ai/dev.svg)](https://notbyai.fyi/)
