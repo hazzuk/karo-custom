@@ -57,11 +57,7 @@ hooks = [
   {
     id = "typos",
     name = "typos: lint files",
-  },
-  {
-    id = "typos",
-    name = "typos: lint commit message",
     args = ["--force-exclude"],
-    stages = ["commit-msg"],
+    stages = ["pre-commit", "commit-msg"],
   }
 ]
