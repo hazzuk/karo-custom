@@ -32,7 +32,7 @@ hooks = [
 
 [[repos]]
 repo = "https://github.com/editorconfig-checker/editorconfig-checker"
-rev = "v3.11.1"
+rev = "e98e4ec6d3bb64b4b62ec4f0ce6cacdfba12f9a0"  # v4.0.1
 hooks = [
   {
     id = "editorconfig-checker",
@@ -42,7 +42,7 @@ hooks = [
 
 [[repos]]
 repo = "https://codeberg.org/fsfe/reuse-tool"
-rev = "v6.2.0"
+rev = "a1bb792acda6fd0724936b4ebbdbc8eceb9c0459"  # v6.2.0
 hooks = [
   {
     id = "reuse-lint-file",
@@ -52,7 +52,7 @@ hooks = [
 
 [[repos]]
 repo = "https://github.com/crate-ci/typos"
-rev = "v1.49.0"
+rev = "d43b6c087ac471e2ea7b8af622ff15f05c0c365b"  # v1.50.1
 hooks = [
   {
     id = "typos",
