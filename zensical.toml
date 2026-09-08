@@ -45,11 +45,8 @@ nav = [
   ] },
 ]
 
-# extra_css = ["stylesheets/extra.css"]
-
 [project.theme]
 custom_dir = "docs/assets/overrides"
-# favicon = "images/favicon.png"
 language = "en"
 
 # https://zensical.org/docs/
@@ -85,19 +82,10 @@ features = [
 [project.theme.icon]
 logo = "lucide/bolt"
 
-# [project.theme.font]
-# text = "Inter"
-# code = "Jetbrains Mono"
-
-# palette for dark mode
 [[project.theme.palette]]
 scheme = "slate"
 primary = "cyan"
 accent = "cyan"
-
-# [[project.extra.social]]
-# icon = "fontawesome/brands/github"
-# link = "https://github.com/user/repo"
 
 [project.extra.status]
 required = "Required"
