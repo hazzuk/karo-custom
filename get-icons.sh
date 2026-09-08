@@ -7,7 +7,7 @@
 set -euo pipefail
 
 BASE_URL="https://hazzuk.github.io/assets/karo-custom"
-DEST_DIR="./overrides/.icons/custom"
+DEST_DIR="./docs/assets/overrides/.icons/custom"
 
 FILES=(
 	"gluetun"

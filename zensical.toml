@@ -48,7 +48,7 @@ nav = [
 # extra_css = ["stylesheets/extra.css"]
 
 [project.theme]
-custom_dir = "overrides"
+custom_dir = "docs/assets/overrides"
 # favicon = "images/favicon.png"
 language = "en"
 
@@ -153,7 +153,7 @@ kwds = { case = "lower" }
 emoji_index = "zensical.extensions.emoji.twemoji"
 emoji_generator = "zensical.extensions.emoji.to_svg"
 # custom icons directory
-options.custom_icons = ["overrides/.icons"]
+options.custom_icons = ["docs/assets/overrides/.icons"]
 
 # lists
 [project.markdown_extensions.pymdownx.tasklist]
