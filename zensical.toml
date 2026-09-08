@@ -2,6 +2,9 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-only
 
+# Configuration file for `zensical`, a modern static site generator.
+# See https://zensical.org/docs for more information.
+
 [project]
 site_name = "hazzuk/karo-custom"
 site_description = "hazzuk karo-custom documentation."
