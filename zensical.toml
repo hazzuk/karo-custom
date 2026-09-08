@@ -11,9 +11,7 @@ site_description = "hazzuk karo-custom documentation."
 site_author = "hazzuk"
 site_url = "https://hazzuk.github.io/karo-custom"
 
-copyright = """
-&copy; 2026 hazzuk
-"""
+copyright = "© 2026 hazzuk"
 
 repo_name = "hazzuk/karo-custom"
 repo_url = "https://github.com/hazzuk/karo-custom"
