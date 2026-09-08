@@ -52,7 +52,6 @@ nav = [
 custom_dir = "docs/assets/overrides"
 language = "en"
 
-# https://zensical.org/docs/
 features = [
   "announce.dismiss",
   # "content.action.edit",
