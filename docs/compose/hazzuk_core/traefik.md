@@ -50,7 +50,7 @@ hazzuk_core_traefik_stack:
 
             - Token name
 
-                ```
+                ``` txt
                 Traefik (example.com) - Resolve domain names to Zone IDs
                 ```
 
@@ -62,7 +62,7 @@ hazzuk_core_traefik_stack:
 
             - Token name
 
-                ```
+                ``` txt
                 Traefik (example.com) - Edit DNS for DNS-01 challenges
                 ```
 

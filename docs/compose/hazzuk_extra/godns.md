@@ -38,7 +38,7 @@ hazzuk_extra_godns_stack:
 
             - Token name
 
-                ```
+                ``` txt
                 GoDNS (example.com) - Edit dynamic DNS record
                 ```
 
