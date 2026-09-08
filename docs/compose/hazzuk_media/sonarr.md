@@ -32,7 +32,7 @@ hazzuk_media_sonarr_stack:
 
     ??? tip "Sonarr authentication"
 
-        --8<-- "includes/snippets.md:arr_auth"
+        --8<-- "docs/snippets.md:arr_auth"
 
             ```sh
             # set sonarr's auth to external

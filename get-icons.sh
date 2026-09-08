@@ -4,10 +4,12 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-only
 
+# Bash script to download externally stored custom icons for docs.
+
 set -euo pipefail
 
 BASE_URL="https://hazzuk.github.io/assets/karo-custom"
-DEST_DIR="./overrides/.icons/custom"
+DEST_DIR="./docs/assets/overrides/.icons/custom"
 
 FILES=(
 	"gluetun"

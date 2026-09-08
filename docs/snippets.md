@@ -4,7 +4,7 @@ SPDX-FileCopyrightText: © 2026 hazzuk
 SPDX-License-Identifier: AGPL-3.0-only
 -->
 
-<!-- use snippets with `--8<-- "snippets.md:name"` -->
+<!-- use snippets with `--8<-- "docs/snippets.md:name"` -->
 
 <!-- text -->
 

@@ -2,15 +2,16 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-only
 
+# Configuration file for `zensical`, a modern static site generator.
+# See https://zensical.org/docs for more information.
+
 [project]
 site_name = "hazzuk/karo-custom"
 site_description = "hazzuk karo-custom documentation."
 site_author = "hazzuk"
 site_url = "https://hazzuk.github.io/karo-custom"
 
-copyright = """
-&copy; 2026 hazzuk
-"""
+copyright = "© 2026 hazzuk"
 
 repo_name = "hazzuk/karo-custom"
 repo_url = "https://github.com/hazzuk/karo-custom"
@@ -45,14 +46,10 @@ nav = [
   ] },
 ]
 
-# extra_css = ["stylesheets/extra.css"]
-
 [project.theme]
-custom_dir = "overrides"
-# favicon = "images/favicon.png"
+custom_dir = "docs/assets/overrides"
 language = "en"
 
-# https://zensical.org/docs/
 features = [
   "announce.dismiss",
   # "content.action.edit",
@@ -85,51 +82,48 @@ features = [
 [project.theme.icon]
 logo = "lucide/bolt"
 
-# [project.theme.font]
-# text = "Inter"
-# code = "Jetbrains Mono"
-
-# palette for dark mode
 [[project.theme.palette]]
 scheme = "slate"
 primary = "cyan"
 accent = "cyan"
 
-# [[project.extra.social]]
-# icon = "fontawesome/brands/github"
-# link = "https://github.com/user/repo"
-
 [project.extra.status]
 required = "Required"
 
 # extensions
-# https://zensical.org/docs/authoring/markdown/
+# https://zensical.org/docs/authoring/markdown
 
-# html
-[project.markdown_extensions.attr_list]  # add html/css to markdown lines
+# add html/css to markdown lines
+[project.markdown_extensions.attr_list]
 
-[project.markdown_extensions.md_in_html]  # write markdown inbetween html
+# write markdown inbetween html
+[project.markdown_extensions.md_in_html]
 
-[project.markdown_extensions.pymdownx.blocks.caption]  # add captions markdown blocks
+# add captions markdown blocks
+[project.markdown_extensions.pymdownx.blocks.caption]
 
-[project.markdown_extensions.pymdownx.details]  # improved call-outs
+# improved call-outs
+[project.markdown_extensions.pymdownx.details]
 
-# code blocks
-[project.markdown_extensions.pymdownx.highlight]  # syntax highlighting
+# syntax highlighting
+[project.markdown_extensions.pymdownx.highlight]
 anchor_linenums = true
 line_spans = "__span"
 pygments_lang_class = true
 
-[project.markdown_extensions.pymdownx.inlinehilite]  # in-line syntax highlighting
+# in-line syntax highlighting
+[project.markdown_extensions.pymdownx.inlinehilite]
 
-[project.markdown_extensions.pymdownx.snippets]  # embed external files
+# embed external files
+[project.markdown_extensions.pymdownx.snippets]
 # auto_append = ["abbreviations.md"]
 
-# content tabs
-[project.markdown_extensions.pymdownx.superfences]  # nest code/content blocks
+# nest code/content blocks
+[project.markdown_extensions.pymdownx.superfences]
 custom_fences = [{ name = "mermaid", class = "mermaid", format = "pymdownx.superfences.fence_code_format" }]
 
-[project.markdown_extensions.pymdownx.tabbed]  # content tabs
+# content tabs
+[project.markdown_extensions.pymdownx.tabbed]
 alternate_style = true
 
 # anchor links
@@ -144,23 +138,24 @@ kwds = { case = "lower" }
 
 [project.markdown_extensions.pymdownx.tilde]
 
-[project.markdown_extensions.pymdownx.keys]  # render keyboard keys
+# render keyboard keys
+[project.markdown_extensions.pymdownx.keys]
 
+# improved bold/italic handling
 [project.markdown_extensions.pymdownx.betterem]
 
 # icons and emoji
 [project.markdown_extensions.pymdownx.emoji]
 emoji_index = "zensical.extensions.emoji.twemoji"
 emoji_generator = "zensical.extensions.emoji.to_svg"
-# custom icons directory
-options.custom_icons = ["overrides/.icons"]
+options.custom_icons = ["docs/assets/overrides/.icons"]
 
 # lists
 [project.markdown_extensions.pymdownx.tasklist]
 custom_checkbox = true
 clickable_checkbox = true
 
-# call-outs (admonitions)
+# call-outs
 [project.markdown_extensions.admonition]
 
 # data tables
