@@ -44,7 +44,7 @@ hazzuk_core_traefik_stack:
 
         > Based on the [Lego library docs](https://go-acme.github.io/lego/dns/cloudflare/index.html#api-tokens).
 
-        --8<-- "includes/snippets.md:cloudflare_token"
+        --8<-- "docs/snippets.md:cloudflare_token"
 
         === "`traefik_acme_zone_api_token`"
 

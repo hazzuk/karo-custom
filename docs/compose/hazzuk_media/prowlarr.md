@@ -32,7 +32,7 @@ hazzuk_media_prowlarr_stack:
 
     ??? tip "Prowlarr authentication"
 
-        --8<-- "includes/snippets.md:arr_auth"
+        --8<-- "docs/snippets.md:arr_auth"
 
             ```sh
             # set prowlarr's auth to external

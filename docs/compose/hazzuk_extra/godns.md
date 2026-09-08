@@ -32,7 +32,7 @@ hazzuk_extra_godns_stack:
 
     ??? tip "GoDNS Cloudflare API token"
 
-        --8<-- "includes/snippets.md:cloudflare_token"
+        --8<-- "docs/snippets.md:cloudflare_token"
 
         === "`godns_dns_api_token`"
 
