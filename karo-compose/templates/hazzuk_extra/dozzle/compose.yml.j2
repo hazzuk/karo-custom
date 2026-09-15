@@ -20,17 +20,13 @@ services:
       - type: volume
         source: dozzle_data
         target: /data
-      - type: bind
-        source: /srv/docker/hazzuk_extra/dozzle/users.yml
-        target: /data/users.yml
-        read_only: true
     labels:
       - traefik.enable=true
       - traefik.http.routers.dozzle.rule=Host(`{{ stack_vars.dozzle.domain }}`)
       - traefik.http.services.dozzle.loadbalancer.server.port=8080
     environment:
       - DOZZLE_LEVEL={{ stack_vars.dozzle.log_level }}
-      - DOZZLE_AUTH_PROVIDER=simple
+      - DOZZLE_AUTH_PROVIDER=oidc
       - DOZZLE_AUTH_OIDC_ISSUER={{ karo_compose_oidc_url }}
       - DOZZLE_AUTH_OIDC_CLIENT_ID={{ stack_vars.dozzle.oidc_client_id }}
       - DOZZLE_AUTH_OIDC_CLIENT_SECRET_FILE=/run/secrets/dozzle_oidc_client_secret
