@@ -4,9 +4,7 @@
 
 ---
 
-hazzuk_extra_stacks:
-  - proxy
-  - whoami
-  - ntfy
-  - godns
-  - dozzle
+users:
+  admin:
+    email: {{ stack_vars.dozzle.oidc_admin_email }}
+    name: Admin
