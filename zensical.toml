@@ -28,11 +28,11 @@ nav = [
     ] },
     { "hazzuk_extra" = [
       "compose/hazzuk_extra/index.md",
+      "compose/hazzuk_extra/dozzle.md",
       "compose/hazzuk_extra/godns.md",
       "compose/hazzuk_extra/ntfy.md",
       "compose/hazzuk_extra/proxy.md",
       "compose/hazzuk_extra/whoami.md",
-      "compose/hazzuk_extra/dozzle.md",
     ] },
     { "hazzuk_media" = [
       "compose/hazzuk_media/index.md",
