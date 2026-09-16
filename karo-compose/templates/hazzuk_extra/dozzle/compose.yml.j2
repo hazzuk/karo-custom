@@ -1,0 +1,85 @@
+# SPDX-FileCopyrightText: © 2026 hazzuk
+#
+# SPDX-License-Identifier: AGPL-3.0-only
+
+---
+
+name: dozzle
+services:
+
+  dozzle:
+    image: {{ stack_vars.dozzle.image }}:{{ stack_vars.dozzle.version }}
+    container_name: dozzle
+    restart: {{ karo_compose_restart_policy }}
+    networks:
+      - socketproxy_dozzle
+      - frontend
+    extra_hosts:
+      - "{{ karo_compose_oidc_domain }}:172.18.0.254"
+    volumes:
+      - type: volume
+        source: dozzle_data
+        target: /data
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.dozzle.rule=Host(`{{ stack_vars.dozzle.domain }}`)
+      - traefik.http.services.dozzle.loadbalancer.server.port=8080
+    environment:
+      - DOZZLE_LEVEL={{ stack_vars.dozzle.log_level }}
+      - DOZZLE_AUTH_PROVIDER=oidc
+      - DOZZLE_AUTH_OIDC_ISSUER={{ karo_compose_oidc_url }}
+      - DOZZLE_AUTH_OIDC_CLIENT_ID={{ stack_vars.dozzle.oidc_client_id }}
+      - DOZZLE_AUTH_OIDC_CLIENT_SECRET_FILE=/run/secrets/dozzle_oidc_client_secret
+      - DOZZLE_AUTH_OIDC_NAME={{ karo_compose_oidc_provider_name }}
+      - DOZZLE_DISABLE_AVATARS=true
+      - DOZZLE_NO_ANALYTICS=true
+      - DOZZLE_RELEASE_CHECK_MODE=manual
+      - DOZZLE_REMOTE_HOST=tcp://cetusguard:2375|{{ stack_vars.dozzle.host_label }}
+    secrets:
+      - dozzle_oidc_client_secret
+    depends_on:
+      - cetusguard
+
+  cetusguard:
+    image: {{ stack_vars.cetusguard.image }}:{{ stack_vars.cetusguard.version }}
+    container_name: cetusguard_dozzle
+    restart: {{ karo_compose_restart_policy }}
+    read_only: true
+    networks:
+      - socketproxy_dozzle
+    volumes:
+      - type: bind
+        source: /run/user/1001/docker.sock
+        target: /var/run/docker.sock
+        read_only: true
+    environment:
+      CETUSGUARD_BACKEND_ADDR: "unix:///var/run/docker.sock"
+      CETUSGUARD_FRONTEND_ADDR: "tcp://:2375"
+      CETUSGUARD_RULES: |
+        ! monitor events
+        GET %API_PREFIX_EVENTS%
+        ! list containers
+        GET %API_PREFIX_CONTAINERS%/json
+        ! inspect a container
+        GET %API_PREFIX_CONTAINERS%/%CONTAINER_ID_OR_NAME%/json
+        ! stream container resource usage statistics
+        GET %API_PREFIX_CONTAINERS%/%CONTAINER_ID_OR_NAME%/stats
+        ! stream container logs
+        GET %API_PREFIX_CONTAINERS%/%CONTAINER_ID_OR_NAME%/logs
+      CETUSGUARD_LOG_LEVEL: "{{ stack_vars.cetusguard.log_level }}"
+
+networks:
+  socketproxy_dozzle:
+    name: socketproxy_dozzle
+    driver: bridge
+    internal: true
+  frontend:
+    external: true
+
+volumes:
+  dozzle_data:
+    name: dozzle_data
+
+secrets:
+  dozzle_oidc_client_secret:
+    file: {{ karo_compose_secrets_path }}/dozzle_oidc_client_secret

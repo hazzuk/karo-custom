@@ -9,3 +9,4 @@ hazzuk_extra_stacks:
   - whoami
   - ntfy
   - godns
+  - dozzle
