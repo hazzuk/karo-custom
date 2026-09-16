@@ -18,6 +18,7 @@ FILES=(
 	"seerr"
 	"sonarr"
 	"traefik"
+	"dozzle"
 )
 
 main() {
