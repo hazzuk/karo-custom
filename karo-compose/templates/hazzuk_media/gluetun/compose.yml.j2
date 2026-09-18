@@ -29,6 +29,7 @@ services:
       - WIREGUARD_CONF_SECRETFILE=/run/secrets/gluetun_wireguard_config_raw
     secrets:
       - gluetun_wireguard_config_raw
+    # healthcheck: defined by image
 
 networks:
   egress_gluetun:

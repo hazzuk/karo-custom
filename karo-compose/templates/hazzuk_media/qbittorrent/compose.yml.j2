@@ -63,6 +63,7 @@ services:
     secrets:
       - qui_session_secret
       - qui_oidc_client_secret
+    # healthcheck: defined by image
     depends_on:
       - qbittorrent
 

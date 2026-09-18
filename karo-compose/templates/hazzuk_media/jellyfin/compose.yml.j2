@@ -35,6 +35,7 @@ services:
       - traefik.http.services.jellyfin.loadbalancer.server.port=8096
     environment:
       - TZ={{ karo_compose_timezone }}
+    # healthcheck: defined by image
 
 networks:
   egress_jellyfin:

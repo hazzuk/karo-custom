@@ -97,6 +97,7 @@ services:
       - DOCKER_HOST=tcp://cetusguard:2375
     secrets:
       - tinyauth_oidc_client_secret
+    # healthcheck: defined by image
     depends_on:
       - cetusguard
 
