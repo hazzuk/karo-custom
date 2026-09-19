@@ -3,6 +3,16 @@
 # SPDX-License-Identifier: AGPL-3.0-only
 
 ---
+{% macro traefik_encoded_chars_options() %}
+      encodedCharacters:
+        allowEncodedSlash: false
+        allowEncodedBackSlash: false
+        allowEncodedNullCharacter: false
+        allowEncodedSemicolon: false
+        allowEncodedPercent: false
+        allowEncodedQuestionMark: false
+        allowEncodedHash: false
+{%- endmacro %}
 
 global:
   checkNewVersion: false
@@ -22,6 +32,7 @@ entryPoints:
   web:
     address: :80
     http:
+{{ traefik_encoded_chars_options() }}
       redirections:
         entryPoint:
           to: websecure
@@ -40,6 +51,7 @@ entryPoints:
         - "{{ hazzuk_extra_proxy_server_wireguard_ipv4 }}"
 {% endif %}
     http:
+{{ traefik_encoded_chars_options() }}
       tls:
         certResolver: cloudflare
         domains:
