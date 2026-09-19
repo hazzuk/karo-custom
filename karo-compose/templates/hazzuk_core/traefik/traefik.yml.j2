@@ -33,6 +33,7 @@ entryPoints:
     address: :80
     http:
 {{ traefik_encoded_chars_options() }}
+      aliasHeadersStrategy: delete
       redirections:
         entryPoint:
           to: websecure
@@ -52,6 +53,7 @@ entryPoints:
 {% endif %}
     http:
 {{ traefik_encoded_chars_options() }}
+      aliasHeadersStrategy: delete
       tls:
         certResolver: cloudflare
         domains:
