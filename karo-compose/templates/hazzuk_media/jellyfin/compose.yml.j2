@@ -14,6 +14,8 @@ services:
     networks:
       - egress_jellyfin
       - frontend
+    extra_hosts:
+      - "{{ karo_compose_oidc_domain }}:172.18.0.254"
     volumes:
       - type: bind
         source: {{ stack_vars.jellyfin.movies_media_path }}
