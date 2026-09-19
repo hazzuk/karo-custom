@@ -9,7 +9,7 @@ hazzuk_core_pocketid_enabled: false
 hazzuk_core_pocketid_stack_defaults:
   pocketid:
     image: ghcr.io/pocket-id/pocket-id # -8<- [end:x]
-    version: v2.6.2@sha256:1cc51e5b36fa7ec31368d3efb24ba362be6dce20f3cc0a2852843527bd5110f0 # -8<- [end:x]
+    version: v2.14.0@sha256:01540977dcf4c7b41b1159f34d68e4632f2658d62790e460ca65a42722b13c4a # -8<- [end:x]
     log_level: info # debug, info, warn, error
     secrets:
       encryption_key: "" # `openssl rand -base64 32`
