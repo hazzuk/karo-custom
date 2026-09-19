@@ -11,7 +11,8 @@ services:
     image: {{ stack_vars.pocketid.image }}:{{ stack_vars.pocketid.version }}
     container_name: pocketid
     restart: {{ karo_compose_restart_policy }}
-    read_only: false
+    user: 1000:1000
+    read_only: true
     networks:
       - egress_pocketid
       - frontend
@@ -31,8 +32,6 @@ services:
       - ANALYTICS_DISABLED=true
       - VERSION_CHECK_DISABLED=true
       - TRUST_PROXY=172.18.0.254
-      - PUID=1000
-      - PGID=1000
     secrets:
       - pocketid_encryption_key
       - pocketid_maxmind_license_key
