@@ -60,6 +60,7 @@ services:
       - QUI__OIDC_CLIENT_SECRET_FILE=/run/secrets/qui_oidc_client_secret
       - QUI__OIDC_REDIRECT_URL=https://{{ stack_vars.qui.domain }}/api/auth/oidc/callback
       - QUI__OIDC_DISABLE_BUILT_IN_LOGIN=true
+      - QUI__CHECK_FOR_UPDATES=false
     secrets:
       - qui_session_secret
       - qui_oidc_client_secret
