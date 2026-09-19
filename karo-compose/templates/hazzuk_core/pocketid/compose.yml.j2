@@ -30,7 +30,7 @@ services:
       - MAXMIND_LICENSE_KEY_FILE=/run/secrets/pocketid_maxmind_license_key
       - ANALYTICS_DISABLED=true
       - VERSION_CHECK_DISABLED=true
-      - TRUST_PROXY=true
+      - TRUST_PROXY=172.18.0.254
       - PUID=1000
       - PGID=1000
     secrets:
