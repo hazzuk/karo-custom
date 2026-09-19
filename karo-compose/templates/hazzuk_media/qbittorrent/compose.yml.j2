@@ -52,6 +52,8 @@ services:
       - traefik.http.routers.qui.rule=Host(`{{ stack_vars.qui.domain }}`)
       - traefik.http.services.qui.loadbalancer.server.port=7476
     environment:
+      - PUID=0
+      - PGID=0
       - QUI__LOG_LEVEL={{ stack_vars.qui.log_level | upper }}
       - QUI__SESSION_SECRET_FILE=/run/secrets/qui_session_secret
       - QUI__OIDC_ENABLED=true
