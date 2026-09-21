@@ -9,7 +9,7 @@ hazzuk_extra_dozzle_enabled: false
 hazzuk_extra_dozzle_stack_defaults:
   dozzle:
     image: docker.io/amir20/dozzle # -8<- [end:x]
-    version: v11.1.0-alpine@sha256:9422c83f1ad06e65a335e8d430e796dd940a338f083d46d4c03f1de4a20aa060 # -8<- [end:x]
+    version: v11.1.1-alpine@sha256:5df6377b20623ab28be599a34965733c45b69d8ba09abca597a6b92741feaf22 # -8<- [end:x]
     domain: "dozzle.{{ karo_compose_root_domain }}"
     log_level: info # debug, info, warn, error
     host_label: "Homeserver"

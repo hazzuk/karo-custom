@@ -8,8 +8,8 @@ hazzuk_core_pocketid_enabled: false
 
 hazzuk_core_pocketid_stack_defaults:
   pocketid:
-    image: ghcr.io/pocket-id/pocket-id # -8<- [end:x]
-    version: v2.6.2@sha256:1cc51e5b36fa7ec31368d3efb24ba362be6dce20f3cc0a2852843527bd5110f0 # -8<- [end:x]
+    image: docker.io/pocketid/pocket-id # -8<- [end:x]
+    version: v2.14.0-distroless@sha256:e0f83a42a78d0759b6d2d8c7380ef0fa8a4c95dfa01ad88740a073ae9cc4ba94 # -8<- [end:x]
     log_level: info # debug, info, warn, error
     secrets:
       encryption_key: "" # `openssl rand -base64 32`

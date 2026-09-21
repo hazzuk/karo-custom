@@ -25,7 +25,7 @@ hazzuk_media_gluetun_stack:
 
     <div class="grid cards" markdown>
 
-    - :simple-github: [qdm12/gluetun](https://github.com/qdm12/gluetun)
+    - :simple-github: [passteque/gluetun](https://github.com/passteque/gluetun)
     - :simple-docker: [docker.io/qmcgaw/gluetun](https://hub.docker.com/r/qmcgaw/gluetun)
 
     </div>
@@ -37,4 +37,4 @@ hazzuk_media_gluetun_stack:
     !!! note "Links"
 
         - :lucide-bookmark: [Documentation](https://github.com/qdm12/gluetun-wiki)
-        - :lucide-tag: [Releases](https://github.com/qdm12/gluetun/releases)
+        - :lucide-tag: [Releases](https://github.com/passteque/gluetun/releases)

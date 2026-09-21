@@ -3,6 +3,16 @@
 # SPDX-License-Identifier: AGPL-3.0-only
 
 ---
+{% macro traefik_encoded_chars_options() %}
+      encodedCharacters:
+        allowEncodedSlash: false
+        allowEncodedBackSlash: false
+        allowEncodedNullCharacter: false
+        allowEncodedSemicolon: false
+        allowEncodedPercent: false
+        allowEncodedQuestionMark: false
+        allowEncodedHash: false
+{%- endmacro %}
 
 global:
   checkNewVersion: false
@@ -22,6 +32,8 @@ entryPoints:
   web:
     address: :80
     http:
+{{ traefik_encoded_chars_options() }}
+      aliasHeadersStrategy: delete
       redirections:
         entryPoint:
           to: websecure
@@ -40,6 +52,8 @@ entryPoints:
         - "{{ hazzuk_extra_proxy_server_wireguard_ipv4 }}"
 {% endif %}
     http:
+{{ traefik_encoded_chars_options() }}
+      aliasHeadersStrategy: delete
       tls:
         certResolver: cloudflare
         domains:
@@ -70,6 +84,9 @@ tls:
     default:
       minVersion: VersionTLS13
       sniStrict: true
+
+core:
+  strictTLSOptions: true
 
 # https://doc.traefik.io/traefik/reference/install-configuration/providers/docker/
 providers:

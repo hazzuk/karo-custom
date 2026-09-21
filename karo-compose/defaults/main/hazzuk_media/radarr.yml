@@ -9,7 +9,7 @@ hazzuk_media_radarr_enabled: false
 hazzuk_media_radarr_stack_defaults:
   radarr:
     image: docker.io/linuxserver/radarr # -8<- [end:x]
-    version: 6.1.1.10360-ls300@sha256:b01097ad2d948c9f5eca39eb60bb529e2e55b0738c4bf7db09383bef0abab59d # -8<- [end:x]
+    version: 6.4.4.10685-ls317@sha256:c960f2b52ec6542dbe6707c5a21e696a7c74fd8b17997454f4d10a55dacee133 # -8<- [end:x]
     domain: "radarr.{{ karo_compose_root_domain }}"
     forward_auth_enabled: true
     data_path: "" # e.g. /media/drive1/data

@@ -12,6 +12,7 @@ services:
     container_name: seerr
     restart: {{ karo_compose_restart_policy }}
     init: true
+    # user: 1000:1000 by default
     networks:
       - egress_seerr
       - frontend

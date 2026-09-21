@@ -14,6 +14,8 @@ services:
     networks:
       - egress_jellyfin
       - frontend
+    extra_hosts:
+      - "{{ karo_compose_oidc_domain }}:172.18.0.254"
     volumes:
       - type: bind
         source: {{ stack_vars.jellyfin.movies_media_path }}
@@ -35,6 +37,7 @@ services:
       - traefik.http.services.jellyfin.loadbalancer.server.port=8096
     environment:
       - TZ={{ karo_compose_timezone }}
+    # healthcheck: defined by image
 
 networks:
   egress_jellyfin:
