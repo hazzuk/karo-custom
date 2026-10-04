@@ -14,8 +14,9 @@ Optional services.
 
 ``` yaml { .no-copy hl_lines="3" }
 karo_compose_stack_groups:
-  - hazzuk_core # required
+  - hazzuk_core # setup first
   - hazzuk_extra
+  - hazzuk_media
 ```
 
 <!-- editorconfig-checker-enable -->

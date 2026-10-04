@@ -12,9 +12,10 @@ Full set of media services, for downloads, content organisation, user requests, 
 
 <!-- editorconfig-checker-disable -->
 
-``` yaml { .no-copy hl_lines="3" }
+``` yaml { .no-copy hl_lines="4" }
 karo_compose_stack_groups:
-  - hazzuk_core # required
+  - hazzuk_core # setup first
+  - hazzuk_extra
   - hazzuk_media
 ```
 
