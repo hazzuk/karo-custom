@@ -12,11 +12,11 @@ Full set of media services, for downloads, content organisation, user requests, 
 
 <!-- editorconfig-checker-disable -->
 
-``` yaml { .no-copy hl_lines="4" }
+``` yaml { .no-copy hl_lines="3" }
 karo_compose_stack_groups:
   - karolabs_core # setup first
-  - karolabs_ops
   - karolabs_media
+  - karolabs_ops
 ```
 
 <!-- editorconfig-checker-enable -->

@@ -16,8 +16,8 @@ Essential services required by every other stack.
 ``` yaml { .no-copy hl_lines="2" }
 karo_compose_stack_groups:
   - karolabs_core
-  - karolabs_ops
   - karolabs_media
+  - karolabs_ops
 ```
 
 <!-- editorconfig-checker-enable -->
