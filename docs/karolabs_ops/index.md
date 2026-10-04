@@ -8,7 +8,7 @@ icon: lucide/layers-2
 
 # karolabs_ops
 
-Optional services.
+Operations and monitoring services.
 
 <!-- editorconfig-checker-disable -->
 
