@@ -28,6 +28,7 @@ nav = [
     ] },
     { "hazzuk_extra" = [
       "compose/hazzuk_extra/index.md",
+      "compose/hazzuk_extra/dozzle.md",
       "compose/hazzuk_extra/godns.md",
       "compose/hazzuk_extra/ntfy.md",
       "compose/hazzuk_extra/proxy.md",

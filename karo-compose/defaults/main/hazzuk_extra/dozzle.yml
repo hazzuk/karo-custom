@@ -1,0 +1,22 @@
+# SPDX-FileCopyrightText: © 2026 hazzuk
+#
+# SPDX-License-Identifier: AGPL-3.0-only
+
+---
+
+hazzuk_extra_dozzle_enabled: false
+
+hazzuk_extra_dozzle_stack_defaults:
+  dozzle:
+    image: docker.io/amir20/dozzle # -8<- [end:x]
+    version: v11.1.0-alpine@sha256:9422c83f1ad06e65a335e8d430e796dd940a338f083d46d4c03f1de4a20aa060 # -8<- [end:x]
+    domain: "dozzle.{{ karo_compose_root_domain }}"
+    log_level: info # debug, info, warn, error
+    host_label: "Homeserver"
+    oidc_client_id: ""
+    secrets:
+      oidc_client_secret: ""
+  cetusguard:
+    image: docker.io/hectorm/cetusguard # -8<- [end:x]
+    version: v1.1.4@sha256:16a60a57943bb5ba4c3792c6b815cfb180f3492a7cabc469036ac1291c9c5365 # -8<- [end:x]
+    log_level: 6 # 0-7 (min to max verbosity)

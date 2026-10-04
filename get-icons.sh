@@ -18,6 +18,7 @@ FILES=(
 	"seerr"
 	"sonarr"
 	"traefik"
+	"dozzle"
 )
 
 main() {
@@ -28,7 +29,7 @@ main() {
 		target="$DEST_DIR/$file.svg"
 
 		if [[ -e "$target" ]]; then
-			echo "error: $target already exists"
+			echo "info: $target already exists"
 		else
 			echo "downloading $file.svg..."
 			curl --fail --location --silent --show-error --retry 3 \
