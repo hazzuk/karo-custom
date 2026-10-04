@@ -16,7 +16,7 @@ icon: custom/seerr
 hazzuk_media_seerr_enabled: false
 
 hazzuk_media_seerr_stack:
---8<-- "karo-compose/defaults/main/hazzuk_media/seerr.yml:10"
+--8<-- "karo-compose/defaults/main/karolabs_media/seerr.yml:10"
 ```
 
 [See all defaults](https://github.com/hazzuk/karo-custom/blob/main/karo-compose/defaults/main/hazzuk_media/seerr.yml){:target='_blank'}

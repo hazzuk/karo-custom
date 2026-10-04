@@ -16,7 +16,7 @@ icon: simple/ntfy
 hazzuk_extra_ntfy_enabled: false
 
 hazzuk_extra_ntfy_stack:
---8<-- "karo-compose/defaults/main/hazzuk_extra/ntfy.yml:10"
+--8<-- "karo-compose/defaults/main/karolabs_ops/ntfy.yml:10"
 ```
 
 [See all defaults](https://github.com/hazzuk/karo-custom/blob/main/karo-compose/defaults/main/hazzuk_extra/ntfy.yml){:target='_blank'}

@@ -21,7 +21,7 @@ hazzuk_extra_proxy_server_enabled: false # proxyserver
 hazzuk_extra_proxy_client_enabled: false # homeserver
 
 hazzuk_extra_proxy_stack:
---8<-- "karo-compose/defaults/main/hazzuk_extra/proxy.yml:19"
+--8<-- "karo-compose/defaults/main/karolabs_ops/proxy.yml:19"
 ```
 
 [See all defaults](https://github.com/hazzuk/karo-custom/blob/main/karo-compose/defaults/main/hazzuk_extra/proxy.yml){:target='_blank'}

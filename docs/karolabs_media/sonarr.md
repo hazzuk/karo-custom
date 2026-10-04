@@ -16,7 +16,7 @@ icon: custom/sonarr
 hazzuk_media_sonarr_enabled: false
 
 hazzuk_media_sonarr_stack:
---8<-- "karo-compose/defaults/main/hazzuk_media/sonarr.yml:10"
+--8<-- "karo-compose/defaults/main/karolabs_media/sonarr.yml:10"
 ```
 
 [See all defaults](https://github.com/hazzuk/karo-custom/blob/main/karo-compose/defaults/main/hazzuk_media/sonarr.yml){:target='_blank'}

@@ -16,7 +16,7 @@ icon: simple/jellyfin
 hazzuk_media_jellyfin_enabled: false
 
 hazzuk_media_jellyfin_stack:
---8<-- "karo-compose/defaults/main/hazzuk_media/jellyfin.yml:10"
+--8<-- "karo-compose/defaults/main/karolabs_media/jellyfin.yml:10"
 ```
 
 [See all defaults](https://github.com/hazzuk/karo-custom/blob/main/karo-compose/defaults/main/hazzuk_media/jellyfin.yml){:target='_blank'}

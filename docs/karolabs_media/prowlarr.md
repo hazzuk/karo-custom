@@ -16,7 +16,7 @@ icon: custom/prowlarr
 hazzuk_media_prowlarr_enabled: false
 
 hazzuk_media_prowlarr_stack:
---8<-- "karo-compose/defaults/main/hazzuk_media/prowlarr.yml:10"
+--8<-- "karo-compose/defaults/main/karolabs_media/prowlarr.yml:10"
 ```
 
 [See all defaults](https://github.com/hazzuk/karo-custom/blob/main/karo-compose/defaults/main/hazzuk_media/prowlarr.yml){:target='_blank'}

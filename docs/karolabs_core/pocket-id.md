@@ -22,7 +22,7 @@ icon: custom/pocket-id
 hazzuk_core_pocketid_enabled: false
 
 hazzuk_core_pocketid_stack:
---8<-- "karo-compose/defaults/main/hazzuk_core/pocketid.yml:10"
+--8<-- "karo-compose/defaults/main/karolabs_core/pocketid.yml:10"
 ```
 
 [See all defaults](https://github.com/hazzuk/karo-custom/blob/main/karo-compose/defaults/main/hazzuk_core/pocketid.yml){:target='_blank'}

@@ -16,7 +16,7 @@ icon: custom/dozzle
 hazzuk_extra_dozzle_enabled: false
 
 hazzuk_extra_dozzle_stack:
---8<-- "karo-compose/defaults/main/hazzuk_extra/dozzle.yml:10"
+--8<-- "karo-compose/defaults/main/karolabs_ops/dozzle.yml:10"
 ```
 
 [See all defaults](https://github.com/hazzuk/karo-custom/blob/main/karo-compose/defaults/main/hazzuk_extra/dozzle.yml){:target='_blank'}

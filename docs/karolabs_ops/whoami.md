@@ -16,7 +16,7 @@ icon: lucide/file-question-mark
 hazzuk_extra_whoami_enabled: false
 
 hazzuk_extra_whoami_stack:
---8<-- "karo-compose/defaults/main/hazzuk_extra/whoami.yml:10"
+--8<-- "karo-compose/defaults/main/karolabs_ops/whoami.yml:10"
 ```
 
 [See all defaults](https://github.com/hazzuk/karo-custom/blob/main/karo-compose/defaults/main/hazzuk_extra/whoami.yml){:target='_blank'}
