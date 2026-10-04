@@ -21,28 +21,28 @@ nav = [
     "index.md",
   ] },
   { "Stack groups" = [
-    { "hazzuk_core" = [
-      "hazzuk_core/index.md",
-      "hazzuk_core/traefik.md",
-      "hazzuk_core/pocket-id.md",
+    { "karolabs_core" = [
+      "karolabs_core/index.md",
+      "karolabs_core/traefik.md",
+      "karolabs_core/pocket-id.md",
     ] },
-    { "hazzuk_extra" = [
-      "hazzuk_extra/index.md",
-      "hazzuk_extra/dozzle.md",
-      "hazzuk_extra/godns.md",
-      "hazzuk_extra/ntfy.md",
-      "hazzuk_extra/proxy.md",
-      "hazzuk_extra/whoami.md",
+    { "karolabs_ops" = [
+      "karolabs_ops/index.md",
+      "karolabs_ops/dozzle.md",
+      "karolabs_ops/godns.md",
+      "karolabs_ops/ntfy.md",
+      "karolabs_ops/proxy.md",
+      "karolabs_ops/whoami.md",
     ] },
-    { "hazzuk_media" = [
-      "hazzuk_media/index.md",
-      "hazzuk_media/gluetun.md",
-      "hazzuk_media/qbittorrent.md",
-      "hazzuk_media/prowlarr.md",
-      "hazzuk_media/radarr.md",
-      "hazzuk_media/sonarr.md",
-      "hazzuk_media/jellyfin.md",
-      "hazzuk_media/seerr.md",
+    { "karolabs_media" = [
+      "karolabs_media/index.md",
+      "karolabs_media/gluetun.md",
+      "karolabs_media/qbittorrent.md",
+      "karolabs_media/prowlarr.md",
+      "karolabs_media/radarr.md",
+      "karolabs_media/sonarr.md",
+      "karolabs_media/jellyfin.md",
+      "karolabs_media/seerr.md",
     ] },
   ] },
 ]
