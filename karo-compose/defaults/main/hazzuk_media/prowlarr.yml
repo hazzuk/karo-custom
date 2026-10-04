@@ -9,6 +9,6 @@ hazzuk_media_prowlarr_enabled: false
 hazzuk_media_prowlarr_stack_defaults:
   prowlarr:
     image: docker.io/linuxserver/prowlarr # -8<- [end:x]
-    version: 2.3.5.5327-ls144@sha256:b4204e18666179472225935b443a99cf6c66dcb7bbc2d35034427a3851f13135 # -8<- [end:x]
+    version: 2.6.5.5623-ls161@sha256:c96b56d94d116a9f4de94bc23d3381689492e6c3cfb7435320e8d982e406f99a # -8<- [end:x]
     domain: "prowlarr.{{ karo_compose_root_domain }}"
     forward_auth_enabled: true

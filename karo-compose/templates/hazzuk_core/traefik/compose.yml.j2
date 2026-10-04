@@ -85,6 +85,7 @@ services:
       - TINYAUTH_RESOURCES_ENABLED=false
       - TINYAUTH_UI_BACKGROUNDIMAGE=""
       - TINYAUTH_APPURL=https://{{ stack_vars.tinyauth.domain }}
+      - TINYAUTH_AUTH_TRUSTEDPROXIES=172.18.0.254
       - TINYAUTH_OAUTH_AUTOREDIRECT=pocketid
       - TINYAUTH_OAUTH_PROVIDERS_POCKETID_CLIENTID={{ stack_vars.tinyauth.oidc_client_id }}
       - TINYAUTH_OAUTH_PROVIDERS_POCKETID_CLIENTSECRETFILE=/run/secrets/tinyauth_oidc_client_secret
@@ -97,6 +98,7 @@ services:
       - DOCKER_HOST=tcp://cetusguard:2375
     secrets:
       - tinyauth_oidc_client_secret
+    # healthcheck: defined by image
     depends_on:
       - cetusguard
 
