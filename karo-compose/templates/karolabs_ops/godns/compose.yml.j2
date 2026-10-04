@@ -1,0 +1,34 @@
+# SPDX-FileCopyrightText: © 2025 hazzuk
+#
+# SPDX-License-Identifier: AGPL-3.0-only
+
+---
+
+name: godns
+services:
+
+  godns:
+    image: {{ stack_vars.godns.image }}:{{ stack_vars.godns.version }}
+    container_name: godns
+    restart: {{ karo_compose_restart_policy }}
+    networks:
+      - egress_godns
+    volumes:
+      - type: bind
+        source: /srv/docker/karolabs_ops/godns/config.json
+        target: /config.json
+        read_only: true
+    labels:
+      - dev.dozzle.icon=go
+    secrets:
+      - godns_dns_api_token
+
+networks:
+  egress_godns:
+    name: egress_godns
+    driver: bridge
+    internal: false
+
+secrets:
+  godns_dns_api_token:
+    file: {{ karo_compose_secrets_path }}/godns_dns_api_token

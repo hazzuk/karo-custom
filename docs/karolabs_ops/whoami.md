@@ -1,0 +1,35 @@
+---
+# SPDX-FileCopyrightText: © 2026 hazzuk
+#
+# SPDX-License-Identifier: AGPL-3.0-only
+
+icon: lucide/file-question-mark
+---
+
+# whoami
+
+> Tiny web server for testing
+
+``` yaml { title="Ansible vault" }
+# whoami
+
+karolabs_ops_whoami_enabled: false
+
+karolabs_ops_whoami_stack:
+--8<-- "karo-compose/defaults/main/karolabs_ops/whoami.yml:10"
+```
+
+[See all defaults](https://github.com/karolabs/karo-custom/blob/main/karo-compose/defaults/main/karolabs_ops/whoami.yml){:target='_blank'}
+
+??? abstract "whoami - Tiny web server for testing"
+
+    <div class="grid cards" markdown>
+
+    - :simple-github: [traefik/whoami](https://github.com/traefik/whoami)
+    - :simple-docker: [docker.io/traefik/whoami](https://hub.docker.com/r/traefik/whoami)
+
+    </div>
+
+    !!! note "Links"
+
+        - :lucide-tag: [Releases](https://github.com/traefik/whoami/releases)

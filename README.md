@@ -6,14 +6,14 @@ SPDX-License-Identifier: AGPL-3.0-only
 
 <div align="center" markdown>
 
-# hazzuk/karo-custom
+# karolabs/karo-custom
 
-**Custom [karo-stack](https://docs.karolabs.dev/) files**
+**For use with the [karo-stack](https://docs.karolabs.dev/)**
 
-[![Latest release](https://img.shields.io/github/v/release/hazzuk/karo-custom?display_name=tag&cacheSeconds=7200&label=Latest)](https://github.com/hazzuk/karo-custom/releases)
-[![License](https://img.shields.io/badge/License-AGPL--3.0-B461B3)](https://github.com/hazzuk/karo-custom/blob/main/LICENSE)
-[![REUSE status](https://api.reuse.software/badge/github.com/hazzuk/karo-custom)](https://api.reuse.software/info/github.com/hazzuk/karo-custom)
-[![Hits-of-Code](https://hitsofcode.com/github/hazzuk/karo-custom)](https://hitsofcode.com/github/hazzuk/karo-custom/view)
+[![Latest release](https://img.shields.io/github/v/release/karolabs/karo-custom?display_name=tag&cacheSeconds=7200&label=Latest)](https://github.com/karolabs/karo-custom/releases)
+[![License](https://img.shields.io/badge/License-AGPL--3.0-B461B3)](https://github.com/karolabs/karo-custom/blob/main/LICENSE)
+[![REUSE status](https://api.reuse.software/badge/github.com/karolabs/karo-custom)](https://api.reuse.software/info/github.com/karolabs/karo-custom)
+[![Hits-of-Code](https://hitsofcode.com/github/karolabs/karo-custom)](https://hitsofcode.com/github/karolabs/karo-custom/view)
 
 [![Developed by Humans, Not by AI](https://hazzuk.github.io/assets/not-by-ai/dev.svg)](https://notbyai.fyi/)
 
@@ -22,12 +22,12 @@ SPDX-License-Identifier: AGPL-3.0-only
 ---
 
 > This is the official [karo-custom](https://docs.karolabs.dev/custom/) repo,
-maintained by the creator of the karo-stack.
+maintained by the karo-stack project.
 
 1.  Get this custom repo
 
     ``` sh
-    just custom get hazzuk
+    just custom get karolabs
     ```
 
 2.  Add these variables
@@ -40,15 +40,15 @@ maintained by the creator of the karo-stack.
 
     ``` yaml { title="Ansible vault" }
     karo_compose_stack_groups:
-      - hazzuk_core
-      - hazzuk_extra
-      - hazzuk_media
+      - karolabs_core
+      - karolabs_media
+      - karolabs_ops
     ```
 
     <!-- editorconfig-checker-enable -->
 
 See the custom repo's documentation:
-[hazzuk.github.io/karo-custom](https://hazzuk.github.io/karo-custom/)
+[custom.karolabs.dev](https://custom.karolabs.dev)
 
 ## Copyright & License
 

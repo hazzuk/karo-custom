@@ -1,0 +1,23 @@
+# SPDX-FileCopyrightText: © 2026 hazzuk
+#
+# SPDX-License-Identifier: AGPL-3.0-only
+
+---
+
+
+karolabs_ops_proxy_server_enabled: false # proxyserver
+karolabs_ops_proxy_client_enabled: false # homeserver
+
+karolabs_ops_proxy_server_wireguard_ipv4: 10.25.0.1 # proxyserver
+karolabs_ops_proxy_client_wireguard_ipv4: 10.25.0.2 # homeserver
+
+karolabs_ops_proxy_server_wireguard_port: 52525
+
+karolabs_ops_proxy_enabled: "{{ karolabs_ops_proxy_server_enabled }}"
+
+karolabs_ops_proxy_stack_defaults:
+  haproxy:
+    image: docker.io/haproxy # -8<- [end:x]
+    version: 3.4.4-alpine@sha256:c0afc4864dca9c68694cd1290433f0ee79b5c55be80f6745a165ffe373b9a564 # -8<- [end:x]
+    config_raw: |
+      # haproxy config
