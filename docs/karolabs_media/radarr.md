@@ -19,7 +19,7 @@ hazzuk_media_radarr_stack:
 --8<-- "karo-compose/defaults/main/karolabs_media/radarr.yml:10"
 ```
 
-[See all defaults](https://github.com/hazzuk/karo-custom/blob/main/karo-compose/defaults/main/hazzuk_media/radarr.yml){:target='_blank'}
+[See all defaults](https://github.com/karolabs/karo-custom/blob/main/karo-compose/defaults/main/hazzuk_media/radarr.yml){:target='_blank'}
 
 ??? abstract "Radarr - Movie collection manager"
 

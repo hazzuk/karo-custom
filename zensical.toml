@@ -6,15 +6,15 @@
 # See https://zensical.org/docs for more information.
 
 [project]
-site_name = "hazzuk/karo-custom"
-site_description = "hazzuk karo-custom documentation."
+site_name = "karolabs/karo-custom"
+site_description = "karolabs karo-custom documentation."
 site_author = "hazzuk"
-site_url = "https://hazzuk.github.io/karo-custom"
+site_url = "https://custom.karolabs.dev/"
 
 copyright = "© 2026 hazzuk"
 
-repo_name = "hazzuk/karo-custom"
-repo_url = "https://github.com/hazzuk/karo-custom"
+repo_name = "karolabs/karo-custom"
+repo_url = "https://github.com/karolabs/karo-custom"
 
 nav = [
   { "Home" = [

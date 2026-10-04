@@ -24,7 +24,7 @@ hazzuk_extra_proxy_stack:
 --8<-- "karo-compose/defaults/main/karolabs_ops/proxy.yml:19"
 ```
 
-[See all defaults](https://github.com/hazzuk/karo-custom/blob/main/karo-compose/defaults/main/hazzuk_extra/proxy.yml){:target='_blank'}
+[See all defaults](https://github.com/karolabs/karo-custom/blob/main/karo-compose/defaults/main/hazzuk_extra/proxy.yml){:target='_blank'}
 
 ??? abstract "HAProxy - High-performance TCP reverse proxy"
 

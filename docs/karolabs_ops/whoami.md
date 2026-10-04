@@ -19,7 +19,7 @@ hazzuk_extra_whoami_stack:
 --8<-- "karo-compose/defaults/main/karolabs_ops/whoami.yml:10"
 ```
 
-[See all defaults](https://github.com/hazzuk/karo-custom/blob/main/karo-compose/defaults/main/hazzuk_extra/whoami.yml){:target='_blank'}
+[See all defaults](https://github.com/karolabs/karo-custom/blob/main/karo-compose/defaults/main/hazzuk_extra/whoami.yml){:target='_blank'}
 
 ??? abstract "whoami - Tiny web server for testing"
 

@@ -19,7 +19,7 @@ hazzuk_media_gluetun_stack:
 --8<-- "karo-compose/defaults/main/karolabs_media/gluetun.yml:10"
 ```
 
-[See all defaults](https://github.com/hazzuk/karo-custom/blob/main/karo-compose/defaults/main/hazzuk_media/gluetun.yml){:target='_blank'}
+[See all defaults](https://github.com/karolabs/karo-custom/blob/main/karo-compose/defaults/main/hazzuk_media/gluetun.yml){:target='_blank'}
 
 ??? abstract "Gluetun - Docker VPN client"
 
