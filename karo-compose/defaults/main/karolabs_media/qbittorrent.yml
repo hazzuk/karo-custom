@@ -4,9 +4,9 @@
 
 ---
 
-hazzuk_media_qbittorrent_enabled: false
+karolabs_media_qbittorrent_enabled: false
 
-hazzuk_media_qbittorrent_stack_defaults:
+karolabs_media_qbittorrent_stack_defaults:
   qbittorrent:
     image: docker.io/qbittorrentofficial/qbittorrent-nox # -8<- [end:x]
     version: 5.2.3-1@sha256:9ebb534fe30bab98622cb84a8c3acecfd88319b2d540f52ecdec7b9f866374d7 # -8<- [end:x]

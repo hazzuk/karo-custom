@@ -4,9 +4,9 @@
 
 ---
 
-hazzuk_media_seerr_enabled: false
+karolabs_media_seerr_enabled: false
 
-hazzuk_media_seerr_stack_defaults:
+karolabs_media_seerr_stack_defaults:
   seerr:
     image: docker.io/seerr/seerr # -8<- [end:x]
     version: preview-new-oidc@sha256:28744b1ced522beb7af8e5c966b73c6e46b1dc2c4c8cb497ad2f12d3139699a3 # -8<- [end:x]

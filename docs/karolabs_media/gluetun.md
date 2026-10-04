@@ -13,13 +13,13 @@ icon: custom/gluetun
 ``` yaml { title="Ansible vault" }
 # gluetun
 
-hazzuk_media_gluetun_enabled: false
+karolabs_media_gluetun_enabled: false
 
-hazzuk_media_gluetun_stack:
+karolabs_media_gluetun_stack:
 --8<-- "karo-compose/defaults/main/karolabs_media/gluetun.yml:10"
 ```
 
-[See all defaults](https://github.com/karolabs/karo-custom/blob/main/karo-compose/defaults/main/hazzuk_media/gluetun.yml){:target='_blank'}
+[See all defaults](https://github.com/karolabs/karo-custom/blob/main/karo-compose/defaults/main/karolabs_media/gluetun.yml){:target='_blank'}
 
 ??? abstract "Gluetun - Docker VPN client"
 

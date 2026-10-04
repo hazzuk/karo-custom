@@ -4,9 +4,9 @@
 
 ---
 
-hazzuk_extra_whoami_enabled: false
+karolabs_ops_whoami_enabled: false
 
-hazzuk_extra_whoami_stack_defaults:
+karolabs_ops_whoami_stack_defaults:
   whoami:
     image: docker.io/traefik/whoami # -8<- [end:x]
     version: v1.12.0@sha256:c4717a8d1f0134a7444e24f881160e033991f23027c6c5a9a3f8fd22e70d1d44 # -8<- [end:x]

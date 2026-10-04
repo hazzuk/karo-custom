@@ -7,7 +7,7 @@ icon: lucide/layers-2
 status: required
 ---
 
-# hazzuk_core
+# karolabs_core
 
 Essential services required by every other stack.
 
@@ -15,9 +15,9 @@ Essential services required by every other stack.
 
 ``` yaml { .no-copy hl_lines="2" }
 karo_compose_stack_groups:
-  - hazzuk_core
-  - hazzuk_extra
-  - hazzuk_media
+  - karolabs_core
+  - karolabs_ops
+  - karolabs_media
 ```
 
 <!-- editorconfig-checker-enable -->

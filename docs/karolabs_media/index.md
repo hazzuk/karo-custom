@@ -6,7 +6,7 @@
 icon: lucide/layers-2
 ---
 
-# hazzuk_media
+# karolabs_media
 
 Full set of media services, for downloads, content organisation, user requests, and streaming.
 
@@ -14,9 +14,9 @@ Full set of media services, for downloads, content organisation, user requests, 
 
 ``` yaml { .no-copy hl_lines="4" }
 karo_compose_stack_groups:
-  - hazzuk_core # setup first
-  - hazzuk_extra
-  - hazzuk_media
+  - karolabs_core # setup first
+  - karolabs_ops
+  - karolabs_media
 ```
 
 <!-- editorconfig-checker-enable -->

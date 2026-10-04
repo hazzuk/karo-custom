@@ -13,13 +13,13 @@ icon: simple/ntfy
 ``` yaml { title="Ansible vault" }
 # ntfy
 
-hazzuk_extra_ntfy_enabled: false
+karolabs_ops_ntfy_enabled: false
 
-hazzuk_extra_ntfy_stack:
+karolabs_ops_ntfy_stack:
 --8<-- "karo-compose/defaults/main/karolabs_ops/ntfy.yml:10"
 ```
 
-[See all defaults](https://github.com/karolabs/karo-custom/blob/main/karo-compose/defaults/main/hazzuk_extra/ntfy.yml){:target='_blank'}
+[See all defaults](https://github.com/karolabs/karo-custom/blob/main/karo-compose/defaults/main/karolabs_ops/ntfy.yml){:target='_blank'}
 
 ??? abstract "ntfy - Notification service"
 

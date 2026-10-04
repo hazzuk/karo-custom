@@ -13,13 +13,13 @@ icon: simple/jellyfin
 ``` yaml { title="Ansible vault" }
 # jellyfin
 
-hazzuk_media_jellyfin_enabled: false
+karolabs_media_jellyfin_enabled: false
 
-hazzuk_media_jellyfin_stack:
+karolabs_media_jellyfin_stack:
 --8<-- "karo-compose/defaults/main/karolabs_media/jellyfin.yml:10"
 ```
 
-[See all defaults](https://github.com/karolabs/karo-custom/blob/main/karo-compose/defaults/main/hazzuk_media/jellyfin.yml){:target='_blank'}
+[See all defaults](https://github.com/karolabs/karo-custom/blob/main/karo-compose/defaults/main/karolabs_media/jellyfin.yml){:target='_blank'}
 
 ??? abstract "Jellyfin - Media server"
 

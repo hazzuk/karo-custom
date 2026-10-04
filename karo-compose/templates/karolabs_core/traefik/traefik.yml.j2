@@ -46,10 +46,10 @@ entryPoints:
     forwardedHeaders:
       trustedIPs:
         - "172.18.0.253"
-{% if hazzuk_extra_proxy_client_enabled %}
+{% if karolabs_ops_proxy_client_enabled %}
     proxyProtocol:
       trustedIPs:
-        - "{{ hazzuk_extra_proxy_server_wireguard_ipv4 }}"
+        - "{{ karolabs_ops_proxy_server_wireguard_ipv4 }}"
 {% endif %}
     http:
 {{ traefik_encoded_chars_options() }}

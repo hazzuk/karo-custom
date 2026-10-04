@@ -6,7 +6,7 @@
 icon: lucide/layers-2
 ---
 
-# hazzuk_extra
+# karolabs_ops
 
 Optional services.
 
@@ -14,9 +14,9 @@ Optional services.
 
 ``` yaml { .no-copy hl_lines="3" }
 karo_compose_stack_groups:
-  - hazzuk_core # setup first
-  - hazzuk_extra
-  - hazzuk_media
+  - karolabs_core # setup first
+  - karolabs_ops
+  - karolabs_media
 ```
 
 <!-- editorconfig-checker-enable -->

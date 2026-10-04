@@ -17,14 +17,14 @@ icon: lucide/waypoints
 ``` yaml { title="Ansible vault" }
 # proxy
 
-hazzuk_extra_proxy_server_enabled: false # proxyserver
-hazzuk_extra_proxy_client_enabled: false # homeserver
+karolabs_ops_proxy_server_enabled: false # proxyserver
+karolabs_ops_proxy_client_enabled: false # homeserver
 
-hazzuk_extra_proxy_stack:
+karolabs_ops_proxy_stack:
 --8<-- "karo-compose/defaults/main/karolabs_ops/proxy.yml:19"
 ```
 
-[See all defaults](https://github.com/karolabs/karo-custom/blob/main/karo-compose/defaults/main/hazzuk_extra/proxy.yml){:target='_blank'}
+[See all defaults](https://github.com/karolabs/karo-custom/blob/main/karo-compose/defaults/main/karolabs_ops/proxy.yml){:target='_blank'}
 
 ??? abstract "HAProxy - High-performance TCP reverse proxy"
 
@@ -58,7 +58,7 @@ hazzuk_extra_proxy_stack:
 
         backend homeserver
           mode tcp
-          server wg {{ hazzuk_extra_proxy_client_wireguard_ipv4 }}:443 send-proxy-v2 check
+          server wg {{ karolabs_ops_proxy_client_wireguard_ipv4 }}:443 send-proxy-v2 check
         ```
 
         <!-- editorconfig-checker-enable -->

@@ -40,9 +40,9 @@ maintained by the karo-stack project.
 
     ``` yaml { title="Ansible vault" }
     karo_compose_stack_groups:
-      - hazzuk_core
-      - hazzuk_extra
-      - hazzuk_media
+      - karolabs_core
+      - karolabs_ops
+      - karolabs_media
     ```
 
     <!-- editorconfig-checker-enable -->

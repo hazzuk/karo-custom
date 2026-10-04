@@ -4,6 +4,6 @@
 
 ---
 
-hazzuk_core_stacks:
+karolabs_core_stacks:
   - traefik
   - pocketid
